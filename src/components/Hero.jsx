@@ -16,7 +16,7 @@ export default function Hero() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 glass text-sm font-medium text-slate-600 dark:text-slate-300"
+                    className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 glass text-sm font-semibold text-strong"
                 >
                     <Sparkles size={14} className="text-accent" />
                     MADA ELEVATE — Agence Digitale
@@ -26,26 +26,26 @@ export default function Hero() {
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     viewport={{ once: true }}
-                    className="font-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight"
+                    className="font-display text-5xl sm:text-6xl md:text-8xl font-black tracking-tight text-strong leading-[1.1]"
                 >
-                    Architecting{' '}
-                    <span className="bg-gradient-to-r from-accent to-cyan-400 bg-clip-text text-transparent">
-                        Digital
-                    </span>{' '}
-                    Excellence
+                    Architects of <br />
+                    <span className="bg-gradient-to-r from-accent via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                        Digital Icons
+                    </span>
                 </motion.h1>
 
                 {/* Subtitle */}
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     viewport={{ once: true }}
-                    className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-slate-500 dark:text-slate-400 leading-relaxed"
+                    className="mt-8 max-w-2xl mx-auto text-lg sm:text-xl text-strong leading-relaxed font-medium"
                 >
-                    Nous concevons des écosystèmes web et mobiles haute performance.
+                    MADA ELEVATE propulse les marques visionnaires vers l'excellence numérique. <br className="hidden sm:block" />
+                    <span className="text-accent font-bold italic">"Votre satisfaction est notre priorité absolue."</span>
                 </motion.p>
 
                 {/* CTA */}
@@ -65,7 +65,7 @@ export default function Hero() {
                     </a>
                     <a
                         href="#portfolio"
-                        className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold glass text-slate-700 dark:text-slate-300 hover:border-accent/50 transition-colors"
+                        className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold glass text-strong hover:border-accent/50 transition-colors"
                     >
                         Voir le Portfolio
                     </a>

@@ -1,21 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
-
-/* ── Theme tokens ───────────────────────────────────── */
+/* ── Theme Definitions ─────────────────────────────── */
 @theme {
   --font-display: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
 
-  --color-bg-light: #f8fafc;
-  --color-bg-dark: #020617;
+  /* Basic Color Tokens */
   --color-accent: #3b82f6;
   --color-accent-hover: #2563eb;
-  --color-glass-light: rgba(248, 250, 252, 0.6);
-  --color-glass-dark: rgba(2, 6, 23, 0.6);
+
+  /* Semantic Theme Variables */
+  --color-bg-base: #f8fafc;
+  /* slate-50 */
+  --color-text-strong: #0f172a;
+  /* slate-900 */
+  --color-text-muted: #475569;
+  /* slate-600 */
+  --color-glass: rgba(248, 250, 252, 0.7);
+  --color-border-main: rgba(148, 163, 184, 0.3);
+  /* Slightly more visible border */
 }
 
-/* ── Base layer ─────────────────────────────────────── */
+.dark {
+  --color-bg-base: #020617 !important;
+  /* slate-950 */
+  --color-text-strong: #ffffff !important;
+  /* Pure white for maximum clarity */
+  --color-text-muted: #cbd5e1 !important;
+  /* slate-300 for soft but readable */
+  --color-glass: rgba(2, 6, 23, 0.75) !important;
+  --color-border-main: rgba(255, 255, 255, 0.15) !important;
+  /* Visible premium border */
+}
+
+/* ── Base Reset & Defaults ─────────────────────────── */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -23,60 +42,76 @@
 
   body {
     font-family: var(--font-body);
-    background-color: var(--color-bg-light);
-    color: #334155;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-strong);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
   }
 
-  .dark body {
-    background-color: var(--color-bg-dark);
-    color: #cbd5e1;
-  }
-
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
+    color: var(--color-text-strong);
+    transition: color 0.4s ease;
   }
 }
 
-/* ── Glassmorphism utility ──────────────────────────── */
+/* ── Utility Classes ─────────────────────────────────── */
 @layer utilities {
   .glass {
-    background: var(--color-glass-light);
-    border: 1px solid rgba(148, 163, 184, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: var(--color-glass);
+    border: 1px solid var(--color-border-main);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all 0.4s ease;
   }
 
-  .dark .glass {
-    background: var(--color-glass-dark);
-    border: 1px solid rgba(30, 41, 59, 0.5);
+  .text-strong {
+    color: var(--color-text-strong);
+  }
+
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+
+  .border-main {
+    border-color: var(--color-border-main);
   }
 }
 
-/* ── Glow effects ───────────────────────────────────── */
+/* ── Custom Elements ────────────────────────────────── */
 .glow-orb {
   position: absolute;
   border-radius: 9999px;
   filter: blur(80px);
-  opacity: 0.3;
+  opacity: 0.4;
   pointer-events: none;
+  transition: opacity 0.5s ease;
 }
 
 .dark .glow-orb {
-  opacity: 0.15;
+  opacity: 0.2;
 }
 
-/* ── Scrollbar styling ──────────────────────────────── */
+/* ── Scrollbar ───────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
+  background: #cbd5e1;
   border-radius: 3px;
 }
+
 .dark ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #334155;
 }

@@ -6,19 +6,19 @@ const services = [
         icon: Globe,
         title: 'Web Development',
         description:
-            'Applications web performantes et scalables, avec une architecture moderne et une expérience utilisateur soignée.',
+            'Nous bâtissons des plateformes web ultra-rapides, SEO-friendly et scalables. Du site vitrine complexe aux architectures microservices.',
     },
     {
         icon: Smartphone,
         title: 'Mobile Apps',
         description:
-            'Applications natives et cross-platform qui offrent une expérience fluide sur tous les appareils.',
+            'Expériences iOS et Android natives ou hybrides privilégiant la fluidité, le design intuitif et l\'engagement utilisateur maximal.',
     },
     {
         icon: Layers,
         title: 'SaaS Design',
         description:
-            'Interfaces SaaS complexes transformées en produits intuitifs, avec un design système cohérent.',
+            'Conception de produits SaaS centrés sur l\'utilisateur, avec une approche axée sur la conversion et des design systems sophistiqués.',
     },
 ];
 
@@ -34,10 +34,10 @@ export default function Services() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                    <h2 className="font-display text-3xl sm:text-4xl font-bold text-strong">
                         Nos Services
                     </h2>
-                    <p className="mt-4 text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
+                    <p className="mt-4 text-muted max-w-xl mx-auto font-medium">
                         Des solutions digitales sur mesure pour propulser votre entreprise.
                     </p>
                 </motion.div>
@@ -51,15 +51,15 @@ export default function Services() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="group glass rounded-2xl p-8 hover:border-accent/50 transition-all duration-300"
+                            className="group glass rounded-2xl p-8 hover:border-accent/50 transition-all duration-300 dark:hover:bg-slate-800/20"
                         >
-                            <div className="mb-5 inline-flex rounded-xl bg-accent/10 p-3 text-accent">
+                            <div className="mb-5 inline-flex rounded-xl bg-accent/10 p-3 text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                                 <service.icon size={24} />
                             </div>
-                            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+                            <h3 className="text-xl font-bold text-strong mb-3">
                                 {service.title}
                             </h3>
-                            <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">
+                            <p className="text-strong leading-relaxed text-sm group-hover:text-accent transition-colors duration-300">
                                 {service.description}
                             </p>
                         </motion.div>

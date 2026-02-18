@@ -28,7 +28,7 @@ export default function Navbar() {
                 <div className="flex h-16 items-center justify-between">
                     {/* Logo */}
                     <a href="#" className="flex items-center gap-1 text-2xl font-bold tracking-tight">
-                        <span className="font-display text-slate-900 dark:text-white">MAD</span>
+                        <span className="font-display text-strong">MAD</span>
                         <span className="font-display bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent">A</span>
                     </a>
 
@@ -38,7 +38,7 @@ export default function Navbar() {
                             <a
                                 key={link.href}
                                 href={link.href}
-                                className="text-sm font-medium text-slate-600 hover:text-accent dark:text-slate-300 dark:hover:text-accent transition-colors"
+                                className="text-sm font-bold text-strong hover:text-accent transition-colors"
                             >
                                 {link.label}
                             </a>
@@ -47,7 +47,7 @@ export default function Navbar() {
                         {/* Theme toggle */}
                         <button
                             onClick={toggleTheme}
-                            className="rounded-full p-2 text-slate-500 hover:text-accent hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                            className="rounded-full p-2 text-strong transition-colors hover:bg-accent/10"
                             aria-label={`Theme: ${theme}`}
                         >
                             <ThemeIcon size={18} />
@@ -58,14 +58,14 @@ export default function Navbar() {
                     <div className="flex md:hidden items-center gap-2">
                         <button
                             onClick={toggleTheme}
-                            className="rounded-full p-2 text-slate-500 hover:text-accent transition-colors"
+                            className="rounded-full p-2 text-strong transition-colors"
                             aria-label={`Theme: ${theme}`}
                         >
                             <ThemeIcon size={18} />
                         </button>
                         <button
                             onClick={() => setMobileOpen(!mobileOpen)}
-                            className="rounded-lg p-2 text-slate-500 hover:text-accent transition-colors"
+                            className="rounded-lg p-2 text-strong transition-colors"
                             aria-label="Toggle menu"
                         >
                             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -89,7 +89,7 @@ export default function Navbar() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setMobileOpen(false)}
-                                    className="block rounded-lg px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition-colors"
+                                    className="block rounded-lg px-3 py-2 text-base font-bold text-strong hover:bg-accent/10 transition-colors"
                                 >
                                     {link.label}
                                 </a>

@@ -7,7 +7,7 @@ const values = [
         title: 'Précision',
         description:
             'Chaque pixel, chaque ligne de code est réfléchie pour atteindre un niveau d\'excellence technique irréprochable.',
-  },
+    },
     {
         icon: TrendingUp,
         title: 'Scalabilité',
@@ -34,11 +34,11 @@ export default function Values() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                    <h2 className="font-display text-4xl sm:text-5xl font-bold text-strong">
                         Nos Valeurs
                     </h2>
-                    <p className="mt-4 text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
-                        Les piliers qui guident chacun de nos projets.
+                    <p className="mt-4 text-strong max-w-xl mx-auto font-semibold opacity-80">
+                        Les piliers qui guident chacun de nos projets, plaçant <span className="text-accent underline decoration-2 underline-offset-4">votre réussite</span> au centre de tout.
                     </p>
                 </motion.div>
 
@@ -51,15 +51,15 @@ export default function Values() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="glass rounded-2xl p-8 text-center hover:border-accent/50 transition-all duration-300"
+                            className="glass rounded-2xl p-8 text-center hover:border-accent/50 transition-all duration-300 dark:hover:bg-slate-800/20 group"
                         >
-                            <div className="mb-5 mx-auto inline-flex rounded-xl bg-accent/10 p-3 text-accent">
+                            <div className="mb-5 mx-auto inline-flex rounded-xl bg-accent/10 p-3 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
                                 <value.icon size={24} />
                             </div>
-                            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+                            <h3 className="text-xl font-bold text-strong mb-3">
                                 {value.title}
                             </h3>
-                            <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">
+                            <p className="text-strong leading-relaxed text-sm font-semibold opacity-90">
                                 {value.description}
                             </p>
                         </motion.div>
