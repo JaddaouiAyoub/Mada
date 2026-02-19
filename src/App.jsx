@@ -7,6 +7,8 @@ import Portfolio from './components/Portfolio';
 import Values from './components/Values';
 import Footer from './components/Footer';
 
+import Testimonials from './components/Testimonials';
+
 export default function App() {
   return (
     <ThemeProvider>
@@ -17,6 +19,7 @@ export default function App() {
           <Services />
           <Process />
           <Portfolio />
+          <Testimonials />
           <Values />
         </main>
         <Footer />

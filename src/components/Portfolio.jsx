@@ -1,27 +1,106 @@
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Github, Globe, Smartphone } from 'lucide-react';
+
+import easy from "../assets/easy.png";
+import recruit from "../assets/recruit.jpg";
+import chat from "../assets/chat.jpg";
+import travel from "../assets/travel.png";
+import photographer from "../assets/photographer.png";
+import hotel from "../assets/hotel.png";
+import mada_scanner from "../assets/mada_scanner.png"
+import liftmosque from "../assets/liftmosque.png"
+import couvoit from "../assets/mada_covoit.png"
 
 const projects = [
     {
-        title: 'Fintech Gold',
-        category: 'Banking / SaaS',
-        description: 'Une plateforme de gestion d\'actifs de luxe avec une interface minimaliste et sécurisée.',
-        image:
-            'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000',
+        title: "Travel With Kaoutar",
+        category: "Agence de voyages romantiques",
+        img: travel,
+        desc: "Plateforme web élégante conçue pour promouvoir des voyages romantiques. Expérience immersive avec mode sombre/clair et fonds animés.",
+        tech: ["React", "Vite", "Tailwind CSS", "Framer Motion", "tsParticles"],
+        type: "web",
+        preview: "https://travel-with-kaoutar.vercel.app/",
+        code: "#",
     },
     {
-        title: 'HealthTrack App',
-        category: 'Mobile / Health',
-        description: 'Application mobile de suivi de santé connectée pour des diagnostics en temps réel.',
-        image:
-            'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000',
+        title: "Portfolio Photographe",
+        category: "Galerie artistique responsive",
+        img: photographer,
+        desc: "Portfolio moderne avec galerie en mosaïque artistique et intégration d’un chatbot via n8n pour l'assistance visiteurs.",
+        tech: ["React", "Vite", "Tailwind CSS", "Framer Motion", "n8n"],
+        type: "web",
+        preview: "https://photograph-portfolio-two.vercel.app/",
+        code: "#",
     },
     {
-        title: 'Cloud Manager',
-        category: 'Enterprise / SaaS',
-        description: 'Tableau de bord intelligent pour la gestion d\'infrastructures cloud complexes.',
-        image:
-            'https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=1000',
+        title: "Hotel Booking Landing",
+        category: "React & Tailwind",
+        img: hotel,
+        desc: "Landing page optimisée pour un hôtel avec Lazy Loading et intégration Stripe. Performante et 100% responsive.",
+        tech: ["React", "Tailwind CSS", "Framer Motion", "Stripe", "Unsplash"],
+        type: "web",
+        preview: null,
+        code: null,
+    },
+    {
+        title: "EasyStock Maroc",
+        category: "Gestion de stock intelligente",
+        img: easy,
+        desc: "Plateforme de gestion de stock temps réel pour entreprises. Automatisation des commandes et statistiques précises.",
+        tech: ["Spring Boot", "Angular", "MySQL"],
+        type: "web",
+        preview: "https://easy-stock-maroc.vercel.app/",
+        code: "#",
+    },
+    {
+        title: "EasyRecruit",
+        category: "Recrutement intelligent",
+        img: recruit,
+        desc: "Gestion du recrutement avec IA (NLP) pour l'analyse des CV et assistance aux entretiens. Sécurisé via Keycloak.",
+        tech: ["Spring Boot", "Angular", "Keycloak", "Python (IA/NLP)", "FastAPI"],
+        type: "web",
+        preview: null,
+        code: "#",
+    },
+    {
+        title: "Chat en temps réel",
+        category: "Stack MERN & Socket.io",
+        img: chat,
+        desc: "Messagerie instantanée permettant des conversations en temps réel avec indicateurs de saisie et statuts en ligne.",
+        tech: ["MongoDB", "Express", "React", "NodeJs", "Tailwind CSS", "Socket.io"],
+        type: "web",
+        preview: null,
+        code: "#",
+    },
+    {
+        title: "Covoiturage Intervilles",
+        category: "Mobilité Intervilles & Aéroport",
+        img : couvoit,
+        desc: "Application mobile facilitant le covoiturage avec gestion des trajets et intégration Mapbox pour le suivi temps réel.",
+        tech: ["Flutter", "Firebase", "Mapbox"],
+        type: "mobile",
+        preview: null,
+        code: "#",
+    },
+    {
+        title: "LiftMosque",
+        category: "Covoiturage vers les mosquées",
+        img: liftmosque,
+        desc: "Réduction des véhicules via covoiturage intelligent. Inclut un dashboard d'administration sophistiqué.",
+        tech: ["Flutter", "Firebase", "React.js"],
+        type: "mobile",
+        preview: null,
+        code: "#",
+    },
+    {
+        title: "Mada Scanner",
+        category: "Scan & PDF intelligent",
+        img: mada_scanner,
+        desc: "Numérisation de documents avec détection de bords, filtres d'amélioration et conversion PDF instantanée.",
+        tech: ["Flutter"],
+        type: "mobile",
+        preview: null,
+        code: "#",
     },
 ];
 
@@ -37,16 +116,16 @@ export default function Portfolio() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-display text-4xl sm:text-5xl font-bold text-strong">
+                    <h2 className="font-display text-4xl sm:text-5xl font-bold text-strong mb-4">
                         Portfolio
                     </h2>
-                    <p className="mt-4 text-strong max-w-xl mx-auto font-semibold opacity-80">
+                    <p className="max-w-2xl mx-auto text-muted font-medium">
                         Une sélection de projets où l'excellence technique rencontre la vision créative.
                     </p>
                 </motion.div>
 
                 {/* Grid */}
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project, i) => (
                         <motion.div
                             key={project.title}
@@ -54,26 +133,71 @@ export default function Portfolio() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="group relative overflow-hidden rounded-2xl aspect-[4/3]"
+                            className="flex flex-col group"
                         >
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                loading="lazy"
-                            />
-                            {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-start justify-end p-8 translate-y-4 group-hover:translate-y-0">
-                                <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-2">
-                                    {project.category}
-                                </span>
-                                <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                            <div className="relative overflow-hidden rounded-[2.5rem] aspect-[4/3] mb-6 glass border-main group-hover:shadow-2xl group-hover:shadow-accent/10 transition-all duration-500">
+                                <img
+                                    src={project.img}
+                                    alt={project.title}
+                                    className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-110"
+                                    loading="lazy"
+                                />
+                                {/* Desktop Overlay */}
+                                <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 hidden md:flex flex-col items-center justify-center p-8 text-center translate-y-4 group-hover:translate-y-0">
+                                    <div className="flex gap-4 mb-6">
+                                        {project.preview && (
+                                            <a href={project.preview} target="_blank" rel="noopener noreferrer" className="p-3 bg-accent text-white rounded-xl hover:scale-110 transition-transform shadow-lg shadow-accent/20">
+                                                <Globe size={20} />
+                                            </a>
+                                        )}
+                                        {project.code && (
+                                            <a href={project.code} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 text-white rounded-xl hover:scale-110 transition-transform backdrop-blur-md border border-white/20">
+                                                <Github size={20} />
+                                            </a>
+                                        )}
+                                    </div>
+                                    <p className="text-sm text-slate-200 leading-relaxed line-clamp-4 px-4">
+                                        {project.desc}
+                                    </p>
+                                </div>
+                                {/* Badge Type */}
+                                <div className="absolute top-6 right-6 px-3 py-1 bg-black/40 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2">
+                                    {project.type === 'web' ? <Globe size={12} className="text-accent" /> : <Smartphone size={12} className="text-accent" />}
+                                    <span className="text-[10px] font-bold text-white uppercase tracking-wider">{project.type}</span>
+                                </div>
+                            </div>
+
+                            <div className="px-2">
+                                <div className="flex flex-wrap gap-1.5 mb-4">
+                                    {project.tech.map(t => (
+                                        <span key={t} className="text-[9px] font-bold px-2 py-0.5 rounded-lg bg-accent/5 text-accent border border-accent/10">
+                                            {t}
+                                        </span>
+                                    ))}
+                                </div>
+                                <h3 className="text-xl font-bold text-strong mb-1.5 transition-colors group-hover:text-accent">
                                     {project.title}
-                                    <ExternalLink size={18} className="text-slate-400" />
                                 </h3>
-                                <p className="mt-3 text-sm text-slate-300 transition-opacity duration-300 delay-100">
-                                    {project.description}
+                                <p className="text-xs font-semibold text-muted mb-4 uppercase tracking-widest opacity-80">
+                                    {project.category}
                                 </p>
+                                {/* Mobile Desc */}
+                                <p className="text-sm text-strong opacity-75 leading-relaxed md:hidden mb-6 line-clamp-3">
+                                    {project.desc}
+                                </p>
+                                {/* Mobile Links */}
+                                <div className="flex md:hidden gap-4">
+                                    {project.preview && (
+                                        <a href={project.preview} className="text-xs font-bold text-accent flex items-center gap-1.5 underline decoration-2 underline-offset-4">
+                                            Live Demo <ExternalLink size={14} />
+                                        </a>
+                                    )}
+                                    {project.code && (
+                                        <a href={project.code} className="text-xs font-bold text-strong flex items-center gap-1.5 opacity-80">
+                                            Code <Github size={14} />
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         </motion.div>
                     ))}

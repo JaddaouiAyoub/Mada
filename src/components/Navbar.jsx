@@ -88,7 +88,9 @@ export default function Navbar() {
                                 <a
                                     key={link.href}
                                     href={link.href}
-                                    onClick={() => setMobileOpen(false)}
+                                    onClick={() => {
+                                        setMobileOpen(false);
+                                    }}
                                     className="block rounded-lg px-3 py-2 text-base font-bold text-strong hover:bg-accent/10 transition-colors"
                                 >
                                     {link.label}

@@ -18,20 +18,18 @@
   --color-text-muted: #475569;
   /* slate-600 */
   --color-glass: rgba(248, 250, 252, 0.7);
-  --color-border-main: rgba(148, 163, 184, 0.3);
-  /* Slightly more visible border */
+  --color-border-main: rgba(15, 23, 42, 0.08);
 }
 
 .dark {
   --color-bg-base: #020617 !important;
   /* slate-950 */
-  --color-text-strong: #ffffff !important;
-  /* Pure white for maximum clarity */
-  --color-text-muted: #cbd5e1 !important;
-  /* slate-300 for soft but readable */
-  --color-glass: rgba(2, 6, 23, 0.75) !important;
-  --color-border-main: rgba(255, 255, 255, 0.15) !important;
-  /* Visible premium border */
+  --color-text-strong: #f8fafc !important;
+  /* slate-50 instead of pure white */
+  --color-text-muted: #94a3b8 !important;
+  /* slate-400 */
+  --color-glass: rgba(2, 6, 23, 0.8) !important;
+  --color-border-main: rgba(248, 250, 252, 0.12) !important;
 }
 
 /* ── Base Reset & Defaults ─────────────────────────── */
