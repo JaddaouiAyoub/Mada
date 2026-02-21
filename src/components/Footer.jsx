@@ -51,15 +51,15 @@ export default function Footer() {
                         <ul className="space-y-4 text-sm text-strong font-semibold opacity-90">
                             <li className="flex items-start gap-3">
                                 <Mail size={16} className="text-accent shrink-0 mt-0.5" />
-                                <span>hello@madaelevate.com</span>
+                                <span>jaddaouiayoub02@gmail.com</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Phone size={16} className="text-accent shrink-0 mt-0.5" />
-                                <span>+261 34 00 000 00</span>
+                                <span>+212 7 00 54 71 63</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <MapPin size={16} className="text-accent shrink-0 mt-0.5" />
-                                <span>Antananarivo, Madagascar</span>
+                                <span>Casablanca , Maroc</span>
                             </li>
                         </ul>
                     </motion.div>

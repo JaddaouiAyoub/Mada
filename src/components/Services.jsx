@@ -51,15 +51,16 @@ export default function Services() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="group glass rounded-2xl p-8 hover:border-accent/50 transition-all duration-300 dark:hover:bg-slate-800/20"
+                            className="group relative glass rounded-2xl p-8 border-main hover:border-accent/40 hover:shadow-2xl hover:shadow-accent/5 transition-all duration-500 flex flex-col items-start overflow-hidden"
                         >
-                            <div className="mb-5 inline-flex rounded-xl bg-accent/10 p-3 text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
-                                <service.icon size={24} />
+                            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <div className="relative mb-6 inline-flex rounded-xl bg-accent/10 p-4 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-500 group-hover:scale-110 shadow-sm">
+                                <service.icon size={28} />
                             </div>
-                            <h3 className="text-xl font-bold text-strong mb-3">
+                            <h3 className="relative text-2xl font-bold text-strong mb-4 group-hover:text-accent transition-colors duration-300">
                                 {service.title}
                             </h3>
-                            <p className="text-strong leading-relaxed text-sm group-hover:text-accent transition-colors duration-300">
+                            <p className="relative text-strong leading-relaxed text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                                 {service.description}
                             </p>
                         </motion.div>

@@ -10,8 +10,19 @@ import hotel from "../assets/hotel.png";
 import mada_scanner from "../assets/mada_scanner.png"
 import liftmosque from "../assets/liftmosque.png"
 import couvoit from "../assets/mada_covoit.png"
+import ironElite from "../assets/ironElite.png"
 
 const projects = [
+     {
+        title: "Iron Elite",
+        category: "Application web fitness",
+        img: ironElite, // Assure-toi d'importer l'image ironElite
+        desc: "Application web interactive pour fitness avec suivi des entraînements, animations fluides et design moderne.",
+        tech: ["React", "Tailwind CSS", "Framer Motion"],
+        type: "web",
+        preview: "https://iron-elite.vercel.app/", // Ajouter le lien si disponible
+        code: null, // Ajouter le lien si disponible
+    },
     {
         title: "Travel With Kaoutar",
         category: "Agence de voyages romantiques",
