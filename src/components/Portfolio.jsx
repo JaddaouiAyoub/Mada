@@ -8,7 +8,7 @@ import travel from "../assets/travel.png";
 import photographer from "../assets/photographer.png";
 import hotel from "../assets/hotel.png";
 import mada_scanner from "../assets/mada_scanner.png"
-import liftmosque from "../assets/liftmosque.png"
+import liftmosque from "../assets/liftMosque.png"
 import couvoit from "../assets/mada_covoit.png"
 import ironElite from "../assets/ironElite.png"
 
