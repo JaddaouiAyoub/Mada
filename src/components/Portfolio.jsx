@@ -11,9 +11,10 @@ import mada_scanner from "../assets/mada_scanner.png"
 import liftmosque from "../assets/liftMosque.png"
 import couvoit from "../assets/mada_covoit.png"
 import ironElite from "../assets/ironElite.png"
+import ayoubStore from "../assets/ayoubStore.png"
 
 const projects = [
-     {
+    {
         title: "Iron Elite",
         category: "Application web fitness",
         img: ironElite, // Assure-toi d'importer l'image ironElite
@@ -22,6 +23,25 @@ const projects = [
         type: "web",
         preview: "https://iron-elite.vercel.app/", // Ajouter le lien si disponible
         code: null, // Ajouter le lien si disponible
+    },
+    {
+        title: "AyoubStore",
+        category: "E-commerce Premium",
+        img: ayoubStore, // Assure-toi d'importer l'image
+        desc: "Application e-commerce moderne avec animations fluides, interface premium et architecture performante. Gestion d’état avec Zustand, formulaires validés avec React Hook Form & Zod et UI basée sur Radix.",
+        tech: [
+            "React 19",
+            "Vite",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Radix UI",
+            "Zustand",
+            "React Hook Form",
+            "Zod"
+        ],
+        type: "web",
+        preview: "https://ayoub-store.vercel.app/", // Mets ton lien Vercel si dispo
+        code: "#", // Mets ton GitHub si dispo
     },
     {
         title: "Travel With Kaoutar",
@@ -86,7 +106,7 @@ const projects = [
     {
         title: "Covoiturage Intervilles",
         category: "Mobilité Intervilles & Aéroport",
-        img : couvoit,
+        img: couvoit,
         desc: "Application mobile facilitant le covoiturage avec gestion des trajets et intégration Mapbox pour le suivi temps réel.",
         tech: ["Flutter", "Firebase", "Mapbox"],
         type: "mobile",
