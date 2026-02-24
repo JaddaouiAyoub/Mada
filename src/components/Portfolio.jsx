@@ -25,6 +25,27 @@ const projects = [
         code: null, // Ajouter le lien si disponible
     },
     {
+        title: "Botanical Beauty Store",
+        category: "E-commerce Cosmétique Premium",
+        img: cosmeticStore, // Assure-toi d'importer l'image
+        desc: "Application e-commerce cosmétique premium inspirée de Yves Rocher. UI/UX haut de gamme avec animations immersives Framer Motion, panier sans login, filtres avancés et dashboard admin complet. Architecture scalable prête à connecter un backend (REST/GraphQL).",
+        tech: [
+            "React 19",
+            "TypeScript",
+            "Vite",
+            "Tailwind CSS (Custom Design System)",
+            "Framer Motion (Advanced Animations)",
+            "Zustand",
+            "React Router DOM",
+            "Axios",
+            "Chart.js / Recharts",
+            "LocalStorage API"
+        ],
+        type: "web",
+        preview: "https://botanical-beauty-store.vercel.app/", // Ajoute ton lien Vercel quand dispo
+        code: "#", // Ajoute ton GitHub quand dispo
+    },
+    {
         title: "AyoubStore",
         category: "E-commerce Premium",
         img: ayoubStore, // Assure-toi d'importer l'image
