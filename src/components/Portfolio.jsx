@@ -13,6 +13,7 @@ import couvoit from "../assets/mada_covoit.png"
 import ironElite from "../assets/ironElite.png"
 import ayoubStore from "../assets/ayoubStore.png"
 import cosmeticStore from "../assets/cosmeticStore.png"
+import dentalClinic from "../assets/dentalClinic.png"
 
 const projects = [
     {
@@ -24,6 +25,24 @@ const projects = [
         type: "web",
         preview: "https://iron-elite.vercel.app/", // Ajouter le lien si disponible
         code: null, // Ajouter le lien si disponible
+    },
+    {
+        title: "SmileCare Dental Clinic",
+        category: "Site web Cabinet Dentaire Premium",
+        img: dentalClinic, // Assure-toi d'importer l'image
+        desc: "Site vitrine moderne pour cabinet dentaire conçu pour inspirer confiance et attirer de nouveaux patients. Interface UI/UX premium avec mode sombre/clair, animations fluides et sections complètes (services, équipe médicale, témoignages, avant/après, prise de rendez-vous). Optimisé SEO, totalement responsive et ultra performant.",
+        tech: [
+            "React 19",
+            "Vite",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Lucide Icons",
+            "Responsive Design",
+            "Dark / Light Mode"
+        ],
+        type: "web",
+        preview: "https://smilecare-dental-clinic.vercel.app/", // mets ton lien Vercel
+        code: "#", // mets ton repo GitHub
     },
     {
         title: "Botanical Beauty Store",
