@@ -41,7 +41,7 @@ const projects = [
             "Dark / Light Mode"
         ],
         type: "web",
-        preview: "https://smilecare-dental-clinic.vercel.app/", // mets ton lien Vercel
+        preview: "https://smilecare-dental-clinic-pi.vercel.app/", // mets ton lien Vercel
         code: "#", // mets ton repo GitHub
     },
     {
