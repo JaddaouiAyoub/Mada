@@ -14,6 +14,7 @@ import ironElite from "../assets/ironElite.png"
 import ayoubStore from "../assets/ayoubStore.png"
 import cosmeticStore from "../assets/cosmeticStore.png"
 import dentalClinic from "../assets/dentalClinic.png"
+import beautySalon from "../assets/beautySalon.png"
 
 const projects = [
     {
@@ -44,6 +45,24 @@ const projects = [
         preview: "https://smilecare-dental-clinic-pi.vercel.app/", // mets ton lien Vercel
         code: "#", // mets ton repo GitHub
     },
+    {
+        title: "Velvet Beauty Casablanca",
+        category: "Salon de beauté féminin – Coiffure & Soins visage",
+        img: beautySalon,
+        desc: "Site web premium pour un salon de beauté au Maroc avec support Français / Arabe (RTL), galerie immersive et réservation.",
+        tech: [
+            "Next.js",
+            "React",
+            "Tailwind CSS",
+            "Framer Motion",
+            "i18n (FR / AR)",
+            "RTL Support"
+        ],
+        type: "web",
+        preview: "https://velvet-beauty-casablanca.vercel.app/",
+        code: "#"
+    },
+
     {
         title: "Botanical Beauty Store",
         category: "E-commerce Cosmétique Premium",
