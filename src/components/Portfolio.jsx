@@ -15,6 +15,7 @@ import ayoubStore from "../assets/ayoubStore.png"
 import cosmeticStore from "../assets/cosmeticStore.png"
 import dentalClinic from "../assets/dentalClinic.png"
 import beautySalon from "../assets/beautySalon.png"
+import riadAtlasPalace from "../assets/riadAtlasPalace.png"
 
 const projects = [
     {
@@ -62,7 +63,26 @@ const projects = [
         preview: "https://velvet-beauty-casablanca.vercel.app/",
         code: "#"
     },
-
+    {
+        title: "Riad Al-Andalous",
+        category: "Riad Marocain – Luxe & Expérience Immersive",
+        img: riadAtlasPalace, // Assure-toi d'importer l'image
+        desc: "Site web premium pour un riad marocain de luxe avec animations professionnelles, galerie immersive, réservation en ligne et support multilingue automatique (FR / EN / AR). Design inspiré de l'architecture marocaine traditionnelle, fully responsive et ultra performant. Inclut génération automatique des icônes et favicon.",
+        tech: [
+            "Next.js",
+            "React",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Lucide Icons",
+            "i18n (FR / EN / AR)",
+            "RTL Support",
+            "Responsive Design",
+            "Performance Optimized"
+        ],
+        type: "web",
+        preview: "https://riad-al-andalous.vercel.app/", // mets ton lien Vercel
+        code: "#", // mets ton GitHub si dispo
+    },
     {
         title: "Botanical Beauty Store",
         category: "E-commerce Cosmétique Premium",
