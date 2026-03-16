@@ -1,4 +1,5 @@
 import { ThemeProvider } from './context/ThemeContext';
+import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -11,19 +12,21 @@ import Testimonials from './components/Testimonials';
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <div className="min-h-screen selection:bg-accent/30">
-        <Navbar />
-        <main>
-          <Hero />
-          <Services />
-          <Process />
-          <Portfolio />
-          <Testimonials />
-          <Values />
-        </main>
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <div className="min-h-screen selection:bg-accent/30">
+          <Navbar />
+          <main>
+            <Hero />
+            <Services />
+            <Process />
+            <Portfolio />
+            <Testimonials />
+            <Values />
+          </main>
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }

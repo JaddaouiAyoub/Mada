@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero() {
+    const { t } = useLanguage();
+
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
             {/* Background glow orbs */}
@@ -19,7 +22,7 @@ export default function Hero() {
                     className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 glass text-sm font-semibold text-strong"
                 >
                     <Sparkles size={14} className="text-accent" />
-                    JADDAOUI ELEVATE — Agence Digitale
+                    {t('hero.badge')}
                 </motion.div>
 
                 {/* Title */}
@@ -30,9 +33,9 @@ export default function Hero() {
                     viewport={{ once: true }}
                     className="font-display text-5xl sm:text-6xl md:text-8xl font-black tracking-tight text-strong leading-[1.1]"
                 >
-                    Architects of <br />
+                    {t('hero.titleLine1')} <br />
                     <span className="bg-gradient-to-r from-accent via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                        Digital Icons
+                        {t('hero.titleLine2')}
                     </span>
                 </motion.h1>
 
@@ -44,8 +47,8 @@ export default function Hero() {
                     viewport={{ once: true }}
                     className="mt-8 max-w-2xl mx-auto text-lg sm:text-xl text-strong leading-relaxed font-medium"
                 >
-                    JADDAOUI ELEVATE propulse les marques visionnaires vers l'excellence numérique. <br className="hidden sm:block" />
-                    <span className="text-accent font-bold italic">"Votre satisfaction est notre priorité absolue."</span>
+                    {t('hero.subtitle')} <br className="hidden sm:block" />
+                    <span className="text-accent font-bold italic">{t('hero.tagline')}</span>
                 </motion.p>
 
                 {/* CTA */}
@@ -60,14 +63,14 @@ export default function Hero() {
                         href="#contact"
                         className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 hover:bg-accent-hover transition-colors"
                     >
-                        Démarrer un Projet
+                        {t('hero.ctaPrimary')}
                         <ArrowRight size={16} />
                     </a>
                     <a
                         href="#portfolio"
                         className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold glass text-strong hover:border-accent/50 transition-colors"
                     >
-                        Voir le Portfolio
+                        {t('hero.ctaSecondary')}
                     </a>
                 </motion.div>
             </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Quote } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const testimonials = [
     {
@@ -26,6 +27,7 @@ const testimonials = [
 export default function Testimonials() {
     const [index, setIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
+    const { t } = useLanguage();
 
     const next = useCallback(() => {
         setIndex((prev) => (prev + 1) % testimonials.length);
@@ -37,7 +39,7 @@ export default function Testimonials() {
 
     useEffect(() => {
         if (isHovered) return;
-        const interval = setInterval(next, 3000); // 3s as per user request
+        const interval = setInterval(next, 3000);
         return () => clearInterval(interval);
     }, [isHovered, next]);
 
@@ -59,9 +61,11 @@ export default function Testimonials() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-display text-4xl font-bold text-strong mb-4">Paroles de Partenaires</h2>
+                    <h2 className="font-display text-4xl font-bold text-strong mb-4">
+                        {t('testimonials.sectionTitle')}
+                    </h2>
                     <p className="text-muted max-w-2xl mx-auto font-medium">
-                        Ils nous ont fait confiance pour bâtir leur avenir numérique.
+                        {t('testimonials.sectionSubtitle')}
                     </p>
                 </motion.div>
 
@@ -70,10 +74,9 @@ export default function Testimonials() {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
-                    {/* Main Carousel Wrapper */}
                     <div className="relative flex items-center justify-center w-full max-w-5xl overflow-visible">
                         <AnimatePresence mode="popLayout" initial={false}>
-                            {/* Peeking Left (Previous) */}
+                            {/* Peeking Left */}
                             <motion.div
                                 key={`prev-${indices.prev}`}
                                 initial={{ opacity: 0, x: -150, scale: 0.8, rotateY: 20 }}
@@ -115,7 +118,7 @@ export default function Testimonials() {
                                 </div>
                             </motion.div>
 
-                            {/* Peeking Right (Next) */}
+                            {/* Peeking Right */}
                             <motion.div
                                 key={`next-${indices.next}`}
                                 initial={{ opacity: 0, x: 150, scale: 0.8, rotateY: -20 }}
@@ -138,8 +141,7 @@ export default function Testimonials() {
                         <button
                             key={i}
                             onClick={() => setIndex(i)}
-                            className={`h-1.5 rounded-full transition-all duration-500 ${i === index ? 'w-10 bg-accent shadow-[0_0_10px_rgba(59,130,246,0.5)]' : 'w-2 bg-strong/10'
-                                }`}
+                            className={`h-1.5 rounded-full transition-all duration-500 ${i === index ? 'w-10 bg-accent shadow-[0_0_10px_rgba(59,130,246,0.5)]' : 'w-2 bg-strong/10'}`}
                             aria-label={`Go to slide ${i + 1}`}
                         />
                     ))}

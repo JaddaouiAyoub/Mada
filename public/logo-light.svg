@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="100" height="100" rx="22" fill="#ffffff"/>
+  <!-- Subtle border -->
+  <rect width="100" height="100" rx="22" fill="none" stroke="url(#g1)" stroke-width="1.5" opacity="0.4"/>
+  <!-- J letter -->
+  <path d="M28 24 L28 62 Q28 76 16 76 L16 68 Q22 68 22 62 L22 24 Z" fill="url(#g1)"/>
+  <!-- E letter -->
+  <path d="M38 24 L38 76 L64 76 L64 70 L44 70 L44 53 L60 53 L60 47 L44 47 L44 30 L64 30 L64 24 Z" fill="url(#g1)"/>
+  <!-- Arrow/elevation accent -->
+  <polygon points="50,86 42,96 58,96" fill="url(#g2)" opacity="0.85"/>
+</svg>
