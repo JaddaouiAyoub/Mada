@@ -19,7 +19,7 @@ export default function Hero() {
                     className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 glass text-sm font-semibold text-strong"
                 >
                     <Sparkles size={14} className="text-accent" />
-                    MADA ELEVATE — Agence Digitale
+                    JADDAOUI ELEVATE — Agence Digitale
                 </motion.div>
 
                 {/* Title */}
@@ -44,7 +44,7 @@ export default function Hero() {
                     viewport={{ once: true }}
                     className="mt-8 max-w-2xl mx-auto text-lg sm:text-xl text-strong leading-relaxed font-medium"
                 >
-                    MADA ELEVATE propulse les marques visionnaires vers l'excellence numérique. <br className="hidden sm:block" />
+                    JADDAOUI ELEVATE propulse les marques visionnaires vers l'excellence numérique. <br className="hidden sm:block" />
                     <span className="text-accent font-bold italic">"Votre satisfaction est notre priorité absolue."</span>
                 </motion.p>
 

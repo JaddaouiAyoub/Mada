@@ -28,8 +28,8 @@ export default function Navbar() {
                 <div className="flex h-16 items-center justify-between">
                     {/* Logo */}
                     <a href="#" className="flex items-center gap-1 text-2xl font-bold tracking-tight">
-                        <span className="font-display text-strong">MAD</span>
-                        <span className="font-display bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent">A</span>
+                        <span className="font-display text-strong">JADD</span>
+                        <span className="font-display bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent">AOUI</span>
                     </a>
 
                     {/* Desktop links */}

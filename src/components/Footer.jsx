@@ -14,9 +14,9 @@ export default function Footer() {
                         viewport={{ once: true }}
                     >
                         <div className="flex items-center gap-1 text-2xl font-bold tracking-tight mb-4">
-                            <span className="font-display text-strong">MAD</span>
+                            <span className="font-display text-strong">JADD</span>
                             <span className="font-display bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent">
-                                A
+                                AOUI
                             </span>
                         </div>
                         <p className="text-sm text-strong leading-relaxed max-w-xs font-semibold opacity-80">
@@ -77,14 +77,14 @@ export default function Footer() {
                         <h4 className="text-2xl font-bold text-strong mb-2 italic">"Votre satisfaction est notre priorité."</h4>
                         <p className="text-sm text-strong font-semibold opacity-80">Discutons de votre prochain projet ambitieux dès aujourd'hui.</p>
                     </div>
-                    <a href="mailto:hello@madaelevate.com" className="px-8 py-4 bg-accent text-white rounded-xl font-bold hover:bg-accent-hover transition-all shadow-xl shadow-accent/40 active:scale-95">
+                    <a href="mailto:jaddaouiayoub02@gmail.com" className="px-8 py-4 bg-accent text-white rounded-xl font-bold hover:bg-accent-hover transition-all shadow-xl shadow-accent/40 active:scale-95">
                         Démarrer l'aventure
                     </a>
                 </motion.div>
 
                 {/* Bottom bar */}
                 <div className="mt-12 pt-8 border-t border-main text-center text-xs text-muted font-medium transition-colors duration-500">
-                    © {new Date().getFullYear()} MADA ELEVATE. Tous droits réservés.
+                    © {new Date().getFullYear()} JADDAOUI ELEVATE. Tous droits réservés.
                 </div>
             </div>
         </footer>
