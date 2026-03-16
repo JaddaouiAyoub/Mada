@@ -9,9 +9,9 @@ export const translations = {
         },
         hero: {
             badge: 'JADDAOUI ELEVATE — Agence Digitale',
-            titleLine1: 'Architectes du',
-            titleLine2: 'Digital Icons',
-            subtitle: "JADDAOUI ELEVATE propulse les marques visionnaires vers l'excellence numérique.",
+            titleLine1: 'Transformez votre',
+            titleLine2: 'Vision en Succès Digital',
+            subtitle: "Sites web premium, applications modernes et expériences digitales qui font grandir votre entreprise.",
             tagline: '"Votre satisfaction est notre priorité absolue."',
             ctaPrimary: 'Démarrer un Projet',
             ctaSecondary: 'Voir le Portfolio',
