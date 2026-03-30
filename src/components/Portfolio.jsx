@@ -6,6 +6,7 @@ import recruit from "../assets/recruit.jpg";
 import chat from "../assets/chat.jpg";
 import travel from "../assets/travel.png";
 import photographer from "../assets/photographer.png";
+import photographer2 from "../assets/photographer2.png";
 import hotel from "../assets/hotel.png";
 import mada_scanner from "../assets/mada_scanner.png"
 import liftmosque from "../assets/liftMosque.png"
@@ -103,6 +104,16 @@ const projects = [
         type: "web",
         preview: "https://botanical-beauty-store.vercel.app/", // Ajoute ton lien Vercel quand dispo
         code: "#", // Ajoute ton GitHub quand dispo
+    },
+    {
+        title: "Portfolio Photographe v2",
+        category: "Galerie artistique responsive",
+        img: photographer2,
+        desc: "Portfolio moderne avec galerie en mosaïque artistique et intégration d’un chatbot via n8n pour l'assistance visiteurs.",
+        tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
+        type: "web",
+        preview: "https://photographer-portfolio-wheat.vercel.app/",
+        code: "#",
     },
     {
         title: "AyoubStore",
