@@ -17,6 +17,8 @@ import cosmeticStore from "../assets/cosmeticStore.png"
 import dentalClinic from "../assets/dentalClinic.png"
 import beautySalon from "../assets/beautySalon.png"
 import riadAtlasPalace from "../assets/riadAtlasPalace.png"
+import perfumeStore from "../assets/parfums.png"
+import womenFashionStore from "../assets/womenFashionStore.png"
 
 const projects = [
     {
@@ -48,6 +50,26 @@ const projects = [
         code: "#", // mets ton repo GitHub
     },
     {
+        title: "Oud Essence Maroc",
+        category: "E-commerce Parfums Premium (FR / AR)",
+        img: perfumeStore, // importe ton image
+        desc: "Boutique e-commerce haut de gamme spécialisée dans les parfums orientaux et de luxe au Maroc. Expérience immersive avec design élégant inspiré des grandes maisons (Dior, Chanel), support multilingue Français / Arabe (RTL), animations fluides et branding complet (logo, favicon, visuels). Gestion du panier et des favoris via localStorage avec commande rapide via WhatsApp. Interface optimisée pour mobile avec une UX premium orientée conversion.",
+        tech: [
+            "Next.js (App Router)",
+            "React",
+            "Tailwind CSS",
+            "Framer Motion",
+            "i18n (FR / AR)",
+            "RTL Support",
+            "LocalStorage API",
+            "Responsive Design",
+            "SEO Optimized"
+        ],
+        type: "web",
+        preview: "https://parfums-du-maroc.vercel.app/", // remplace si besoin
+        code: "#"
+    },
+    {
         title: "Velvet Beauty Casablanca",
         category: "Salon de beauté féminin – Coiffure & Soins visage",
         img: beautySalon,
@@ -62,6 +84,26 @@ const projects = [
         ],
         type: "web",
         preview: "https://velvet-beauty-casablanca.vercel.app/",
+        code: "#"
+    },
+    {
+        title: "Luna Chic Boutique",
+        category: "E-commerce Mode Féminine (Vêtements, Bijoux, Pyjamas)",
+        img: womenFashionStore, // importe ton image
+        desc: "Plateforme e-commerce féminine moderne et immersive dédiée à la mode au Maroc (robes, bijoux, pyjamas). Design chic et instagrammable avec animations Framer Motion, sections marketing engageantes (best sellers, coups de cœur, looks complets) et expérience utilisateur fluide. Support multilingue FR / AR avec RTL, panier et favoris persistants via localStorage et commande simplifiée via WhatsApp. Pensée pour maximiser l'engagement et la conversion avec une UI/UX premium.",
+        tech: [
+            "Next.js (App Router)",
+            "React",
+            "Tailwind CSS",
+            "Framer Motion",
+            "i18n (FR / AR)",
+            "RTL Support",
+            "LocalStorage API",
+            "Responsive Design",
+            "UX Optimized"
+        ],
+        type: "web",
+        preview: "https://luna-chic-boutique.vercel.app/", // remplace si besoin
         code: "#"
     },
     {
@@ -257,7 +299,7 @@ export default function Portfolio() {
                             viewport={{ once: true }}
                             className="flex flex-col group"
                         >
-                            <div className="relative overflow-hidden rounded-[2.5rem] aspect-[4/3] mb-6 glass border-main group-hover:shadow-2xl group-hover:shadow-accent/10 transition-all duration-500">
+                            <div className=" overflow-hidden rounded-[2.5rem] aspect-[4/3] mb-6 glass border-main group-hover:shadow-2xl group-hover:shadow-accent/10 transition-all duration-500">
                                 <img
                                     src={project.img}
                                     alt={project.title}

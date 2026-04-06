@@ -15,7 +15,7 @@ export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
     const { lang, setLang, t } = useLanguage();
 
-    const ThemeIcon = themeIcons[theme];
+    const ThemeIcon = themeIcons[theme] || Monitor;
 
     const navLinks = [
         { label: t('nav.services'), href: '#services' },
