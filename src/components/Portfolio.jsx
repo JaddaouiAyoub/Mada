@@ -17,7 +17,7 @@ import cosmeticStore from "../assets/cosmeticStore.png"
 import dentalClinic from "../assets/dentalClinic.png"
 import beautySalon from "../assets/beautySalon.png"
 import riadAtlasPalace from "../assets/riadAtlasPalace.png"
-import perfumeStore from "../assets/parfums.png"
+import perfumeStore from "../assets/parfums2.png"
 import womenFashionStore from "../assets/womenFashionStore.png"
 
 const projects = [
