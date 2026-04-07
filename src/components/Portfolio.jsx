@@ -19,6 +19,7 @@ import beautySalon from "../assets/beautySalon.png"
 import riadAtlasPalace from "../assets/riadAtlasPalace.png"
 import perfumeStore from "../assets/parfums2.png"
 import womenFashionStore from "../assets/womenFashionStore.png"
+import tawziiFlow from "../assets/tawziiFlow.jpeg"
 
 const projects = [
     {
@@ -237,6 +238,25 @@ const projects = [
         code: "#",
     },
     {
+        title: "TawziiFlow",
+        category: "Application mobile de distribution & facturation",
+        img: tawziiFlow, // importe l'image générée
+        desc: "Application mobile professionnelle conçue pour les agents de distribution permettant la gestion des produits et la création de factures en temps réel chez les clients. Inclut un système complet de facturation avec calcul automatique, génération de PDF personnalisés, stockage local des factures et partage via WhatsApp ou email. Interface moderne, rapide et optimisée pour une utilisation terrain (offline-first).",
+        tech: [
+            "Flutter",
+            "Dart",
+            "SQLite / Hive",
+            "PDF & Printing",
+            "Share Plus",
+            "Clean Architecture",
+            "Material 3",
+            "Offline First"
+        ],
+        type: "mobile",
+        preview: null, // mets lien si tu fais une démo (APK ou vidéo)
+        code: "#", // ton repo GitHub
+    },
+    {
         title: "Covoiturage Intervilles",
         category: "Mobilité Intervilles & Aéroport",
         img: couvoit,
@@ -266,6 +286,7 @@ const projects = [
         preview: null,
         code: "#",
     },
+
 ];
 
 export default function Portfolio() {
