@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Globe, Smartphone } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Github, Globe, Smartphone, Cloud } from 'lucide-react';
 
 import easy from "../assets/easy.png";
 import recruit from "../assets/recruit.jpg";
@@ -20,8 +21,27 @@ import riadAtlasPalace from "../assets/riadAtlasPalace.png"
 import perfumeStore from "../assets/parfums2.png"
 import womenFashionStore from "../assets/womenFashionStore.png"
 import tawziiFlow from "../assets/tawziiFlow.jpeg"
+import centerHub from "../assets/centerHub2.png"
 
 const projects = [
+    {
+        title: "CenterHub",
+        category: "Plateforme SaaS Éducative",
+        img: centerHub,
+        desc: "Application SaaS de gestion complète pour centre éducatif. Tableau de bord multi-rôles (Admin, Secrétaire, Professeur, Étudiant) permettant de gérer les présences, paiements, cours et notifications en temps réel avec support multilingue (FR/AR).",
+        tech: [
+            "Next.js 16",
+            "React 19",
+            "TypeScript",
+            "NextAuth",
+            "Prisma",
+            "PostgreSQL",
+            "Tailwind CSS"
+        ],
+        type: "saas",
+        preview: "https://center-hub.vercel.app/",
+        code: "#",
+    },
     {
         title: "Iron Elite",
         category: "Application web fitness",
@@ -289,7 +309,20 @@ const projects = [
 
 ];
 
+const filterCategories = [
+    { id: 'all', label: 'Tous' },
+    { id: 'web', label: 'Web' },
+    { id: 'mobile', label: 'Mobile' },
+    { id: 'saas', label: 'SaaS' }
+];
+
 export default function Portfolio() {
+    const [filterType, setFilterType] = useState('all');
+
+    const filteredProjects = projects.filter(
+        (p) => filterType === 'all' || p.type === filterType
+    );
+
     return (
         <section id="portfolio" className="py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -309,13 +342,33 @@ export default function Portfolio() {
                     </p>
                 </motion.div>
 
+                {/* Filter */}
+                <div className="flex flex-wrap justify-center gap-3 mb-12">
+                    {filterCategories.map((cat) => (
+                        <button
+                            key={cat.id}
+                            onClick={() => setFilterType(cat.id)}
+                            className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
+                                filterType === cat.id
+                                    ? 'bg-accent text-white shadow-lg shadow-accent/30'
+                                    : 'bg-white/5 text-strong hover:bg-white/10 hover:text-accent border border-white/10'
+                            }`}
+                        >
+                            {cat.label}
+                        </button>
+                    ))}
+                </div>
+
                 {/* Grid */}
-                <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                    {projects.map((project, i) => (
-                        <motion.div
-                            key={project.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                <motion.div layout className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                    <AnimatePresence mode="popLayout">
+                        {filteredProjects.map((project, i) => (
+                            <motion.div
+                                layout
+                                key={project.title}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
                             transition={{ duration: 0.6, delay: i * 0.1 }}
                             viewport={{ once: true }}
                             className="flex flex-col group"
@@ -347,7 +400,9 @@ export default function Portfolio() {
                                 </div>
                                 {/* Badge Type */}
                                 <div className="absolute top-6 right-6 px-3 py-1 bg-black/40 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2">
-                                    {project.type === 'web' ? <Globe size={12} className="text-accent" /> : <Smartphone size={12} className="text-accent" />}
+                                    {project.type === 'mobile' ? <Smartphone size={12} className="text-accent" /> : 
+                                     project.type === 'saas' ? <Cloud size={12} className="text-accent" /> : 
+                                     <Globe size={12} className="text-accent" />}
                                     <span className="text-[10px] font-bold text-white uppercase tracking-wider">{project.type}</span>
                                 </div>
                             </div>
@@ -386,7 +441,8 @@ export default function Portfolio() {
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                    </AnimatePresence>
+                </motion.div>
             </div>
         </section>
     );
