@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: 'Jaddaoui Elevate',
     images: [
       {
-        url: '/og-image.png', // 🔥 IMPORTANT
+url: 'https://jaddaoui.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Jaddaoui Elevate',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Jaddaoui Elevate',
     description:
       'Agence web & mobile à Casablanca spécialisée en développement moderne.',
-    images: ['/og-image.jpg'],
+    images: ['https://jaddaoui.com/og-image.png']
   },
 
   icons: {
