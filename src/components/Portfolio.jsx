@@ -1,4 +1,7 @@
+'use client';
+
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Globe, Smartphone, Cloud } from 'lucide-react';
 
@@ -373,12 +376,13 @@ export default function Portfolio() {
                             viewport={{ once: true }}
                             className="flex flex-col group"
                         >
-                            <div className=" overflow-hidden rounded-[2.5rem] aspect-[4/3] mb-6 glass border-main group-hover:shadow-2xl group-hover:shadow-accent/10 transition-all duration-500">
-                                <img
+                            <div className="relative overflow-hidden rounded-[2.5rem] aspect-[4/3] mb-6 glass border-main group-hover:shadow-2xl group-hover:shadow-accent/10 transition-all duration-500">
+                                <Image
                                     src={project.img}
                                     alt={project.title}
-                                    className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-110"
-                                    loading="lazy"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    className="object-contain transition-transform duration-700 group-hover:scale-110"
                                 />
                                 {/* Desktop Overlay */}
                                 <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 hidden md:flex flex-col items-center justify-center p-8 text-center translate-y-4 group-hover:translate-y-0">

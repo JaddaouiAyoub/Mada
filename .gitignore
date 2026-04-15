@@ -1,3 +1,30 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js Build Output
+/.next/
+/out/
+
+# Production build output (Vite/others)
+/dist
+/dist-ssr
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Vercel
+.vercel
+
 # Logs
 logs
 *.log
@@ -7,18 +34,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# OS Files
+.DS_Store
+Thumbs.db
+*.suo
+*.sln
+*.sw?
 
-# Editor directories and files
+# Editor/IDE
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
-*.suo
 *.ntvs*
 *.njsproj
-*.sln
-*.sw?
+
+# AI/Assistant Specific
+.gemini
+.antigravityignore

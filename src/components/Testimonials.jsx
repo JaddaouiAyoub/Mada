@@ -1,4 +1,7 @@
+'use client';
+
 import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Quote } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -7,7 +10,7 @@ const testimonials = [
     {
         name: "Marc-Antoine R.",
         role: "CEO, TechSphere",
-        content: "L'expertise technique de MADA ELEVATE est tout simplement impressionnante. Ils ont transformé notre vision complexe en une plateforme fluide et performante.",
+        content: "L'expertise technique de Jaddaoui ELEVATE est tout simplement impressionnante. Ils ont transformé notre vision complexe en une plateforme fluide et performante.",
         avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop"
     },
     {
@@ -105,11 +108,12 @@ export default function Testimonials() {
                                         &ldquo;{testimonials[indices.current].content}&rdquo;
                                     </p>
                                     <div className="flex flex-col items-center">
-                                        <div className="w-20 h-20 rounded-full overflow-hidden mb-5 border-2 border-accent/30 p-1 bg-white/5">
-                                            <img
+                                        <div className="relative w-20 h-20 rounded-full overflow-hidden mb-5 border-2 border-accent/30 p-1 bg-white/5">
+                                            <Image
                                                 src={testimonials[indices.current].avatar}
                                                 alt={testimonials[indices.current].name}
-                                                className="w-full h-full object-cover rounded-full"
+                                                fill
+                                                className="object-cover rounded-full p-1"
                                             />
                                         </div>
                                         <h4 className="text-xl font-bold text-strong">{testimonials[indices.current].name}</h4>

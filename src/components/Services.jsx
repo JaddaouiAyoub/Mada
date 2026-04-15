@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Globe, Smartphone, Layers } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';

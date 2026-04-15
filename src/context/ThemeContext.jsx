@@ -1,16 +1,24 @@
+'use client';
+
 import { createContext, useContext, useEffect, useState } from 'react';
 
-const ThemeContext = createContext();
+const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
-    const [theme, setTheme] = useState(() => {
-        if (typeof window !== 'undefined') {
-            return localStorage.getItem('mada-theme') || 'system';
-        }
-        return 'system';
-    });
+    const [theme, setTheme] = useState('system'); // Fixed initial value matching server
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        setMounted(true);
+        const saved = localStorage.getItem('mada-theme');
+        if (saved) {
+            setTheme(saved);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (!mounted) return;
+
         const root = document.documentElement;
 
         const applyTheme = (resolvedTheme) => {
@@ -33,7 +41,7 @@ export function ThemeProvider({ children }) {
         }
 
         localStorage.setItem('mada-theme', theme);
-    }, [theme]);
+    }, [theme, mounted]);
 
     const toggleTheme = () => {
         setTheme((prev) => {
@@ -44,7 +52,7 @@ export function ThemeProvider({ children }) {
     };
 
     return (
-        <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+        <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, mounted }}>
             {children}
         </ThemeContext.Provider>
     );

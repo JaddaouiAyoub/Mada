@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Search, PenTool, Code2, Rocket } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';

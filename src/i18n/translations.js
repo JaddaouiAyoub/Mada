@@ -114,8 +114,8 @@ export const translations = {
         },
         hero: {
             badge: 'JADDAOUI ELEVATE — وكالة رقمية',
-            titleLine1: 'مهندسو',
-            titleLine2: 'أيقونات الرقمي',
+            titleLine1: '',
+            titleLine2: 'حوّل رؤيتك إلى نجاح رقمي',
             subtitle: "JADDAOUI ELEVATE تدفع العلامات الطموحة نحو التميز الرقمي.",
             tagline: '"رضاكم هو أولويتنا المطلقة."',
             ctaPrimary: 'ابدأ مشروعك',
