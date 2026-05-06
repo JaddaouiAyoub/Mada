@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,
-      alternates: { languages: { fr: `${BASE_URL}/fr`, ar: `${BASE_URL}/ar` } },
+      alternates: { languages: { fr: `${BASE_URL}/fr`, ar: `${BASE_URL}/ar` , 'x-default': `${BASE_URL}/fr`, } },
     });
 
     // About

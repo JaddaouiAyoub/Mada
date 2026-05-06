@@ -25,6 +25,7 @@ import perfumeStore from "../assets/parfums2.png"
 import womenFashionStore from "../assets/womenFashionStore.png"
 import tawziiFlow from "../assets/tawziiFlow.jpeg"
 import centerHub from "../assets/centerHub2.png"
+import smartersIptv from "../assets/smartersIptv.png"
 
 const projects = [
     {
@@ -44,6 +45,28 @@ const projects = [
         type: "saas",
         preview: "https://center-hub.vercel.app/",
         code: "#",
+    },
+        {
+        title: "Smarters IPTV Canada",
+        category: "Plateforme de vente d’abonnements IPTV",
+        img: smartersIptv, // importe ton image
+        desc: "Site vitrine moderne conçu pour la vente d’abonnements IPTV au Canada. Interface claire et orientée conversion avec présentation des offres, mise en avant des avantages du service, FAQ, sections marketing et parcours utilisateur fluide. Design responsive, animations légères et expérience optimisée pour desktop et mobile.",
+        tech: [
+            "React 18",
+            "TypeScript",
+            "Vite",
+            "React Router DOM",
+            "Tailwind CSS",
+            "Shadcn UI / Radix UI",
+            "Framer Motion",
+            "Lucide React",
+            "React Hook Form",
+            "Zod",
+            "React Query"
+        ],
+        type: "web",
+        preview: "https://smarters-iptv-8r8f.vercel.app/",
+        code: "#"
     },
     {
         title: "Iron Elite",
@@ -351,11 +374,10 @@ export default function Portfolio() {
                         <button
                             key={cat.id}
                             onClick={() => setFilterType(cat.id)}
-                            className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
-                                filterType === cat.id
+                            className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 ${filterType === cat.id
                                     ? 'bg-accent text-white shadow-lg shadow-accent/30'
                                     : 'bg-white/5 text-strong hover:bg-white/10 hover:text-accent border border-white/10'
-                            }`}
+                                }`}
                         >
                             {cat.label}
                         </button>
@@ -372,79 +394,79 @@ export default function Portfolio() {
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.8 }}
-                            transition={{ duration: 0.6, delay: i * 0.1 }}
-                            viewport={{ once: true }}
-                            className="flex flex-col group"
-                        >
-                            <div className="relative overflow-hidden rounded-[2.5rem] aspect-[4/3] mb-6 glass border-main group-hover:shadow-2xl group-hover:shadow-accent/10 transition-all duration-500">
-                                <Image
-                                    src={project.img}
-                                    alt={project.title}
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    className="object-contain transition-transform duration-700 group-hover:scale-110"
-                                />
-                                {/* Desktop Overlay */}
-                                <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 hidden md:flex flex-col items-center justify-center p-8 text-center translate-y-4 group-hover:translate-y-0">
-                                    <div className="flex gap-4 mb-6">
+                                transition={{ duration: 0.6, delay: i * 0.1 }}
+                                viewport={{ once: true }}
+                                className="flex flex-col group"
+                            >
+                                <div className="relative overflow-hidden rounded-[2.5rem] aspect-[4/3] mb-6 glass border-main group-hover:shadow-2xl group-hover:shadow-accent/10 transition-all duration-500">
+                                    <Image
+                                        src={project.img}
+                                        alt={project.title}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        className="object-contain transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    {/* Desktop Overlay */}
+                                    <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 hidden md:flex flex-col items-center justify-center p-8 text-center translate-y-4 group-hover:translate-y-0">
+                                        <div className="flex gap-4 mb-6">
+                                            {project.preview && (
+                                                <a href={project.preview} target="_blank" rel="noopener noreferrer" className="p-3 bg-accent text-white rounded-xl hover:scale-110 transition-transform shadow-lg shadow-accent/20">
+                                                    <Globe size={20} />
+                                                </a>
+                                            )}
+                                            {project.code && (
+                                                <a href={project.code} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 text-white rounded-xl hover:scale-110 transition-transform backdrop-blur-md border border-white/20">
+                                                    <Github size={20} />
+                                                </a>
+                                            )}
+                                        </div>
+                                        <p className="text-sm text-slate-200 leading-relaxed line-clamp-4 px-4">
+                                            {project.desc}
+                                        </p>
+                                    </div>
+                                    {/* Badge Type */}
+                                    <div className="absolute top-6 right-6 px-3 py-1 bg-black/40 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2">
+                                        {project.type === 'mobile' ? <Smartphone size={12} className="text-accent" /> :
+                                            project.type === 'saas' ? <Cloud size={12} className="text-accent" /> :
+                                                <Globe size={12} className="text-accent" />}
+                                        <span className="text-[10px] font-bold text-white uppercase tracking-wider">{project.type}</span>
+                                    </div>
+                                </div>
+
+                                <div className="px-2">
+                                    <div className="flex flex-wrap gap-1.5 mb-4">
+                                        {project.tech.map(t => (
+                                            <span key={t} className="text-[9px] font-bold px-2 py-0.5 rounded-lg bg-accent/5 text-accent border border-accent/10">
+                                                {t}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-strong mb-1.5 transition-colors group-hover:text-accent">
+                                        {project.title}
+                                    </h3>
+                                    <p className="text-xs font-semibold text-muted mb-4 uppercase tracking-widest opacity-80">
+                                        {project.category}
+                                    </p>
+                                    {/* Mobile Desc */}
+                                    <p className="text-sm text-strong opacity-75 leading-relaxed md:hidden mb-6 line-clamp-3">
+                                        {project.desc}
+                                    </p>
+                                    {/* Mobile Links */}
+                                    <div className="flex md:hidden gap-4">
                                         {project.preview && (
-                                            <a href={project.preview} target="_blank" rel="noopener noreferrer" className="p-3 bg-accent text-white rounded-xl hover:scale-110 transition-transform shadow-lg shadow-accent/20">
-                                                <Globe size={20} />
+                                            <a href={project.preview} className="text-xs font-bold text-accent flex items-center gap-1.5 underline decoration-2 underline-offset-4">
+                                                Live Demo <ExternalLink size={14} />
                                             </a>
                                         )}
                                         {project.code && (
-                                            <a href={project.code} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 text-white rounded-xl hover:scale-110 transition-transform backdrop-blur-md border border-white/20">
-                                                <Github size={20} />
+                                            <a href={project.code} className="text-xs font-bold text-strong flex items-center gap-1.5 opacity-80">
+                                                Code <Github size={14} />
                                             </a>
                                         )}
                                     </div>
-                                    <p className="text-sm text-slate-200 leading-relaxed line-clamp-4 px-4">
-                                        {project.desc}
-                                    </p>
                                 </div>
-                                {/* Badge Type */}
-                                <div className="absolute top-6 right-6 px-3 py-1 bg-black/40 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2">
-                                    {project.type === 'mobile' ? <Smartphone size={12} className="text-accent" /> : 
-                                     project.type === 'saas' ? <Cloud size={12} className="text-accent" /> : 
-                                     <Globe size={12} className="text-accent" />}
-                                    <span className="text-[10px] font-bold text-white uppercase tracking-wider">{project.type}</span>
-                                </div>
-                            </div>
-
-                            <div className="px-2">
-                                <div className="flex flex-wrap gap-1.5 mb-4">
-                                    {project.tech.map(t => (
-                                        <span key={t} className="text-[9px] font-bold px-2 py-0.5 rounded-lg bg-accent/5 text-accent border border-accent/10">
-                                            {t}
-                                        </span>
-                                    ))}
-                                </div>
-                                <h3 className="text-xl font-bold text-strong mb-1.5 transition-colors group-hover:text-accent">
-                                    {project.title}
-                                </h3>
-                                <p className="text-xs font-semibold text-muted mb-4 uppercase tracking-widest opacity-80">
-                                    {project.category}
-                                </p>
-                                {/* Mobile Desc */}
-                                <p className="text-sm text-strong opacity-75 leading-relaxed md:hidden mb-6 line-clamp-3">
-                                    {project.desc}
-                                </p>
-                                {/* Mobile Links */}
-                                <div className="flex md:hidden gap-4">
-                                    {project.preview && (
-                                        <a href={project.preview} className="text-xs font-bold text-accent flex items-center gap-1.5 underline decoration-2 underline-offset-4">
-                                            Live Demo <ExternalLink size={14} />
-                                        </a>
-                                    )}
-                                    {project.code && (
-                                        <a href={project.code} className="text-xs font-bold text-strong flex items-center gap-1.5 opacity-80">
-                                            Code <Github size={14} />
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                            </motion.div>
+                        ))}
                     </AnimatePresence>
                 </motion.div>
             </div>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jaddaoui.com'),
-    title: {
+  title: {
     default: 'Jaddaoui Elevate - Agence Web Casablanca',
     template: '%s | Jaddaoui Elevate',
   },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: 'Jaddaoui Elevate',
     images: [
       {
-url: 'https://jaddaoui.com/og-image.png',
+        url: 'https://jaddaoui.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Jaddaoui Elevate',
@@ -37,9 +37,28 @@ url: 'https://jaddaoui.com/og-image.png',
   },
 
   icons: {
-    icon: '/logo-dark.svg',
-    apple: '/logo-dark.svg',
+    icon: [
+      {
+        url: '/favicon-96x96.png',
+        sizes: '96x96',
+        type: 'image/png',
+      },
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      {
+        url: '/apple-touch-icon.png',
+        sizes: '180x180',
+      },
+    ],
   },
+
+  manifest: '/site.webmanifest',
+
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
