@@ -32,11 +32,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta.home' });
+  const baseUrl = 'https://jaddaoui.com';
 
   return {
     title: t('title'),
     description: t('description'),
-    metadataBase: new URL('https://jaddaoui.com'),
+    metadataBase: new URL(baseUrl),
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -47,9 +48,17 @@ export async function generateMetadata({
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `https://jaddaoui.com/${locale}`,
+      url: `${baseUrl}/${locale}`,
       siteName: 'Jaddaoui Elevate',
-      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: t('title'),
+          type: 'image/png',
+        },
+      ],
       type: 'website',
       locale: locale === 'ar' ? 'ar_MA' : 'fr_MA',
     },
@@ -57,13 +66,31 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: ['/og-image.png'],
+      images: [
+        {
+          url: '/og-image.png',
+          alt: t('title'),
+        },
+      ],
     },
     icons: {
-      icon: '/logo-dark.svg',
-      apple: '/logo-dark.svg',
+      icon: [
+        { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+        { url: '/favicon.svg', type: 'image/svg+xml' },
+      ],
+      apple: '/apple-touch-icon.png',
     },
-    robots: { index: true, follow: true },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
 

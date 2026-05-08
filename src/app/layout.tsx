@@ -3,28 +3,29 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   metadataBase: new URL('https://jaddaoui.com'),
   title: {
-    default: 'Jaddaoui Elevate - Agence Web Casablanca',
+    default: 'Jaddaoui Elevate — Agence Web & Développement Mobile au Maroc',
     template: '%s | Jaddaoui Elevate',
   },
 
   description:
-    'Agence web & mobile à Casablanca spécialisée en développement moderne.',
+    'Agence digitale basée à Casablanca. Sites web premium, applications mobiles iOS/Android, plateformes SaaS.',
 
   openGraph: {
-    title: 'Jaddaoui Elevate - Agence Web Casablanca',
+    title: 'Jaddaoui Elevate — Agence Web & Développement Mobile au Maroc',
     description:
-      'Agence web & mobile à Casablanca spécialisée en développement moderne.',
+      'Agence digitale basée à Casablanca. Sites web premium, applications mobiles iOS/Android, plateformes SaaS.',
     url: 'https://jaddaoui.com',
     siteName: 'Jaddaoui Elevate',
     images: [
       {
-        url: 'https://jaddaoui.com/og-image.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Jaddaoui Elevate',
+        type: 'image/png',
       },
     ],
-    locale: 'fr_FR',
+    locale: 'fr_MA',
     type: 'website',
   },
 
@@ -32,8 +33,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jaddaoui Elevate',
     description:
-      'Agence web & mobile à Casablanca spécialisée en développement moderne.',
-    images: ['https://jaddaoui.com/og-image.png']
+      'Agence digitale basée à Casablanca. Sites web premium, applications mobiles iOS/Android, plateformes SaaS.',
+    images: [
+      {
+        url: '/og-image.png',
+        alt: 'Jaddaoui Elevate',
+      },
+    ],
   },
 
   icons: {
@@ -58,7 +64,6 @@ export const metadata: Metadata = {
   },
 
   manifest: '/site.webmanifest',
-
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
