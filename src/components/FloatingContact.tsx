@@ -11,7 +11,7 @@ export default function FloatingContact() {
   const [open, setOpen] = useState(false);
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    "Bonjour, je souhaite démarrer un projet avec Jaddaoui Elevate."
+    "Bonjour Ayoub, je souhaite discuter d'un projet avec vous."
   )}`;
 
   return (

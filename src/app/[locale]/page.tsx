@@ -21,7 +21,7 @@ export default async function HomePage({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta.home' });
 
-  // JSON-LD: LocalBusiness + WebSite
+  // JSON-LD: Person + WebSite
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -29,7 +29,7 @@ export default async function HomePage({
         '@type': 'WebSite',
         '@id': 'https://jaddaoui.com/#website',
         url: 'https://jaddaoui.com/',
-        name: 'Jaddaoui Elevate',
+        name: 'Ayoub Jaddaoui',
         description: t('description'),
         inLanguage: locale === 'ar' ? 'ar' : 'fr',
         potentialAction: {
@@ -39,36 +39,29 @@ export default async function HomePage({
         },
       },
       {
-        '@type': 'ProfessionalService',
-        '@id': 'https://jaddaoui.com/#organization',
-        name: 'Jaddaoui Elevate',
+        '@type': 'Person',
+        '@id': 'https://jaddaoui.com/#person',
+        name: 'Ayoub Jaddaoui',
         url: 'https://jaddaoui.com/',
-        logo: 'https://jaddaoui.com/logo-dark.svg',
         image: 'https://jaddaoui.com/og-image.png',
         description: t('description'),
         telephone: '+212700547163',
         email: 'jaddaouiayoub02@gmail.com',
+        jobTitle: 'Développeur Full Stack',
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Casablanca',
           addressCountry: 'MA',
         },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 33.5731,
-          longitude: -7.5898,
-        },
-        areaServed: {
-          '@type': 'Country',
-          name: 'Morocco',
-        },
-        serviceType: [
+        knowsAbout: [
           'Web Development',
           'Mobile App Development',
           'SaaS Design',
           'SEO Optimization',
+          'Next.js',
+          'React',
+          'Flutter',
         ],
-        priceRange: '$$',
         sameAs: ['https://github.com/jaddaouiayoub'],
       },
     ],

@@ -7,10 +7,10 @@ import LandingClient from './LandingClient';
 import { routing } from '@/i18n/routing';
 
 const SEO_SLUGS = [
-  'agence-web-maroc',
+  'developpeur-fullstack-maroc',
   'developpement-mobile-maroc',
   'developpeur-casablanca',
-  'jaddaoui-agency',
+  'ayoub-jaddaoui',
 ] as const;
 
 type SeoSlug = typeof SEO_SLUGS[number];
@@ -76,8 +76,8 @@ export default async function LandingPage({
       name: pageData.hero,
       description: pageData.intro,
       provider: {
-        '@type': 'ProfessionalService',
-        name: 'Jaddaoui Elevate',
+        '@type': 'Person',
+        name: 'Ayoub Jaddaoui',
         url: 'https://jaddaoui.com',
         address: { '@type': 'PostalAddress', addressLocality: 'Casablanca', addressCountry: 'MA' },
       },

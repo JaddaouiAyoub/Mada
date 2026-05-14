@@ -28,7 +28,7 @@ export async function generateMetadata({
   if (!post) return {};
 
   return {
-    title: `${post.title} | Jaddaoui Blog`,
+    title: `${post.title} | Ayoub Jaddaoui`,
     description: post.excerpt,
     alternates: {
       canonical: `/${locale}/blog/${slug}`,
@@ -71,9 +71,9 @@ export default async function BlogPostPage({
       url: 'https://jaddaoui.com',
     },
     publisher: {
-      '@type': 'Organization',
-      name: 'Jaddaoui Elevate',
-      logo: { '@type': 'ImageObject', url: 'https://jaddaoui.com/logo-dark.svg' },
+      '@type': 'Person',
+      name: 'Ayoub Jaddaoui',
+      url: 'https://jaddaoui.com',
     },
     image: 'https://jaddaoui.com/og-image.png',
     url: `https://jaddaoui.com/${locale}/blog/${slug}`,

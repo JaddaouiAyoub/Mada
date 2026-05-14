@@ -45,12 +45,7 @@ export default async function AboutPage({
     name: 'Ayoub Jaddaoui',
     url: 'https://jaddaoui.com',
     image: 'https://jaddaoui.com/og-image.png',
-    jobTitle: 'Full Stack Software Engineer & Digital Agency Founder',
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Jaddaoui Elevate',
-      url: 'https://jaddaoui.com',
-    },
+    jobTitle: 'Développeur Full Stack & Freelance',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Casablanca',

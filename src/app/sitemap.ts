@@ -3,7 +3,7 @@ import { getAllPosts } from '@/lib/blog';
 
 const BASE_URL = 'https://jaddaoui.com';
 const LOCALES = ['fr', 'ar'] as const;
-const SEO_SLUGS = ['agence-web-maroc', 'developpement-mobile-maroc', 'developpeur-casablanca', 'jaddaoui-agency'];
+const SEO_SLUGS = ['developpeur-fullstack-maroc', 'developpement-mobile-maroc', 'developpeur-casablanca', 'ayoub-jaddaoui'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

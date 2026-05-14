@@ -1,33 +1,33 @@
 {
   "meta": {
     "home": {
-      "title": "Jaddaoui — Agence Web & Développement Mobile au Maroc",
-      "description": "Agence digitale basée à Casablanca. Sites web premium, applications mobiles iOS/Android, plateformes SaaS. Développement sur mesure, SEO-dominant, livraison rapide."
+      "title": "Ayoub Jaddaoui — Développeur Full Stack | Casablanca, Maroc",
+      "description": "Ayoub Jaddaoui (Jaddaoui Ayoub) — Développeur Full Stack à Casa. Création de sites web premium, applications mobiles iOS/Android, plateformes SaaS. Expert Next.js, React & Flutter."
     },
     "about": {
-      "title": "À Propos — Ayoub Jaddaoui, Développeur Full Stack Casablanca",
-      "description": "Ingénieur Full Stack passionné par la création d'expériences web et mobiles premium. Découvrez le parcours, les projets et l'expertise de Jaddaoui Ayoub."
+      "title": "À Propos — Ayoub Jaddaoui, Développeur Full Stack",
+      "description": "Développeur Full Stack passionné basé à Casablanca. Découvrez mon parcours, mes projets et mon expertise technique."
     },
     "blog": {
-      "title": "Blog — Développement Web & Mobile au Maroc | Jaddaoui",
-      "description": "Articles experts sur le développement web, mobile, SaaS, SEO et les tendances tech au Maroc. Ressources gratuites pour entrepreneurs et PME marocaines."
+      "title": "Blog — Développement Web & Mobile | Ayoub Jaddaoui",
+      "description": "Articles sur le développement web, mobile et SaaS par Ayoub Jaddaoui, développeur Full Stack à Casablanca."
     },
     "landing": {
-      "agence-web-maroc": {
-        "title": "Agence Web Maroc — Création de Sites Web Professionnels | Jaddaoui",
-        "description": "Meilleure agence web au Maroc. Création de sites web modernes, rapides et optimisés SEO. Devis gratuit en 24h. Casablanca, Rabat, Marrakech."
+      "developpeur-fullstack-maroc": {
+        "title": "Développeur Full Stack Maroc — Next.js, React, Flutter | Ayoub Jaddaoui",
+        "description": "Développeur Full Stack freelance au Maroc. Sites web modernes, apps mobiles, plateformes SaaS. Basé à Casablanca."
       },
       "developpement-mobile-maroc": {
-        "title": "Développement Application Mobile au Maroc | Jaddaoui",
-        "description": "Développement d'applications mobiles iOS & Android au Maroc. React Native, Flutter. Devis gratuit. Casablanca."
+        "title": "Développement Application Mobile au Maroc | Ayoub Jaddaoui",
+        "description": "Développement d'applications mobiles iOS & Android au Maroc. Flutter, React Native. Contact rapide. Casablanca."
       },
       "developpeur-casablanca": {
-        "title": "Développeur Web Casablanca — Freelance & Agence | Jaddaoui",
-        "description": "Développeur web Full Stack à Casablanca. Sites web, apps mobiles, solutions SaaS. Expertise Next.js, React, Flutter. Contact rapide via WhatsApp."
+        "title": "Développeur Casa — Freelance Web & Mobile | Ayoub Jaddaoui",
+        "description": "Développeur Casa (Casablanca). Ayoub Jaddaoui, expert Full Stack (Next.js, React, Flutter) pour la création de vos sites web, applications mobiles et solutions SaaS."
       },
-      "jaddaoui-agency": {
-        "title": "Jaddaoui Agency — Digital Web & Mobile Agency Morocco",
-        "description": "Jaddaoui Agency: your trusted partner for premium web and mobile development in Morocco. Fast, SEO-optimized, modern. Get a free quote today."
+      "ayoub-jaddaoui": {
+        "title": "Jaddaoui Ayoub — Développeur Full Stack & Freelance",
+        "description": "Portfolio de Jaddaoui Ayoub (Ayoub Jaddaoui), développeur Full Stack freelance basé à Casa. Projets web, mobile et SaaS. Disponible pour missions et collaborations."
       }
     }
   },
@@ -41,25 +41,25 @@
     "blog": "Blog"
   },
   "hero": {
-    "badge": "JADDAOUI ELEVATE — Agence Digitale",
-    "titleLine1": "Transformez votre",
-    "titleLine2": "Vision en Succès Digital",
-    "subtitle": "Sites web premium, applications modernes et expériences digitales qui font grandir votre entreprise.",
-    "tagline": "\"Votre satisfaction est notre priorité absolue.\"",
-    "ctaPrimary": "Démarrer un Projet",
-    "ctaSecondary": "Voir le Portfolio"
+    "badge": "Ayoub Jaddaoui — Développeur Full Stack",
+    "titleLine1": "Bonjour, je suis",
+    "titleLine2": "Développeur Full Stack",
+    "subtitle": "Je conçois des sites web premium, applications mobiles et plateformes SaaS qui font la différence.",
+    "tagline": "\"Passionné par la création d'expériences digitales exceptionnelles.\"",
+    "ctaPrimary": "Me Contacter",
+    "ctaSecondary": "Voir mon Portfolio"
   },
   "services": {
-    "sectionTitle": "Nos Services",
-    "sectionSubtitle": "Des solutions digitales sur mesure pour propulser votre entreprise.",
+    "sectionTitle": "Mes Services",
+    "sectionSubtitle": "Des solutions digitales sur mesure que je développe avec passion et expertise.",
     "items": [
       {
         "title": "Web Development",
-        "description": "Nous bâtissons des plateformes web ultra-rapides, SEO-friendly et scalables. Du site vitrine complexe aux architectures microservices."
+        "description": "Je construis des plateformes web ultra-rapides, SEO-friendly et scalables. Du site vitrine aux architectures microservices."
       },
       {
         "title": "Mobile Apps",
-        "description": "Expériences iOS et Android natives ou hybrides privilégiant la fluidité, le design intuitif et l'engagement utilisateur maximal."
+        "description": "Expériences iOS et Android natives ou hybrides privilégiant la fluidité, le design intuitif et l'engagement utilisateur."
       },
       {
         "title": "SaaS Design",
@@ -68,16 +68,16 @@
     ]
   },
   "process": {
-    "sectionTitle": "Notre Méthodologie",
-    "sectionSubtitle": "Un processus rigoureux et créatif pour transformer vos idées en icônes du digital.",
+    "sectionTitle": "Ma Méthodologie",
+    "sectionSubtitle": "Un processus rigoureux et créatif pour transformer vos idées en expériences digitales remarquables.",
     "steps": [
       {
         "title": "Découverte",
-        "description": "Immersion totale dans votre univers pour comprendre vos enjeux, vos cibles et vos objectifs stratégiques."
+        "description": "Immersion dans votre univers pour comprendre vos enjeux, vos cibles et vos objectifs stratégiques."
       },
       {
         "title": "Conception",
-        "description": "Architecture de l'expérience utilisateur et création d'une interface premium alignée sur votre image de marque."
+        "description": "Architecture de l'expérience utilisateur et création d'une interface premium alignée sur votre identité."
       },
       {
         "title": "Développement",
@@ -85,21 +85,21 @@
       },
       {
         "title": "Lancement",
-        "description": "Déploiement optimisé, tests rigoureux et accompagnement post-lancement pour garantir votre succès."
+        "description": "Déploiement optimisé, tests rigoureux et suivi post-lancement pour garantir votre succès."
       }
     ]
   },
   "portfolio": {
-    "sectionTitle": "Notre Portfolio",
-    "sectionSubtitle": "Une sélection de projets qui illustrent notre savoir-faire et notre exigence.",
+    "sectionTitle": "Mon Portfolio",
+    "sectionSubtitle": "Une sélection de projets réalisés avec passion, illustrant mon savoir-faire et mon exigence.",
     "all": "Tous",
     "viewProject": "Voir le projet"
   },
   "values": {
-    "sectionTitle": "Nos Valeurs",
-    "sectionSubtitle": "Les piliers qui guident chacun de nos projets, plaçant",
+    "sectionTitle": "Mes Valeurs",
+    "sectionSubtitle": "Les principes qui guident chacun de mes projets, plaçant",
     "sectionHighlight": "votre réussite",
-    "sectionEnd": "au centre de tout.",
+    "sectionEnd": "au cœur de tout.",
     "items": [
       {
         "title": "Précision",
@@ -116,24 +116,24 @@
     ]
   },
   "testimonials": {
-    "sectionTitle": "Paroles de Partenaires",
-    "sectionSubtitle": "Ils nous ont fait confiance pour bâtir leur avenir numérique."
+    "sectionTitle": "Ce que disent mes clients",
+    "sectionSubtitle": "Ils m'ont fait confiance pour bâtir leur avenir numérique."
   },
   "footer": {
-    "tagline": "Agence digitale haute performance. Nous transformons vos ambitions en expériences numériques exceptionnelles.",
+    "tagline": "Développeur Full Stack passionné. Je transforme vos idées en expériences digitales exceptionnelles.",
     "navigation": "Navigation",
     "contact": "Contact",
     "processus": "Processus",
     "services": "Services",
     "portfolio": "Portfolio",
     "values": "Valeurs",
-    "quote": "\"Votre satisfaction est notre priorité.\"",
-    "quoteSubtitle": "Discutons de votre prochain projet ambitieux dès aujourd'hui.",
-    "ctaButton": "Démarrer l'aventure",
-    "rights": "JADDAOUI ELEVATE. Tous droits réservés."
+    "quote": "\"Passionné par la création d'expériences qui font la différence.\"",
+    "quoteSubtitle": "Discutons de votre prochain projet dès aujourd'hui.",
+    "ctaButton": "Me Contacter",
+    "rights": "Ayoub Jaddaoui. Tous droits réservés."
   },
   "about": {
-    "badge": "Ingénieur Full Stack & Fondateur",
+    "badge": "Développeur Full Stack & Freelance",
     "title": "Bonjour, je suis",
     "name": "Ayoub Jaddaoui",
     "subtitle": "Développeur Full Stack passionné basé à Casablanca, spécialisé dans la création d'expériences web et mobiles premium pour les entreprises ambitieuses.",
@@ -142,7 +142,7 @@
     "statsYears": "Années d'Expérience",
     "statsCountries": "Pays Servis",
     "expertiseTitle": "Stack Technique",
-    "journeyTitle": "Parcours Professionnel",
+    "journeyTitle": "Mon Parcours",
     "journey": [
       {
         "year": "2020",
@@ -161,23 +161,23 @@
       },
       {
         "year": "2023",
-        "title": "Agence Digitale",
-        "desc": "Fondation de Jaddaoui Elevate. Équipe et projets à grande échelle pour des clients nationaux et internationaux."
+        "title": "Expert Freelance",
+        "desc": "Projets à grande échelle pour des clients nationaux et internationaux. Spécialisation Next.js & Flutter."
       },
       {
         "year": "2024–2026",
-        "title": "Top Regional Authority",
-        "desc": "Référencement en tant qu'expert de confiance au Maroc. Architecture Next.js, SEO-dominant, solutions enterprise."
+        "title": "Référence Régionale",
+        "desc": "Reconnu comme expert de confiance au Maroc. Architecture Next.js, SEO-dominant, solutions enterprise."
       }
     ],
     "ctaTitle": "Prêt à démarrer votre projet ?",
-    "ctaDesc": "Contactez-nous via WhatsApp ou email pour un devis gratuit sous 24h.",
+    "ctaDesc": "Contactez-moi via WhatsApp ou email pour discuter de votre projet.",
     "ctaWhatsapp": "WhatsApp",
     "ctaEmail": "Envoyer un Email"
   },
   "blog": {
     "title": "Blog & Ressources",
-    "subtitle": "Insights techniques et stratégiques pour les entrepreneurs et PME marocaines.",
+    "subtitle": "Insights techniques et stratégiques sur le développement web, mobile et les tendances tech.",
     "readMore": "Lire l'article",
     "readTime": "min de lecture",
     "backToBlog": "Retour au Blog",
@@ -187,57 +187,57 @@
   "contact": {
     "whatsapp": "Discuter sur WhatsApp",
     "email": "Envoyer un Email",
-    "title": "Lancez votre projet",
+    "title": "Démarrons votre projet",
     "subtitle": "Réponse garantie sous 24h"
   },
   "landing": {
     "faqTitle": "Questions Fréquentes",
-    "ctaTitle": "Prêt à Démarrer ?",
-    "ctaDesc": "Contactez-nous maintenant pour un devis gratuit et sans engagement.",
+    "ctaTitle": "Prêt à Collaborer ?",
+    "ctaDesc": "Contactez-moi maintenant pour discuter de votre projet.",
     "ctaWhatsapp": "WhatsApp Maintenant",
     "pages": {
-      "agence-web-maroc": {
-        "hero": "Agence Web Maroc",
-        "heroSub": "Création de sites web professionnels, rapides & optimisés SEO au Maroc",
-        "intro": "Vous cherchez une agence web fiable au Maroc ? Jaddaoui Elevate est votre partenaire digital de référence à Casablanca. Nous créons des sites web modernes, ultra-performants et optimisés pour le référencement naturel (SEO) qui génèrent de véritables résultats commerciaux.",
+      "developpeur-fullstack-maroc": {
+        "hero": "Développeur Full Stack Maroc",
+        "heroSub": "Sites web premium, applications mobiles & SaaS — Next.js, React, Flutter",
+        "intro": "Je suis Ayoub Jaddaoui, développeur Full Stack freelance basé à Casablanca. Je crée des sites web modernes, ultra-performants et optimisés SEO, ainsi que des applications mobiles iOS/Android avec Flutter et React Native.",
         "faqs": [
-          { "q": "Quel est le prix d'un site web professionnel au Maroc ?", "a": "Le coût d'un site web au Maroc varie entre 3 000 MAD et 30 000+ MAD selon la complexité : site vitrine simple, e-commerce, ou plateforme SaaS custom." },
-          { "q": "Combien de temps faut-il pour créer un site web ?", "a": "Un site vitrine prend 1 à 3 semaines. Un site e-commerce ou une plateforme complexe peut nécessiter 4 à 12 semaines selon les fonctionnalités." },
-          { "q": "Proposez-vous le référencement naturel (SEO) ?", "a": "Oui, tous nos sites sont optimisés SEO dès la conception : structure technique, balises méta, Core Web Vitals, schémas JSON-LD et contenu optimisé." },
-          { "q": "Intervenez-vous dans toutes les villes du Maroc ?", "a": "Oui, nous travaillons à distance avec des clients partout au Maroc : Casablanca, Rabat, Marrakech, Fès, Agadir, Tanger et à l'international." }
+          { "q": "Quel est le coût d'un site web professionnel au Maroc ?", "a": "Le coût varie entre 3 000 MAD et 30 000+ MAD selon la complexité : site vitrine, e-commerce ou plateforme SaaS." },
+          { "q": "Combien de temps faut-il pour créer un site web ?", "a": "Un site vitrine prend 1 à 3 semaines. Une plateforme complexe peut nécessiter 4 à 12 semaines." },
+          { "q": "Vos projets sont-ils optimisés SEO ?", "a": "Oui, tous mes projets sont optimisés SEO dès la conception : structure technique, balises méta, Core Web Vitals, JSON-LD." },
+          { "q": "Travaillez-vous à distance ?", "a": "Oui, je travaille avec des clients partout au Maroc et à l'international : Casablanca, Rabat, Marrakech, Europe, Golfe." }
         ]
       },
       "developpement-mobile-maroc": {
         "hero": "Développement Application Mobile au Maroc",
-        "heroSub": "Applications iOS & Android natives et hybrides — Flutter & React Native",
-        "intro": "Besoin d'une application mobile pour votre entreprise au Maroc ? Jaddaoui Elevate développe des applications iOS et Android performantes, intuitives et scalables. De la startup à l'entreprise, nous transformons vos idées en produits mobiles qui engagent vos utilisateurs.",
+        "heroSub": "Applications iOS & Android — Flutter & React Native",
+        "intro": "Besoin d'une application mobile ? Je développe des applications iOS et Android performantes, intuitives et scalables avec Flutter et React Native. De la startup à l'entreprise, je transforme vos idées en produits mobiles qui engagent.",
         "faqs": [
-          { "q": "Quel est le coût de développement d'une application mobile au Maroc ?", "a": "Le développement d'une app mobile au Maroc coûte généralement entre 15 000 et 80 000+ MAD selon les fonctionnalités, l'API backend, et les plateformes cibles (iOS, Android, ou les deux)." },
-          { "q": "Flutter ou React Native, quelle technologie choisir ?", "a": "Flutter offre des performances natives et une UI cohérente sur iOS/Android. React Native est idéal si vous avez déjà une équipe React web. Nous recommandons Flutter pour la plupart des projets mobiles." },
-          { "q": "Pouvez-vous intégrer un backend existant à l'application ?", "a": "Absolument. Nous intégrons votre API REST ou GraphQL existante, ou construisons un backend Node.js/Laravel adapté à vos besoins." },
-          { "q": "Quelle est la durée d'un projet d'application mobile ?", "a": "Un MVP (version minimale) prend 6 à 12 semaines. Une application complète avec backend peut nécessiter 3 à 6 mois selon la complexité." }
+          { "q": "Quel est le coût de développement d'une application mobile ?", "a": "Généralement entre 15 000 et 80 000+ MAD selon les fonctionnalités et les plateformes cibles." },
+          { "q": "Flutter ou React Native ?", "a": "Flutter offre des performances natives et une UI cohérente sur iOS/Android. Je recommande Flutter pour la plupart des projets mobiles." },
+          { "q": "Pouvez-vous intégrer un backend existant ?", "a": "Oui, j'intègre votre API REST ou GraphQL existante, ou construis un backend Node.js adapté." },
+          { "q": "Quelle est la durée d'un projet mobile ?", "a": "Un MVP prend 6 à 12 semaines. Une application complète avec backend : 3 à 6 mois." }
         ]
       },
       "developpeur-casablanca": {
         "hero": "Développeur Web Casablanca",
-        "heroSub": "Freelance Full Stack & Agence Digitale — Next.js, React, Flutter",
-        "intro": "Vous cherchez un développeur web freelance ou une agence à Casablanca ? Ayoub Jaddaoui est ingénieur Full Stack basé à Casablanca, spécialisé en Next.js, React et Flutter. Disponible pour des missions courtes ou longues durée.",
+        "heroSub": "Freelance Full Stack — Next.js, React, Flutter",
+        "intro": "Je suis Ayoub Jaddaoui, développeur Full Stack freelance basé à Casablanca. Spécialisé en Next.js, React et Flutter, je suis disponible pour des missions courtes ou longue durée.",
         "faqs": [
-          { "q": "Quelle est la différence entre un développeur freelance et une agence web à Casablanca ?", "a": "Un développeur freelance offre plus de flexibilité et souvent des tarifs plus compétitifs. Une agence apporte une équipe pluridisciplinaire (dev, design, SEO). Chez Jaddaoui Elevate, vous avez les deux avantages." },
-          { "q": "Proposez-vous des TJM (Tarif Journalier Moyen) pour des missions longues ?", "a": "Oui, nous proposons des engagements flexibles : projets au forfait, missions en régie ou abonnements mensuels de maintenance & évolution." },
-          { "q": "Quelles technologies maîtrisez-vous ?", "a": "Next.js, React 19, TypeScript, Node.js, Flutter, Dart, PostgreSQL, MongoDB, Prisma, Tailwind CSS, Framer Motion, et bien plus." },
-          { "q": "Pouvez-vous reprendre un projet existant ?", "a": "Oui, nous réalisons des audits de code, refactorisations, migrations (ex: Vite vers Next.js) et montées en version." }
+          { "q": "Quelles technologies maîtrisez-vous ?", "a": "Next.js, React 19, TypeScript, Node.js, Flutter, Dart, PostgreSQL, MongoDB, Prisma, Tailwind CSS, Framer Motion." },
+          { "q": "Proposez-vous des missions longue durée ?", "a": "Oui, projets au forfait, missions en régie ou abonnements mensuels de maintenance & évolution." },
+          { "q": "Pouvez-vous reprendre un projet existant ?", "a": "Oui, je réalise des audits de code, refactorisations, migrations et montées en version." },
+          { "q": "Quelle est votre disponibilité ?", "a": "Je suis disponible pour de nouveaux projets. Contactez-moi via WhatsApp pour une réponse rapide." }
         ]
       },
-      "jaddaoui-agency": {
-        "hero": "Jaddaoui Agency",
-        "heroSub": "Premium Web & Mobile Development — Morocco's Digital Growth Partner",
-        "intro": "Jaddaoui Agency is a premium digital agency based in Casablanca, Morocco. We specialize in building high-performance websites, mobile applications, and SaaS platforms that help businesses grow. Trusted by startups and established companies across Morocco and beyond.",
+      "ayoub-jaddaoui": {
+        "hero": "Ayoub Jaddaoui",
+        "heroSub": "Développeur Full Stack & Freelance — Casablanca, Maroc",
+        "intro": "Je suis Ayoub Jaddaoui, développeur Full Stack freelance basé à Casablanca. Spécialisé en Next.js, React et Flutter, je crée des sites web, applications mobiles et plateformes SaaS pour des clients au Maroc et à l'international.",
         "faqs": [
-          { "q": "What services does Jaddaoui Agency offer?", "a": "We offer full-stack web development (Next.js, React), mobile app development (Flutter, React Native), SaaS platform design & development, SEO optimization, and UI/UX design." },
-          { "q": "Do you work with international clients?", "a": "Yes, we work with clients remotely across Morocco, Europe, and the Gulf region. Communication in French, Arabic, or English." },
-          { "q": "How quickly can you start a new project?", "a": "We can typically start within 1 week of project agreement. Contact us via WhatsApp for the fastest response." },
-          { "q": "What is your development process?", "a": "We follow a 4-step process: Discovery, Design, Development, and Launch — with clear milestones and transparent communication throughout." }
+          { "q": "Quels services proposez-vous ?", "a": "Développement web (Next.js, React), apps mobiles (Flutter, React Native), plateformes SaaS, optimisation SEO, design UI/UX." },
+          { "q": "Travaillez-vous avec des clients internationaux ?", "a": "Oui, je travaille à distance avec des clients au Maroc, en Europe et dans les pays du Golfe. Communication en français, arabe ou anglais." },
+          { "q": "Comment démarrer un projet ?", "a": "Contactez-moi via WhatsApp ou email. Je réponds généralement sous 24h pour planifier un premier échange." },
+          { "q": "Quelle est votre approche de travail ?", "a": "Je suis un processus en 4 étapes : Découverte, Conception, Développement et Lancement — avec des jalons clairs et une communication transparente." }
         ]
       }
     }

@@ -101,7 +101,7 @@ export default function Navbar() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     {/* Animated Logo */}
-                    <Link href={`/${lang}`} className="flex items-center gap-2 group" aria-label="JADDAOUI ELEVATE">
+                    <Link href={`/${lang}`} className="flex items-center gap-2 group" aria-label="Ayoub Jaddaoui">
                         <motion.div
                             className="relative w-9 h-9 flex-shrink-0 overflow-hidden rounded-xl"
                             whileHover={{ scale: 1.12, rotate: 4 }}

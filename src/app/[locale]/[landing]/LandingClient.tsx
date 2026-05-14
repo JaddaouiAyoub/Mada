@@ -87,7 +87,7 @@ export default function LandingClient({
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-bold text-accent mb-8 border-main"
           >
-            ✦ Jaddaoui Elevate — Casablanca, Maroc
+            ✦ Ayoub Jaddaoui — Développeur Full Stack
           </motion.div>
 
           <motion.h1

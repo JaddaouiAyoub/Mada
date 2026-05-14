@@ -3,25 +3,62 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   metadataBase: new URL('https://jaddaoui.com'),
   title: {
-    default: 'Jaddaoui Elevate — Agence Web & Développement Mobile au Maroc',
-    template: '%s | Jaddaoui Elevate',
+    default: 'Ayoub Jaddaoui — Développeur Full Stack | Casablanca, Maroc',
+    template: '%s | Ayoub Jaddaoui',
+  },
+
+  applicationName: 'Ayoub Jaddaoui',
+
+  appleWebApp: {
+    capable: true,
+    title: 'Ayoub Jaddaoui',
+    statusBarStyle: 'default',
   },
 
   description:
-    'Agence digitale basée à Casablanca. Sites web premium, applications mobiles iOS/Android, plateformes SaaS.',
+    'Ayoub Jaddaoui (Jaddaoui Ayoub) — Développeur Full Stack basé à Casablanca (Casa). Création de sites web premium, applications mobiles iOS/Android, et plateformes SaaS. Expert Next.js, React & Flutter.',
+
+  keywords: [
+    'jaddaoui',
+    'ayoub jaddaoui',
+    'jaddaoui ayoub',
+    'developpeur casa',
+    'développeur casablanca',
+    'développeur full stack maroc',
+    'freelance web casablanca',
+    'création site web maroc',
+    'développeur web freelance',
+    'développeur application mobile',
+  ],
+
+  authors: [{ name: 'Ayoub Jaddaoui', url: 'https://jaddaoui.com' }],
+  creator: 'Ayoub Jaddaoui',
+  publisher: 'Ayoub Jaddaoui',
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 
   openGraph: {
-    title: 'Jaddaoui Elevate — Agence Web & Développement Mobile au Maroc',
+    title: 'Ayoub Jaddaoui — Développeur Full Stack | Casablanca, Maroc',
     description:
-      'Agence digitale basée à Casablanca. Sites web premium, applications mobiles iOS/Android, plateformes SaaS.',
+      'Développeur Full Stack basé à Casablanca. Sites web premium, applications mobiles iOS/Android, plateformes SaaS. Spécialiste Next.js, React & Flutter.',
     url: 'https://jaddaoui.com',
-    siteName: 'Jaddaoui Elevate',
+    siteName: 'Ayoub Jaddaoui',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Jaddaoui Elevate',
+        alt: 'Ayoub Jaddaoui — Développeur Full Stack',
         type: 'image/png',
       },
     ],
@@ -31,13 +68,13 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Jaddaoui Elevate',
+    title: 'Ayoub Jaddaoui — Développeur Full Stack',
     description:
-      'Agence digitale basée à Casablanca. Sites web premium, applications mobiles iOS/Android, plateformes SaaS.',
+      'Développeur Full Stack basé à Casablanca. Sites web premium, applications mobiles iOS/Android, plateformes SaaS. Spécialiste Next.js, React & Flutter.',
     images: [
       {
         url: '/og-image.png',
-        alt: 'Jaddaoui Elevate',
+        alt: 'Ayoub Jaddaoui — Développeur Full Stack',
       },
     ],
   },

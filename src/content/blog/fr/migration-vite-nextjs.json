@@ -1,7 +1,7 @@
 {
   "slug": "migration-vite-nextjs",
   "title": "Migration de Vite à Next.js : Retour d'expérience et guide technique",
-  "excerpt": "Nous avons migré notre portfolio de Vite/React SPA vers Next.js App Router. Voici le guide complet : pourquoi, comment, et les pièges à éviter.",
+  "excerpt": "j'ai migré notre portfolio de Vite/React SPA vers Next.js App Router. Voici le guide complet : pourquoi, comment, et les pièges à éviter.",
   "date": "2026-04-07",
   "readTime": 14,
   "category": "Technique",

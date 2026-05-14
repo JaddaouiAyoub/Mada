@@ -49,7 +49,7 @@ export async function generateMetadata({
       title: t('title'),
       description: t('description'),
       url: `${baseUrl}/${locale}`,
-      siteName: 'Jaddaoui Elevate',
+      siteName: 'Ayoub Jaddaoui',
       images: [
         {
           url: '/og-image.png',

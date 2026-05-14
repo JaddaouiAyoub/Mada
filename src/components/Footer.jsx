@@ -22,7 +22,7 @@ export default function Footer() {
                             </span>
                         </div>
                         <p className="text-sm text-strong leading-relaxed max-w-xs font-semibold opacity-80">
-                            Agence digitale haute performance. Nous transformons vos ambitions en expériences numériques exceptionnelles.
+                            Développeur Full Stack passionné. Je transforme vos idées en expériences digitales exceptionnelles.
                         </p>
                     </motion.div>
 
@@ -76,17 +76,17 @@ export default function Footer() {
                     className="mt-16 p-8 glass rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8"
                 >
                     <div>
-                        <h4 className="text-2xl font-bold text-strong mb-2 italic">"Votre satisfaction est notre priorité."</h4>
-                        <p className="text-sm text-strong font-semibold opacity-80">Discutons de votre prochain projet ambitieux dès aujourd'hui.</p>
+                        <h4 className="text-2xl font-bold text-strong mb-2 italic">"Passionné par la création d'expériences qui font la différence."</h4>
+                        <p className="text-sm text-strong font-semibold opacity-80">Discutons de votre prochain projet dès aujourd'hui.</p>
                     </div>
                     <a href="mailto:jaddaouiayoub02@gmail.com" className="px-8 py-4 bg-accent text-white rounded-xl font-bold hover:bg-accent-hover transition-all shadow-xl shadow-accent/40 active:scale-95">
-                        Démarrer l'aventure
+                        Me Contacter
                     </a>
                 </motion.div>
 
                 {/* Bottom bar */}
                 <div className="mt-12 pt-8 border-t border-main text-center text-xs text-muted font-medium transition-colors duration-500">
-                    © {new Date().getFullYear()} JADDAOUI ELEVATE. Tous droits réservés.
+                    © {new Date().getFullYear()} Ayoub Jaddaoui. Tous droits réservés.
                 </div>
             </div>
         </footer>

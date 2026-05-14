@@ -10,7 +10,7 @@ const testimonials = [
     {
         name: "Marc-Antoine R.",
         role: "CEO, TechSphere",
-        content: "L'expertise technique de Jaddaoui ELEVATE est tout simplement impressionnante. Ils ont transformé notre vision complexe en une plateforme fluide et performante.",
+        content: "L'expertise technique d'Ayoub est tout simplement impressionnante. Il a transformé notre vision complexe en une plateforme fluide et performante.",
         avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop"
     },
     {

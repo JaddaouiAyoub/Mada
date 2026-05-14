@@ -8,27 +8,27 @@ export const translations = {
             processus: 'Processus',
         },
         hero: {
-            badge: 'JADDAOUI ELEVATE — Agence Digitale',
-            titleLine1: 'Transformez votre',
-            titleLine2: 'Vision en Succès Digital',
-            subtitle: "Sites web premium, applications modernes et expériences digitales qui font grandir votre entreprise.",
-            tagline: '"Votre satisfaction est notre priorité absolue."',
-            ctaPrimary: 'Démarrer un Projet',
-            ctaSecondary: 'Voir le Portfolio',
+            badge: 'Ayoub Jaddaoui — Développeur Full Stack',
+            titleLine1: 'Bonjour, je suis',
+            titleLine2: 'Développeur Full Stack',
+            subtitle: "Je conçois des sites web premium, applications mobiles et plateformes SaaS qui font la différence.",
+            tagline: '"Passionné par la création d\'expériences digitales exceptionnelles."',
+            ctaPrimary: 'Me Contacter',
+            ctaSecondary: 'Voir mon Portfolio',
         },
         services: {
-            sectionTitle: 'Nos Services',
-            sectionSubtitle: 'Des solutions digitales sur mesure pour propulser votre entreprise.',
+            sectionTitle: 'Mes Services',
+            sectionSubtitle: 'Des solutions digitales sur mesure que je développe avec passion et expertise.',
             items: [
                 {
                     title: 'Web Development',
                     description:
-                        "Nous bâtissons des plateformes web ultra-rapides, SEO-friendly et scalables. Du site vitrine complexe aux architectures microservices.",
+                        "Je construis des plateformes web ultra-rapides, SEO-friendly et scalables. Du site vitrine aux architectures microservices.",
                 },
                 {
                     title: 'Mobile Apps',
                     description:
-                        "Expériences iOS et Android natives ou hybrides privilégiant la fluidité, le design intuitif et l'engagement utilisateur maximal.",
+                        "Expériences iOS et Android natives ou hybrides privilégiant la fluidité, le design intuitif et l'engagement utilisateur.",
                 },
                 {
                     title: 'SaaS Design',
@@ -38,16 +38,16 @@ export const translations = {
             ],
         },
         process: {
-            sectionTitle: 'Notre Méthodologie',
-            sectionSubtitle: "Un processus rigoureux et créatif pour transformer vos idées en icônes du digital.",
+            sectionTitle: 'Ma Méthodologie',
+            sectionSubtitle: "Un processus rigoureux et créatif pour transformer vos idées en expériences digitales remarquables.",
             steps: [
                 {
                     title: 'Découverte',
-                    description: "Immersion totale dans votre univers pour comprendre vos enjeux, vos cibles et vos objectifs stratégiques.",
+                    description: "Immersion dans votre univers pour comprendre vos enjeux, vos cibles et vos objectifs stratégiques.",
                 },
                 {
                     title: 'Conception',
-                    description: "Architecture de l'expérience utilisateur et création d'une interface premium alignée sur votre image de marque.",
+                    description: "Architecture de l'expérience utilisateur et création d'une interface premium alignée sur votre identité.",
                 },
                 {
                     title: 'Développement',
@@ -55,21 +55,21 @@ export const translations = {
                 },
                 {
                     title: 'Lancement',
-                    description: "Déploiement optimisé, tests rigoureux et accompagnement post-lancement pour garantir votre succès.",
+                    description: "Déploiement optimisé, tests rigoureux et suivi post-lancement pour garantir votre succès.",
                 },
             ],
         },
         portfolio: {
-            sectionTitle: 'Notre Portfolio',
-            sectionSubtitle: 'Une sélection de projets qui illustrent notre savoir-faire et notre exigence.',
+            sectionTitle: 'Mon Portfolio',
+            sectionSubtitle: 'Une sélection de projets réalisés avec passion, illustrant mon savoir-faire et mon exigence.',
             all: 'Tous',
             viewProject: 'Voir le projet',
         },
         values: {
-            sectionTitle: 'Nos Valeurs',
-            sectionSubtitle: 'Les piliers qui guident chacun de nos projets, plaçant',
+            sectionTitle: 'Mes Valeurs',
+            sectionSubtitle: 'Les principes qui guident chacun de mes projets, plaçant',
             sectionHighlight: 'votre réussite',
-            sectionEnd: 'au centre de tout.',
+            sectionEnd: 'au cœur de tout.',
             items: [
                 {
                     title: 'Précision',
@@ -86,54 +86,54 @@ export const translations = {
             ],
         },
         testimonials: {
-            sectionTitle: 'Paroles de Partenaires',
-            sectionSubtitle: "Ils nous ont fait confiance pour bâtir leur avenir numérique.",
+            sectionTitle: 'Ce que disent mes clients',
+            sectionSubtitle: "Ils m'ont fait confiance pour bâtir leur avenir numérique.",
         },
         footer: {
-            tagline: "Agence digitale haute performance. Nous transformons vos ambitions en expériences numériques exceptionnelles.",
+            tagline: "Développeur Full Stack passionné. Je transforme vos idées en expériences digitales exceptionnelles.",
             navigation: 'Navigation',
             contact: 'Contact',
             processus: 'Processus',
             services: 'Services',
             portfolio: 'Portfolio',
             values: 'Valeurs',
-            quote: '"Votre satisfaction est notre priorité."',
-            quoteSubtitle: "Discutons de votre prochain projet ambitieux dès aujourd'hui.",
-            ctaButton: "Démarrer l'aventure",
-            rights: 'JADDAOUI ELEVATE. Tous droits réservés.',
+            quote: '"Passionné par la création d\'expériences qui font la différence."',
+            quoteSubtitle: "Discutons de votre prochain projet dès aujourd'hui.",
+            ctaButton: "Me Contacter",
+            rights: 'Ayoub Jaddaoui. Tous droits réservés.',
         },
     },
 
     ar: {
         nav: {
             services: 'الخدمات',
-            portfolio: 'أعمالنا',
-            values: 'قيمنا',
-            contact: 'اتصل بنا',
+            portfolio: 'أعمالي',
+            values: 'قيمي',
+            contact: 'اتصل بي',
             processus: 'المنهجية',
         },
         hero: {
-            badge: 'JADDAOUI ELEVATE — وكالة رقمية',
-            titleLine1: '',
-            titleLine2: 'حوّل رؤيتك إلى نجاح رقمي',
-            subtitle: "JADDAOUI ELEVATE تدفع العلامات الطموحة نحو التميز الرقمي.",
-            tagline: '"رضاكم هو أولويتنا المطلقة."',
-            ctaPrimary: 'ابدأ مشروعك',
-            ctaSecondary: 'شاهد أعمالنا',
+            badge: 'أيوب جداوي — مطور Full Stack',
+            titleLine1: 'مرحباً، أنا',
+            titleLine2: 'مطور Full Stack',
+            subtitle: "أصمم مواقع ويب متميزة وتطبيقات موبايل ومنصات SaaS تُحدث فارقاً حقيقياً.",
+            tagline: '"شغوف بإنشاء تجارب رقمية استثنائية."',
+            ctaPrimary: 'تواصل معي',
+            ctaSecondary: 'شاهد أعمالي',
         },
         services: {
-            sectionTitle: 'خدماتنا',
-            sectionSubtitle: 'حلول رقمية مخصصة لدفع أعمالكم إلى الأمام.',
+            sectionTitle: 'خدماتي',
+            sectionSubtitle: 'حلول رقمية مخصصة أطورها بشغف وخبرة.',
             items: [
                 {
                     title: 'تطوير الويب',
                     description:
-                        "نبني منصات ويب فائقة السرعة، محسّنة لمحركات البحث وقابلة للتوسع. من المواقع الاحترافية إلى البنيات الخدمية الدقيقة.",
+                        "أبني منصات ويب فائقة السرعة، محسّنة لمحركات البحث وقابلة للتوسع. من المواقع الاحترافية إلى البنيات المعقدة.",
                 },
                 {
                     title: 'تطبيقات الموبايل',
                     description:
-                        "تجارب iOS و Android أصيلة أو هجينة تُعطي الأولوية للسلاسة والتصميم الحدسي وأقصى قدر من تفاعل المستخدم.",
+                        "تجارب iOS و Android أصيلة أو هجينة تُعطي الأولوية للسلاسة والتصميم الحدسي وتفاعل المستخدم.",
                 },
                 {
                     title: 'تصميم SaaS',
@@ -143,16 +143,16 @@ export const translations = {
             ],
         },
         process: {
-            sectionTitle: 'منهجيتنا',
-            sectionSubtitle: "عملية صارمة وإبداعية لتحويل أفكاركم إلى أيقونات رقمية.",
+            sectionTitle: 'منهجيتي',
+            sectionSubtitle: "عملية صارمة وإبداعية لتحويل أفكارك إلى تجارب رقمية رائعة.",
             steps: [
                 {
                     title: 'الاستكشاف',
-                    description: "انغماس كامل في عالمكم لفهم تحدياتكم وأهدافكم الاستراتيجية.",
+                    description: "انغماس في عالمك لفهم تحدياتك وأهدافك الاستراتيجية.",
                 },
                 {
                     title: 'التصميم',
-                    description: "هندسة تجربة المستخدم وإنشاء واجهة متميزة تتوافق مع هويتكم التجارية.",
+                    description: "هندسة تجربة المستخدم وإنشاء واجهة متميزة تتوافق مع هويتك.",
                 },
                 {
                     title: 'التطوير',
@@ -160,20 +160,20 @@ export const translations = {
                 },
                 {
                     title: 'الإطلاق',
-                    description: "نشر محسّن، اختبارات صارمة ودعم ما بعد الإطلاق لضمان نجاحكم.",
+                    description: "نشر محسّن، اختبارات صارمة ومتابعة ما بعد الإطلاق لضمان نجاحك.",
                 },
             ],
         },
         portfolio: {
-            sectionTitle: 'أعمالنا',
-            sectionSubtitle: 'مختارات من مشاريعنا تعكس خبرتنا ومعاييرنا العالية.',
+            sectionTitle: 'أعمالي',
+            sectionSubtitle: 'مختارات من مشاريعي تعكس خبرتي ومعاييري العالية.',
             all: 'الكل',
             viewProject: 'عرض المشروع',
         },
         values: {
-            sectionTitle: 'قيمنا',
-            sectionSubtitle: 'الركائز التي توجه كل مشاريعنا، وتضع',
-            sectionHighlight: 'نجاحكم',
+            sectionTitle: 'قيمي',
+            sectionSubtitle: 'المبادئ التي توجه كل مشاريعي، وتضع',
+            sectionHighlight: 'نجاحك',
             sectionEnd: 'في المركز.',
             items: [
                 {
@@ -182,7 +182,7 @@ export const translations = {
                 },
                 {
                     title: 'قابلية التوسع',
-                    description: "بنيات مصممة للتطور مع نموكم دون أي تنازل على الأداء.",
+                    description: "بنيات مصممة للتطور مع نموك دون أي تنازل على الأداء.",
                 },
                 {
                     title: 'الجماليات',
@@ -191,21 +191,21 @@ export const translations = {
             ],
         },
         testimonials: {
-            sectionTitle: 'كلمات الشركاء',
-            sectionSubtitle: "وثقوا بنا لبناء مستقبلهم الرقمي.",
+            sectionTitle: 'ما يقوله عملائي',
+            sectionSubtitle: "وثقوا بي لبناء مستقبلهم الرقمي.",
         },
         footer: {
-            tagline: "وكالة رقمية عالية الأداء. نحوّل طموحاتكم إلى تجارب رقمية استثنائية.",
+            tagline: "مطور Full Stack شغوف. أحوّل أفكارك إلى تجارب رقمية استثنائية.",
             navigation: 'التنقل',
-            contact: 'اتصل بنا',
+            contact: 'اتصل بي',
             processus: 'المنهجية',
             services: 'الخدمات',
-            portfolio: 'أعمالنا',
-            values: 'قيمنا',
-            quote: '"رضاكم هو أولويتنا."',
-            quoteSubtitle: "لنتحدث عن مشروعكم الطموح القادم اليوم.",
-            ctaButton: "ابدأ المغامرة",
-            rights: 'JADDAOUI ELEVATE. جميع الحقوق محفوظة.',
+            portfolio: 'أعمالي',
+            values: 'قيمي',
+            quote: '"شغوف بإنشاء تجارب تُحدث فارقاً."',
+            quoteSubtitle: "لنتحدث عن مشروعك القادم اليوم.",
+            ctaButton: "تواصل معي",
+            rights: 'أيوب جداوي. جميع الحقوق محفوظة.',
         },
     },
 };

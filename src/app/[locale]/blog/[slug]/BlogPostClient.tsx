@@ -80,7 +80,7 @@ export default function BlogPostClient({
               </div>
               <div>
                 <div className="text-sm font-bold text-strong">{t('blog.author')}</div>
-                <div className="text-xs text-muted font-semibold">Jaddaoui Elevate</div>
+                <div className="text-xs text-muted font-semibold">Développeur Full Stack</div>
               </div>
             </div>
           </motion.div>
