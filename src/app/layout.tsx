@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jaddaoui.com'),
+  metadataBase: new URL('https://www.jaddaoui.com'),
   title: {
     default: 'Ayoub Jaddaoui — Développeur Full Stack | Casablanca, Maroc',
     template: '%s | Ayoub Jaddaoui',
@@ -16,22 +16,39 @@ export const metadata: Metadata = {
   },
 
   description:
-    'Ayoub Jaddaoui (Jaddaoui Ayoub) — Développeur Full Stack basé à Casablanca (Casa). Création de sites web premium, applications mobiles iOS/Android, et plateformes SaaS. Expert Next.js, React & Flutter.',
+    'Ayoub Jaddaoui (Jaddaoui Ayoub) — Développeur Full Stack basé à Casablanca (Casa). Création de sites web premium, applications mobiles iOS/Android, et plateformes SaaS. Expert Spring boot, Angular, Next.js, React & Flutter.',
 
   keywords: [
+    // Branding
+    'Ayoub Jaddaoui',
+    'Jaddaoui Ayoub',
     'jaddaoui',
-    'ayoub jaddaoui',
-    'jaddaoui ayoub',
-    'developpeur casa',
-    'développeur casablanca',
+
+    // Core métier
     'développeur full stack maroc',
-    'freelance web casablanca',
+    'développeur web casablanca',
+    'freelance web maroc',
+    'développeur freelance casablanca',
+
+    // Services
     'création site web maroc',
-    'développeur web freelance',
-    'développeur application mobile',
+    'création application mobile maroc',
+    'développement SaaS maroc',
+    'création site e-commerce maroc',
+
+    // Technologies
+    'Next.js developer Morocco',
+    'Flutter developer Morocco',
+    'React developer Morocco',
+    'Spring Boot developer Morocco',
+
+    // Local SEO
+    'développeur casablanca',
+    'agence web casablanca',
+    'développeur mobile maroc',
   ],
 
-  authors: [{ name: 'Ayoub Jaddaoui', url: 'https://jaddaoui.com' }],
+  authors: [{ name: 'Ayoub Jaddaoui', url: 'https://www.jaddaoui.com' }],
   creator: 'Ayoub Jaddaoui',
   publisher: 'Ayoub Jaddaoui',
 
@@ -50,7 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ayoub Jaddaoui — Développeur Full Stack | Casablanca, Maroc',
     description:
-      'Développeur Full Stack basé à Casablanca. Sites web premium, applications mobiles iOS/Android, plateformes SaaS. Spécialiste Next.js, React & Flutter.',
+      'Développeur Full Stack basé à Casablanca. Sites web premium, applications mobiles iOS/Android, plateformes SaaS. Spécialiste Spring boot, Angular, Next.js, React & Flutter.',
     url: 'https://jaddaoui.com',
     siteName: 'Ayoub Jaddaoui',
     images: [

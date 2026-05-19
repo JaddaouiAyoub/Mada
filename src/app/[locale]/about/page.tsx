@@ -21,12 +21,12 @@ export async function generateMetadata({
     description: t('description'),
     alternates: {
       canonical: `/${locale}/about`,
-      languages: { fr: '/fr/about', ar: '/ar/about' },
+      languages: { fr: '/fr/about', ar: '/ar/about', 'x-default': '/fr/about' },
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `https://jaddaoui.com/${locale}/about`,
+      url: `https://www.jaddaoui.com/${locale}/about`,
       images: [{ url: '/og-image.png' }],
     },
   };
@@ -43,8 +43,8 @@ export default async function AboutPage({
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Ayoub Jaddaoui',
-    url: 'https://jaddaoui.com',
-    image: 'https://jaddaoui.com/og-image.png',
+    url: 'https://www.jaddaoui.com',
+    image: 'https://www.jaddaoui.com/og-image.png',
     jobTitle: 'Développeur Full Stack & Freelance',
     address: {
       '@type': 'PostalAddress',

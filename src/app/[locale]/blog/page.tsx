@@ -22,12 +22,12 @@ export async function generateMetadata({
     description: t('description'),
     alternates: {
       canonical: `/${locale}/blog`,
-      languages: { fr: '/fr/blog', ar: '/ar/blog' },
+      languages: { fr: '/fr/blog', ar: '/ar/blog', 'x-default': '/fr/blog' },
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `https://jaddaoui.com/${locale}/blog`,
+      url: `https://www.jaddaoui.com/${locale}/blog`,
       images: [{ url: '/og-image.png' }],
     },
   };

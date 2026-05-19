@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://jaddaoui.com/sitemap.xml',
-    host: 'https://jaddaoui.com',
+    sitemap: 'https://www.jaddaoui.com/sitemap.xml',
+    host: 'https://www.jaddaoui.com',
   };
 }

@@ -32,12 +32,12 @@ export async function generateMetadata({
     description: post.excerpt,
     alternates: {
       canonical: `/${locale}/blog/${slug}`,
-      languages: { fr: `/fr/blog/${slug}`, ar: `/ar/blog/${slug}` },
+      languages: { fr: `/fr/blog/${slug}`, ar: `/ar/blog/${slug}`, 'x-default': `/fr/blog/${slug}` },
     },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://jaddaoui.com/${locale}/blog/${slug}`,
+      url: `https://www.jaddaoui.com/${locale}/blog/${slug}`,
       type: 'article',
       publishedTime: post.date,
       authors: ['Ayoub Jaddaoui'],
@@ -68,15 +68,15 @@ export default async function BlogPostPage({
     author: {
       '@type': 'Person',
       name: 'Ayoub Jaddaoui',
-      url: 'https://jaddaoui.com',
+      url: 'https://www.jaddaoui.com',
     },
     publisher: {
       '@type': 'Person',
       name: 'Ayoub Jaddaoui',
-      url: 'https://jaddaoui.com',
+      url: 'https://www.jaddaoui.com',
     },
-    image: 'https://jaddaoui.com/og-image.png',
-    url: `https://jaddaoui.com/${locale}/blog/${slug}`,
+    image: 'https://www.jaddaoui.com/og-image.png',
+    url: `https://www.jaddaoui.com/${locale}/blog/${slug}`,
     inLanguage: locale === 'ar' ? 'ar' : 'fr',
     keywords: post.tags?.join(', '),
   };

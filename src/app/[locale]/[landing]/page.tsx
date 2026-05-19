@@ -39,12 +39,12 @@ export async function generateMetadata({
     description: t('description'),
     alternates: {
       canonical: `/${locale}/${landing}`,
-      languages: { fr: `/fr/${landing}`, ar: `/ar/${landing}` },
+      languages: { fr: `/fr/${landing}`, ar: `/ar/${landing}`, 'x-default': `/fr/${landing}` },
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `https://jaddaoui.com/${locale}/${landing}`,
+      url: `https://www.jaddaoui.com/${locale}/${landing}`,
       images: [{ url: '/og-image.png' }],
     },
   };
@@ -78,11 +78,11 @@ export default async function LandingPage({
       provider: {
         '@type': 'Person',
         name: 'Ayoub Jaddaoui',
-        url: 'https://jaddaoui.com',
+        url: 'https://www.jaddaoui.com',
         address: { '@type': 'PostalAddress', addressLocality: 'Casablanca', addressCountry: 'MA' },
       },
       areaServed: { '@type': 'Country', name: 'Morocco' },
-      url: `https://jaddaoui.com/${locale}/${landing}`,
+      url: `https://www.jaddaoui.com/${locale}/${landing}`,
     },
     {
       '@context': 'https://schema.org',

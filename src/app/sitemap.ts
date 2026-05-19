@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 
-const BASE_URL = 'https://jaddaoui.com';
+const BASE_URL = 'https://www.jaddaoui.com';
 const LOCALES = ['fr', 'ar'] as const;
 const SEO_SLUGS = ['developpeur-fullstack-maroc', 'developpement-mobile-maroc', 'developpeur-casablanca', 'ayoub-jaddaoui'];
 
@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,
-      alternates: { languages: { fr: `${BASE_URL}/fr`, ar: `${BASE_URL}/ar` , 'x-default': `${BASE_URL}/fr`, } },
+      alternates: { languages: { fr: `${BASE_URL}/fr`, ar: `${BASE_URL}/ar`, 'x-default': `${BASE_URL}/fr` } },
     });
 
     // About
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
-      alternates: { languages: { fr: `${BASE_URL}/fr/about`, ar: `${BASE_URL}/ar/about` } },
+      alternates: { languages: { fr: `${BASE_URL}/fr/about`, ar: `${BASE_URL}/ar/about`, 'x-default': `${BASE_URL}/fr/about` } },
     });
 
     // Blog index
@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
-      alternates: { languages: { fr: `${BASE_URL}/fr/blog`, ar: `${BASE_URL}/ar/blog` } },
+      alternates: { languages: { fr: `${BASE_URL}/fr/blog`, ar: `${BASE_URL}/ar/blog`, 'x-default': `${BASE_URL}/fr/blog` } },
     });
 
     // Blog posts
@@ -48,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             fr: `${BASE_URL}/fr/blog/${post.slug}`,
             ar: `${BASE_URL}/ar/blog/${post.slug}`,
+            'x-default': `${BASE_URL}/fr/blog/${post.slug}`,
           },
         },
       });
@@ -64,6 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             fr: `${BASE_URL}/fr/${slug}`,
             ar: `${BASE_URL}/ar/${slug}`,
+            'x-default': `${BASE_URL}/fr/${slug}`,
           },
         },
       });

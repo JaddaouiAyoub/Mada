@@ -32,7 +32,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta.home' });
-  const baseUrl = 'https://jaddaoui.com';
+  const baseUrl = 'https://www.jaddaoui.com';
 
   return {
     title: t('title'),
@@ -43,6 +43,7 @@ export async function generateMetadata({
       languages: {
         fr: '/fr',
         ar: '/ar',
+        'x-default': '/fr',
       },
     },
     openGraph: {
