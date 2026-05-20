@@ -342,6 +342,92 @@ const filterCategories = [
     { id: 'saas', label: 'SaaS' }
 ];
 
+const ProjectCard = ({ project, i }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const shouldTruncate = project.desc.length > 120; // Afficher "Voir plus" si la description est longue
+
+    const ImageWrapper = project.preview ? 'a' : 'div';
+    const wrapperProps = project.preview ? { href: project.preview, target: "_blank", rel: "noopener noreferrer" } : {};
+
+    return (
+        <motion.div
+            layout
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+            viewport={{ once: true }}
+            className="flex flex-col group"
+        >
+            <ImageWrapper 
+                {...wrapperProps}
+                className={`relative block overflow-hidden rounded-[2.5rem] aspect-[4/3] mb-6 glass border-main group-hover:shadow-2xl group-hover:shadow-accent/10 transition-all duration-500 ${project.preview ? 'cursor-pointer' : ''}`}
+            >
+                <Image
+                    src={project.img}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-contain transition-transform duration-700 group-hover:scale-110"
+                />
+                
+                {/* Badge Type */}
+                <div className="absolute top-6 right-6 px-3 py-1 bg-black/40 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2">
+                    {project.type === 'mobile' ? <Smartphone size={12} className="text-accent" /> :
+                        project.type === 'saas' ? <Cloud size={12} className="text-accent" /> :
+                            <Globe size={12} className="text-accent" />}
+                    <span className="text-[10px] font-bold text-white uppercase tracking-wider">{project.type}</span>
+                </div>
+            </ImageWrapper>
+
+            <div className="px-2">
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                    {project.tech.map(t => (
+                        <span key={t} className="text-[9px] font-bold px-2 py-0.5 rounded-lg bg-accent/5 text-accent border border-accent/10">
+                            {t}
+                        </span>
+                    ))}
+                </div>
+                <h3 className="text-xl font-bold text-strong mb-1.5 transition-colors group-hover:text-accent">
+                    {project.title}
+                </h3>
+                <p className="text-xs font-semibold text-muted mb-4 uppercase tracking-widest opacity-80">
+                    {project.category}
+                </p>
+
+                {/* Description and Voir plus */}
+                <div className="mb-6">
+                    <p className={`text-sm text-strong opacity-75 leading-relaxed ${isExpanded ? '' : 'line-clamp-3'}`}>
+                        {project.desc}
+                    </p>
+                    {shouldTruncate && (
+                        <button 
+                            onClick={() => setIsExpanded(!isExpanded)} 
+                            className="text-xs font-bold text-accent hover:underline mt-2 inline-block"
+                        >
+                            {isExpanded ? 'Voir moins' : 'Voir plus'}
+                        </button>
+                    )}
+                </div>
+
+                {/* Links */}
+                <div className="flex gap-4">
+                    {project.preview && (
+                        <a href={project.preview} target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-accent flex items-center gap-1.5 underline decoration-2 underline-offset-4 hover:text-accent/80 transition-colors">
+                            Live Demo <ExternalLink size={14} />
+                        </a>
+                    )}
+                    {project.code && project.code !== "#" && (
+                        <a href={project.code} target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-strong flex items-center gap-1.5 opacity-80 hover:opacity-100 transition-opacity">
+                            Code <Github size={14} />
+                        </a>
+                    )}
+                </div>
+            </div>
+        </motion.div>
+    );
+};
+
 export default function Portfolio() {
     const [filterType, setFilterType] = useState('all');
 
@@ -388,84 +474,7 @@ export default function Portfolio() {
                 <motion.div layout className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
                     <AnimatePresence mode="popLayout">
                         {filteredProjects.map((project, i) => (
-                            <motion.div
-                                layout
-                                key={project.title}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.8 }}
-                                transition={{ duration: 0.6, delay: i * 0.1 }}
-                                viewport={{ once: true }}
-                                className="flex flex-col group"
-                            >
-                                <div className="relative overflow-hidden rounded-[2.5rem] aspect-[4/3] mb-6 glass border-main group-hover:shadow-2xl group-hover:shadow-accent/10 transition-all duration-500">
-                                    <Image
-                                        src={project.img}
-                                        alt={project.title}
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        className="object-contain transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    {/* Desktop Overlay */}
-                                    <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 hidden md:flex flex-col items-center justify-center p-8 text-center translate-y-4 group-hover:translate-y-0">
-                                        <div className="flex gap-4 mb-6">
-                                            {project.preview && (
-                                                <a href={project.preview} target="_blank" rel="noopener noreferrer" className="p-3 bg-accent text-white rounded-xl hover:scale-110 transition-transform shadow-lg shadow-accent/20">
-                                                    <Globe size={20} />
-                                                </a>
-                                            )}
-                                            {project.code && (
-                                                <a href={project.code} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 text-white rounded-xl hover:scale-110 transition-transform backdrop-blur-md border border-white/20">
-                                                    <Github size={20} />
-                                                </a>
-                                            )}
-                                        </div>
-                                        <p className="text-sm text-slate-200 leading-relaxed line-clamp-4 px-4">
-                                            {project.desc}
-                                        </p>
-                                    </div>
-                                    {/* Badge Type */}
-                                    <div className="absolute top-6 right-6 px-3 py-1 bg-black/40 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2">
-                                        {project.type === 'mobile' ? <Smartphone size={12} className="text-accent" /> :
-                                            project.type === 'saas' ? <Cloud size={12} className="text-accent" /> :
-                                                <Globe size={12} className="text-accent" />}
-                                        <span className="text-[10px] font-bold text-white uppercase tracking-wider">{project.type}</span>
-                                    </div>
-                                </div>
-
-                                <div className="px-2">
-                                    <div className="flex flex-wrap gap-1.5 mb-4">
-                                        {project.tech.map(t => (
-                                            <span key={t} className="text-[9px] font-bold px-2 py-0.5 rounded-lg bg-accent/5 text-accent border border-accent/10">
-                                                {t}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <h3 className="text-xl font-bold text-strong mb-1.5 transition-colors group-hover:text-accent">
-                                        {project.title}
-                                    </h3>
-                                    <p className="text-xs font-semibold text-muted mb-4 uppercase tracking-widest opacity-80">
-                                        {project.category}
-                                    </p>
-                                    {/* Mobile Desc */}
-                                    <p className="text-sm text-strong opacity-75 leading-relaxed md:hidden mb-6 line-clamp-3">
-                                        {project.desc}
-                                    </p>
-                                    {/* Mobile Links */}
-                                    <div className="flex md:hidden gap-4">
-                                        {project.preview && (
-                                            <a href={project.preview} className="text-xs font-bold text-accent flex items-center gap-1.5 underline decoration-2 underline-offset-4">
-                                                Live Demo <ExternalLink size={14} />
-                                            </a>
-                                        )}
-                                        {project.code && (
-                                            <a href={project.code} className="text-xs font-bold text-strong flex items-center gap-1.5 opacity-80">
-                                                Code <Github size={14} />
-                                            </a>
-                                        )}
-                                    </div>
-                                </div>
-                            </motion.div>
+                            <ProjectCard key={project.title} project={project} i={i} />
                         ))}
                     </AnimatePresence>
                 </motion.div>
