@@ -16,18 +16,47 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta.about' });
+  const baseUrl = 'https://www.jaddaoui.com';
+  
   return {
     title: t('title'),
     description: t('description'),
+    metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `/${locale}/about`,
-      languages: { fr: '/fr/about', ar: '/ar/about', 'x-default': '/fr/about' },
+      canonical: `${baseUrl}/${locale}/about`,
+      languages: { 
+        fr: `${baseUrl}/fr/about`, 
+        ar: `${baseUrl}/ar/about`, 
+        'x-default': `${baseUrl}/fr/about` 
+      },
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `https://www.jaddaoui.com/${locale}/about`,
-      images: [{ url: '/og-image.png' }],
+      url: `${baseUrl}/${locale}/about`,
+      siteName: 'Ayoub Jaddaoui',
+      type: 'website',
+      locale: locale === 'ar' ? 'ar_MA' : 'fr_MA',
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: t('title'),
+          type: 'image/png',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('title'),
+      description: t('description'),
+      images: [
+        {
+          url: '/og-image.png',
+          alt: t('title'),
+        },
+      ],
     },
   };
 }

@@ -34,18 +34,47 @@ export async function generateMetadata({
   if (!SEO_SLUGS.includes(landing as SeoSlug)) return {};
 
   const t = await getTranslations({ locale, namespace: `meta.landing.${landing}` });
+  const baseUrl = 'https://www.jaddaoui.com';
+  
   return {
     title: t('title'),
     description: t('description'),
+    metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `/${locale}/${landing}`,
-      languages: { fr: `/fr/${landing}`, ar: `/ar/${landing}`, 'x-default': `/fr/${landing}` },
+      canonical: `${baseUrl}/${locale}/${landing}`,
+      languages: { 
+        fr: `${baseUrl}/fr/${landing}`, 
+        ar: `${baseUrl}/ar/${landing}`, 
+        'x-default': `${baseUrl}/fr/${landing}` 
+      },
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `https://www.jaddaoui.com/${locale}/${landing}`,
-      images: [{ url: '/og-image.png' }],
+      url: `${baseUrl}/${locale}/${landing}`,
+      siteName: 'Ayoub Jaddaoui',
+      type: 'website',
+      locale: locale === 'ar' ? 'ar_MA' : 'fr_MA',
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: t('title'),
+          type: 'image/png',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('title'),
+      description: t('description'),
+      images: [
+        {
+          url: '/og-image.png',
+          alt: t('title'),
+        },
+      ],
     },
   };
 }
