@@ -1,4 +1,4 @@
-export default async function googleSiteVerification() {
+export async function GET() {
   return new Response(
     'google-site-verification: YOUR_GOOGLE_VERIFICATION_CODE',
     {
