@@ -1,18 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "https://www.jaddaoui.com/:path*",
-      "basePath": false,
-      "permanent": true,
-      "has": [
-        {
-          "type": "host",
-          "value": "jaddaoui.com"
-        }
-      ]
-    }
-  ],
   "headers": [
     {
       "source": "/sitemap.xml",
