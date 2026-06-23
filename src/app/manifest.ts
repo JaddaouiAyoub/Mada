@@ -61,9 +61,5 @@ export default function manifest(): MetadataRoute.Manifest {
         icons: [{ src: '/favicon.svg', sizes: 'any' }],
       },
     ],
-    categories_ar: ['أعمال', 'مطور'],
-    lang: 'fr',
-    dir: 'auto',
-    prefer_related_applications: false,
   };
 }
