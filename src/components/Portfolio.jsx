@@ -26,6 +26,7 @@ import womenFashionStore from "../assets/womenFashionStore.png"
 import tawziiFlow from "../assets/tawziiFlow.jpeg"
 import centerHub from "../assets/centerHub2.png"
 import smartersIptv from "../assets/smartersIptv.png"
+import driveFlow from "../assets/driveFlow.png"
 
 const projects = [
     {
@@ -46,7 +47,32 @@ const projects = [
         preview: "https://center-hub.vercel.app/",
         code: "#",
     },
-        {
+    {
+        title: "DriveFlow",
+        category: "ERP SaaS pour Auto-Écoles",
+        img: driveFlow, // importe l'image correspondante
+        desc: "Application SaaS complète destinée aux auto-écoles permettant de digitaliser la gestion des élèves, des paiements, des moniteurs et des formations. Le système offre un tableau de bord analytique, un suivi financier en temps réel, la gestion des échéances, l'historique des paiements, la génération de reçus, des statistiques interactives et une administration sécurisée multi-rôles. Conçue avec une architecture moderne et évolutive, l'application propose une expérience utilisateur premium, responsive et optimisée pour une utilisation quotidienne.",
+        tech: [
+            "Next.js 15",
+            "React 19",
+            "TypeScript",
+            "Tailwind CSS",
+            "Shadcn UI",
+            "Framer Motion",
+            "NextAuth v5",
+            "Prisma ORM",
+            "PostgreSQL",
+            "React Hook Form",
+            "Zod",
+            "TanStack Query",
+            "TanStack Table",
+            "Recharts"
+        ],
+        type: "saas",
+        preview: "https://auto-ecole-production.up.railway.app", // Remplacer par ton lien
+        code: "#"
+    },
+    {
         title: "Smarters IPTV Canada",
         category: "Plateforme de vente d’abonnements IPTV",
         img: smartersIptv, // importe ton image
@@ -359,7 +385,7 @@ const ProjectCard = ({ project, i }) => {
             viewport={{ once: true }}
             className="flex flex-col group"
         >
-            <ImageWrapper 
+            <ImageWrapper
                 {...wrapperProps}
                 className={`relative block overflow-hidden rounded-[2.5rem] aspect-[4/3] mb-6 glass border-main group-hover:shadow-2xl group-hover:shadow-accent/10 transition-all duration-500 ${project.preview ? 'cursor-pointer' : ''}`}
             >
@@ -370,7 +396,7 @@ const ProjectCard = ({ project, i }) => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-contain transition-transform duration-700 group-hover:scale-110"
                 />
-                
+
                 {/* Badge Type */}
                 <div className="absolute top-6 right-6 px-3 py-1 bg-black/40 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2">
                     {project.type === 'mobile' ? <Smartphone size={12} className="text-accent" /> :
@@ -401,8 +427,8 @@ const ProjectCard = ({ project, i }) => {
                         {project.desc}
                     </p>
                     {shouldTruncate && (
-                        <button 
-                            onClick={() => setIsExpanded(!isExpanded)} 
+                        <button
+                            onClick={() => setIsExpanded(!isExpanded)}
                             className="text-xs font-bold text-accent hover:underline mt-2 inline-block"
                         >
                             {isExpanded ? 'Voir moins' : 'Voir plus'}
@@ -461,8 +487,8 @@ export default function Portfolio() {
                             key={cat.id}
                             onClick={() => setFilterType(cat.id)}
                             className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 ${filterType === cat.id
-                                    ? 'bg-accent text-white shadow-lg shadow-accent/30'
-                                    : 'bg-white/5 text-strong hover:bg-white/10 hover:text-accent border border-white/10'
+                                ? 'bg-accent text-white shadow-lg shadow-accent/30'
+                                : 'bg-white/5 text-strong hover:bg-white/10 hover:text-accent border border-white/10'
                                 }`}
                         >
                             {cat.label}
