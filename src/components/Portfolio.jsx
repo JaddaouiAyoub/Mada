@@ -27,6 +27,7 @@ import tawziiFlow from "../assets/tawziiFlow.jpeg"
 import centerHub from "../assets/centerHub2.png"
 import smartersIptv from "../assets/smartersIptv.png"
 import driveFlow from "../assets/driveFlow.png"
+import rentFlow from "../assets/rentFlow.png"
 
 const projects = [
     {
@@ -46,6 +47,29 @@ const projects = [
         type: "saas",
         preview: "https://center-hub.vercel.app/",
         code: "#",
+    },
+        {
+        title: "RentFlow",
+        category: "SaaS de Gestion pour Agences de Location",
+        img: rentFlow,
+        desc: "Plateforme SaaS dédiée aux agences de location de voitures permettant de centraliser la gestion des clients, des véhicules, des locations et des dépenses. Le système assure le suivi de l'état et des coûts des véhicules, la gestion des contrats et factures avec génération automatique de documents, ainsi que l'intégration de la signature électronique. Il intègre également une fonctionnalité d'extraction automatique des informations à partir du scan des permis de conduire afin d'accélérer la création des dossiers clients. Une solution complète pensée pour automatiser les opérations quotidiennes et améliorer le suivi financier de l'agence.",
+        tech: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Shadcn UI",
+            "NextAuth",
+            "Prisma ORM",
+            "PostgreSQL",
+            "React Hook Form",
+            "Zod",
+            "OCR",
+            "Signature électronique"
+        ],
+        type: "saas",
+        preview: "#",
+        code: "#"
     },
     {
         title: "DriveFlow",
