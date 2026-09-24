@@ -28,6 +28,7 @@ import centerHub from "../assets/centerHub2.png"
 import smartersIptv from "../assets/smartersIptv.png"
 import driveFlow from "../assets/driveFlow.png"
 import rentFlow from "../assets/rentFlow.png"
+import syndicFlow from "../assets/syndicFlow.png"
 
 const projects = [
     {
@@ -48,6 +49,32 @@ const projects = [
         preview: "https://center-hub.vercel.app/",
         code: "#",
     },
+
+    {
+    title: "SyndicFlow",
+    category: "SaaS de Gestion de Syndic & Copropriété",
+    img: syndicFlow,
+    desc: "Plateforme SaaS complète dédiée à la gestion des syndics et des copropriétés. Le système permet aux administrateurs de gérer les syndics et leurs comptes, tandis que chaque syndic dispose d'un espace dédié pour gérer ses immeubles, appartements, copropriétaires et résidents. La solution intègre la gestion des charges, paiements, impayés, dépenses et suivi financier avec tableaux de bord analytiques, recherche, filtres et pagination côté serveur. L'application propose une authentification sécurisée avec gestion des rôles et changement obligatoire du mot de passe à la première connexion. Conçue en mobile-first avec une interface premium et originale, elle supporte le Français et l'Arabe avec une gestion complète du RTL.",
+    tech: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Prisma ORM",
+        "PostgreSQL",
+        "NextAuth",
+        "React Hook Form",
+        "Zod",
+        "TanStack Table",
+        "Recharts",
+        "Framer Motion",
+        "i18n (FR / AR)",
+        "RTL Support"
+    ],
+    type: "saas",
+    preview: "#",
+    code: "#"
+},
         {
         title: "RentFlow",
         category: "SaaS de Gestion pour Agences de Location",
