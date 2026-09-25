@@ -29,6 +29,7 @@ import smartersIptv from "../assets/smartersIptv.png"
 import driveFlow from "../assets/driveFlow.png"
 import rentFlow from "../assets/rentFlow.png"
 import syndicFlow from "../assets/syndicFlow.png"
+import gymFlow from "../assets/gymFlow.png"
 
 const projects = [
     {
@@ -51,31 +52,54 @@ const projects = [
     },
 
     {
-    title: "SyndicFlow",
-    category: "SaaS de Gestion de Syndic & Copropriété",
-    img: syndicFlow,
-    desc: "Plateforme SaaS complète dédiée à la gestion des syndics et des copropriétés. Le système permet aux administrateurs de gérer les syndics et leurs comptes, tandis que chaque syndic dispose d'un espace dédié pour gérer ses immeubles, appartements, copropriétaires et résidents. La solution intègre la gestion des charges, paiements, impayés, dépenses et suivi financier avec tableaux de bord analytiques, recherche, filtres et pagination côté serveur. L'application propose une authentification sécurisée avec gestion des rôles et changement obligatoire du mot de passe à la première connexion. Conçue en mobile-first avec une interface premium et originale, elle supporte le Français et l'Arabe avec une gestion complète du RTL.",
-    tech: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "Prisma ORM",
-        "PostgreSQL",
-        "NextAuth",
-        "React Hook Form",
-        "Zod",
-        "TanStack Table",
-        "Recharts",
-        "Framer Motion",
-        "i18n (FR / AR)",
-        "RTL Support"
-    ],
-    type: "saas",
-    preview: "#",
-    code: "#"
-},
-        {
+        title: "SyndicFlow",
+        category: "SaaS de Gestion de Syndic & Copropriété",
+        img: syndicFlow,
+        desc: "Plateforme SaaS complète dédiée à la gestion des syndics et des copropriétés. Le système permet aux administrateurs de gérer les syndics et leurs comptes, tandis que chaque syndic dispose d'un espace dédié pour gérer ses immeubles, appartements, copropriétaires et résidents. La solution intègre la gestion des charges, paiements, impayés, dépenses et suivi financier avec tableaux de bord analytiques, recherche, filtres et pagination côté serveur. L'application propose une authentification sécurisée avec gestion des rôles et changement obligatoire du mot de passe à la première connexion. Conçue en mobile-first avec une interface premium et originale, elle supporte le Français et l'Arabe avec une gestion complète du RTL.",
+        tech: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Prisma ORM",
+            "PostgreSQL",
+            "NextAuth",
+            "React Hook Form",
+            "Zod",
+            "TanStack Table",
+            "Recharts",
+            "Framer Motion",
+            "i18n (FR / AR)",
+            "RTL Support"
+        ],
+        type: "saas",
+        preview: "#",
+        code: "#"
+    },
+    {
+        title: "PowerGym",
+        category: "SaaS de Gestion de Salle de Sport",
+        img: gymFlow,
+        desc: "Plateforme SaaS moderne dédiée à la gestion complète des salles de sport et de leurs adhérents. Le système permet aux administrateurs et secrétaires de gérer les membres, les abonnements, les paiements, les échéances et les présences. L'application intègre un tableau de bord avec statistiques sur les adhérents actifs, les revenus, les paiements récents, les abonnements expirant et les activités quotidiennes. Les administrateurs disposent également d'une gestion des secrétaires avec des permissions basées sur les rôles. Conçue selon une approche mobile-first avec une interface sportive, premium et originale, la solution offre une expérience optimisée pour les opérations quotidiennes d'une salle de sport.",
+        tech: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Prisma ORM",
+            "PostgreSQL",
+            "NextAuth",
+            "React Hook Form",
+            "Zod",
+            "Recharts",
+            "Framer Motion",
+            "RBAC"
+        ],
+        type: "saas",
+        preview: "#",
+        code: "#"
+    },
+    {
         title: "RentFlow",
         category: "SaaS de Gestion pour Agences de Location",
         img: rentFlow,
