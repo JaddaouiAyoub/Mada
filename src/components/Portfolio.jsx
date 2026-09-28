@@ -639,16 +639,20 @@ export default function Portfolio() {
                                     <X size={18} />
                                 </button>
 
-                                <div className="max-h-[90vh] overflow-y-auto">
-                                    <div className="sticky top-0 z-10 bg-[#0c1220]">
-                                        <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-900">
-                                            <Image
-                                                src={selectedProject.img}
-                                                alt={selectedProject.title}
-                                                fill
-                                                sizes="(max-width: 768px) 100vw, 70vw"
-                                                className="object-cover"
-                                            />
+                                <div className="max-h-[90vh] overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+                                    <div className="bg-[#0c1220]">
+                                        <div className="relative w-full overflow-y-auto bg-slate-900 md:max-h-[55vh]">
+                                            <div className="relative h-[260px] w-full sm:h-[320px] lg:h-[420px]">
+                                                <Image
+                                                    src={selectedProject.img}
+                                                    alt={selectedProject.title}
+                                                    fill
+                                                    priority
+                                                    loading="eager"
+                                                    sizes="(max-width: 768px) 100vw, 70vw"
+                                                    className="object-fill"
+                                                />
+                                            </div>
                                         </div>
                                     </div>
 
