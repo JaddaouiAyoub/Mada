@@ -9,6 +9,14 @@ import { routing } from '@/i18n/routing';
 import { SEO_SLUGS, type SeoSlug } from '@/lib/landing';
 import { SITE_URL, SITE_NAME, OG_IMAGE, localeAlternates, ogLocale } from '@/lib/site';
 import { breadcrumbSchema } from '@/lib/schema';
+import { getProjectsBySlugs } from '@/data/projects';
+
+const LANDING_PROJECTS: Record<SeoSlug, string[]> = {
+  'developpeur-fullstack-maroc': ['syndicflow', 'rentflow', 'driveflow', 'centerhub'],
+  'developpement-mobile-maroc': ['tawziiflow', 'covoiturage-intervilles', 'liftmosque', 'mada-scanner'],
+  'developpeur-casablanca': ['velvet-beauty-casablanca', 'smilecare-dental-clinic', 'oud-essence-maroc', 'luna-chic-boutique'],
+  'ayoub-jaddaoui': ['syndicflow', 'powergym', 'tawziiflow', 'riad-al-andalous'],
+};
 
 // Any other slug returns a real 404 instead of being rendered on demand.
 export const dynamicParams = false;
@@ -73,7 +81,14 @@ export default async function LandingPage({
     heroSub: t('heroSub'),
     intro: t('intro'),
     faqs: t.raw('faqs') as { q: string; a: string }[],
+    sections: (t.has('sections') ? t.raw('sections') : []) as { title: string; text: string }[],
   };
+  const relatedProjects = getProjectsBySlugs(LANDING_PROJECTS[landing as SeoSlug]).map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    category: p.category,
+    img: p.img,
+  }));
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -120,6 +135,8 @@ export default async function LandingPage({
           ctaTitle={tLanding('ctaTitle')}
           ctaDesc={tLanding('ctaDesc')}
           ctaWhatsapp={tLanding('ctaWhatsapp')}
+          projectsTitle={tLanding('projectsTitle')}
+          projects={relatedProjects}
         />
       </main>
       <Footer />

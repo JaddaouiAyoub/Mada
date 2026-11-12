@@ -28,8 +28,6 @@ export default function AboutClient({ locale }: { locale: string }) {
   const stats = [
     { value: '20+', label: t('about.statsProjects') },
     { value: '100%', label: t('about.statsSatisfaction') },
-    { value: '5+', label: t('about.statsYears') },
-    { value: '3+', label: t('about.statsCountries') },
   ];
 
   const journey = (t('about.journey') as unknown as Array<{ year: string; title: string; desc: string }>);
@@ -77,7 +75,7 @@ export default function AboutClient({ locale }: { locale: string }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6"
+            className="mt-14 mx-auto max-w-md grid grid-cols-2 gap-6"
           >
             {stats.map((s, i) => (
               <div key={i} className="glass rounded-2xl p-5 text-center border-main">

@@ -41,10 +41,10 @@
     "blog": "Blog"
   },
   "hero": {
-    "badge": "Ayoub Jaddaoui — Développeur Full Stack",
-    "titleLine1": "Bonjour, je suis",
+    "badge": "Développeur web & mobile · Casablanca, Maroc",
+    "titleLine1": "Ayoub Jaddaoui",
     "titleLine2": "Développeur Full Stack",
-    "subtitle": "Je conçois des sites web premium, applications mobiles et plateformes SaaS qui font la différence.",
+    "subtitle": "Je conçois des sites web premium, applications mobiles et plateformes SaaS pour les entreprises au Maroc et à l'international.",
     "tagline": "\"Passionné par la création d'expériences digitales exceptionnelles.\"",
     "ctaPrimary": "Me Contacter",
     "ctaSecondary": "Voir mon Portfolio"
@@ -116,8 +116,35 @@
     ]
   },
   "testimonials": {
-    "sectionTitle": "Ce que disent mes clients",
-    "sectionSubtitle": "Ils m'ont fait confiance pour bâtir leur avenir numérique."
+    "sectionTitle": "Résultats concrets",
+    "sectionSubtitle": "Ce que mes plateformes changent au quotidien pour les entreprises qui les utilisent.",
+    "cta": "Voir le projet",
+    "items": {
+      "syndicflow": {
+        "sector": "Syndics & copropriétés",
+        "result": "Charges, paiements, impayés et dépenses centralisés dans un seul espace, en français et en arabe."
+      },
+      "rentflow": {
+        "sector": "Location de voitures",
+        "result": "Contrats et factures générés automatiquement, signature électronique et dossier client créé en scannant le permis."
+      },
+      "driveflow": {
+        "sector": "Auto-écoles",
+        "result": "Élèves, moniteurs, paiements et échéances suivis en temps réel, avec reçus générés en un clic."
+      },
+      "tawziiflow": {
+        "sector": "Distribution",
+        "result": "Factures PDF créées directement chez le client, même hors connexion, puis partagées par WhatsApp."
+      },
+      "powergym": {
+        "sector": "Salles de sport",
+        "result": "Abonnements, échéances, présences et revenus des adhérents suivis depuis un tableau de bord unique."
+      },
+      "centerhub": {
+        "sector": "Centres éducatifs",
+        "result": "Présences, paiements et cours gérés par rôle : administrateur, secrétaire, professeur et étudiant."
+      }
+    }
   },
   "footer": {
     "tagline": "Développeur Full Stack passionné. Je transforme vos idées en expériences digitales exceptionnelles.",
@@ -139,8 +166,6 @@
     "subtitle": "Développeur Full Stack passionné basé à Casablanca, spécialisé dans la création d'expériences web et mobiles premium pour les entreprises ambitieuses.",
     "statsProjects": "Projets Livrés",
     "statsSatisfaction": "Satisfaction Client",
-    "statsYears": "Années d'Expérience",
-    "statsCountries": "Pays Servis",
     "expertiseTitle": "Stack Technique",
     "journeyTitle": "Mon Parcours",
     "journey": [
@@ -201,10 +226,36 @@
         "heroSub": "Sites web premium, applications mobiles & SaaS — Next.js, React, Flutter",
         "intro": "Je suis Ayoub Jaddaoui, développeur Full Stack freelance basé à Casablanca. Je crée des sites web modernes, ultra-performants et optimisés SEO, ainsi que des applications mobiles iOS/Android avec Flutter et React Native.",
         "faqs": [
-          { "q": "Quel est le coût d'un site web professionnel au Maroc ?", "a": "Le coût varie entre 3 000 MAD et 30 000+ MAD selon la complexité : site vitrine, e-commerce ou plateforme SaaS." },
-          { "q": "Combien de temps faut-il pour créer un site web ?", "a": "Un site vitrine prend 1 à 3 semaines. Une plateforme complexe peut nécessiter 4 à 12 semaines." },
-          { "q": "Vos projets sont-ils optimisés SEO ?", "a": "Oui, tous mes projets sont optimisés SEO dès la conception : structure technique, balises méta, Core Web Vitals, JSON-LD." },
-          { "q": "Travaillez-vous à distance ?", "a": "Oui, je travaille avec des clients partout au Maroc et à l'international : Casablanca, Rabat, Marrakech, Europe, Golfe." }
+          {
+            "q": "Quel est le coût d'un site web professionnel au Maroc ?",
+            "a": "Le coût varie entre 3 000 MAD et 30 000+ MAD selon la complexité : site vitrine, e-commerce ou plateforme SaaS."
+          },
+          {
+            "q": "Combien de temps faut-il pour créer un site web ?",
+            "a": "Un site vitrine prend 1 à 3 semaines. Une plateforme complexe peut nécessiter 4 à 12 semaines."
+          },
+          {
+            "q": "Vos projets sont-ils optimisés SEO ?",
+            "a": "Oui, tous mes projets sont optimisés SEO dès la conception : structure technique, balises méta, Core Web Vitals, JSON-LD."
+          },
+          {
+            "q": "Travaillez-vous à distance ?",
+            "a": "Oui, je travaille avec des clients partout au Maroc et à l'international : Casablanca, Rabat, Marrakech, Europe, Golfe."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Un développeur Full Stack au Maroc, du front-end au serveur",
+            "text": "Je prends en charge l'ensemble de votre projet : interface (Next.js, React, Angular), back-end et API (Node.js, Spring Boot), base de données (PostgreSQL, MySQL, MongoDB) et mise en ligne. Un seul interlocuteur, une architecture cohérente et un code maintenable dans la durée."
+          },
+          {
+            "title": "Des plateformes SaaS pensées pour les entreprises marocaines",
+            "text": "J'ai conçu des SaaS de gestion pour des syndics de copropriété, des agences de location de voitures, des auto-écoles, des salles de sport et des centres éducatifs : tableaux de bord, gestion des rôles, paiements, facturation et interfaces en français et en arabe (RTL)."
+          },
+          {
+            "title": "Une méthode de travail claire",
+            "text": "Chaque projet commence par un cadrage précis de vos besoins, suivi de livraisons régulières que vous pouvez tester. Je travaille sur place à Casablanca ou à distance, pour des entreprises partout au Maroc et à l'international."
+          }
         ]
       },
       "developpement-mobile-maroc": {
@@ -212,10 +263,36 @@
         "heroSub": "Applications iOS & Android — Flutter & React Native",
         "intro": "Besoin d'une application mobile ? Je développe des applications iOS et Android performantes, intuitives et scalables avec Flutter et React Native. De la startup à l'entreprise, je transforme vos idées en produits mobiles qui engagent.",
         "faqs": [
-          { "q": "Quel est le coût de développement d'une application mobile ?", "a": "Généralement entre 15 000 et 80 000+ MAD selon les fonctionnalités et les plateformes cibles." },
-          { "q": "Flutter ou React Native ?", "a": "Flutter offre des performances natives et une UI cohérente sur iOS/Android. Je recommande Flutter pour la plupart des projets mobiles." },
-          { "q": "Pouvez-vous intégrer un backend existant ?", "a": "Oui, j'intègre votre API REST ou GraphQL existante, ou construis un backend Node.js adapté." },
-          { "q": "Quelle est la durée d'un projet mobile ?", "a": "Un MVP prend 6 à 12 semaines. Une application complète avec backend : 3 à 6 mois." }
+          {
+            "q": "Quel est le coût de développement d'une application mobile ?",
+            "a": "Généralement entre 15 000 et 80 000+ MAD selon les fonctionnalités et les plateformes cibles."
+          },
+          {
+            "q": "Flutter ou React Native ?",
+            "a": "Flutter offre des performances natives et une UI cohérente sur iOS/Android. Je recommande Flutter pour la plupart des projets mobiles."
+          },
+          {
+            "q": "Pouvez-vous intégrer un backend existant ?",
+            "a": "Oui, j'intègre votre API REST ou GraphQL existante, ou construis un backend Node.js adapté."
+          },
+          {
+            "q": "Quelle est la durée d'un projet mobile ?",
+            "a": "Un MVP prend 6 à 12 semaines. Une application complète avec backend : 3 à 6 mois."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Applications iOS et Android avec Flutter",
+            "text": "Avec Flutter, une seule base de code donne une application native sur iOS et Android : développement plus rapide, coût maîtrisé et expérience fluide. Je m'occupe de la conception, du développement, de la publication sur les stores et du suivi."
+          },
+          {
+            "title": "Des applications pensées pour le terrain",
+            "text": "TawziiFlow permet aux agents de distribution de créer des factures PDF chez le client, même sans connexion, puis de les partager par WhatsApp. J'ai aussi développé des applications de covoiturage avec suivi en temps réel (Mapbox, Firebase) et un scanner de documents avec conversion PDF."
+          },
+          {
+            "title": "Back-office et API inclus",
+            "text": "Une application mobile a souvent besoin d'un tableau de bord d'administration et d'une API sécurisée. Je développe l'ensemble — application, back-office web et serveur — pour que tout fonctionne ensemble."
+          }
         ]
       },
       "developpeur-casablanca": {
@@ -223,10 +300,36 @@
         "heroSub": "Freelance Full Stack — Next.js, React, Flutter",
         "intro": "Je suis Ayoub Jaddaoui, développeur Full Stack freelance basé à Casablanca. Spécialisé en Next.js, React et Flutter, je suis disponible pour des missions courtes ou longue durée.",
         "faqs": [
-          { "q": "Quelles technologies maîtrisez-vous ?", "a": "Next.js, React 19, TypeScript, Node.js, Flutter, Dart, PostgreSQL, MongoDB, Prisma, Tailwind CSS, Framer Motion." },
-          { "q": "Proposez-vous des missions longue durée ?", "a": "Oui, projets au forfait, missions en régie ou abonnements mensuels de maintenance & évolution." },
-          { "q": "Pouvez-vous reprendre un projet existant ?", "a": "Oui, je réalise des audits de code, refactorisations, migrations et montées en version." },
-          { "q": "Quelle est votre disponibilité ?", "a": "Je suis disponible pour de nouveaux projets. Contactez-moi via WhatsApp pour une réponse rapide." }
+          {
+            "q": "Quelles technologies maîtrisez-vous ?",
+            "a": "Next.js, React 19, TypeScript, Node.js, Flutter, Dart, PostgreSQL, MongoDB, Prisma, Tailwind CSS, Framer Motion."
+          },
+          {
+            "q": "Proposez-vous des missions longue durée ?",
+            "a": "Oui, projets au forfait, missions en régie ou abonnements mensuels de maintenance & évolution."
+          },
+          {
+            "q": "Pouvez-vous reprendre un projet existant ?",
+            "a": "Oui, je réalise des audits de code, refactorisations, migrations et montées en version."
+          },
+          {
+            "q": "Quelle est votre disponibilité ?",
+            "a": "Je suis disponible pour de nouveaux projets. Contactez-moi via WhatsApp pour une réponse rapide."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Un développeur web basé à Casablanca",
+            "text": "Basé à Casablanca, je peux vous rencontrer pour cadrer votre projet, puis assurer le développement et le suivi. Je crée des sites vitrines, des boutiques en ligne et des applications web sur mesure pour les commerces, cabinets et entreprises de Casa et de sa région."
+          },
+          {
+            "title": "Sites vitrines et e-commerce qui convertissent",
+            "text": "Salon de beauté, cabinet dentaire, boutique de parfums ou de mode : chaque site est conçu d'abord pour le mobile, rapide, bilingue français/arabe si besoin, avec commande ou prise de contact via WhatsApp."
+          },
+          {
+            "title": "Référencement local inclus",
+            "text": "Chaque site est livré optimisé pour Google : balises, données structurées, vitesse de chargement et contenu pensé pour les recherches locales à Casablanca et au Maroc."
+          }
         ]
       },
       "ayoub-jaddaoui": {
@@ -234,12 +337,39 @@
         "heroSub": "Développeur Full Stack & Freelance — Casablanca, Maroc",
         "intro": "Je suis Ayoub Jaddaoui, développeur Full Stack freelance basé à Casablanca. Spécialisé en Next.js, React et Flutter, je crée des sites web, applications mobiles et plateformes SaaS pour des clients au Maroc et à l'international.",
         "faqs": [
-          { "q": "Quels services proposez-vous ?", "a": "Développement web (Next.js, React), apps mobiles (Flutter, React Native), plateformes SaaS, optimisation SEO, design UI/UX." },
-          { "q": "Travaillez-vous avec des clients internationaux ?", "a": "Oui, je travaille à distance avec des clients au Maroc, en Europe et dans les pays du Golfe. Communication en français, arabe ou anglais." },
-          { "q": "Comment démarrer un projet ?", "a": "Contactez-moi via WhatsApp ou email. Je réponds généralement sous 24h pour planifier un premier échange." },
-          { "q": "Quelle est votre approche de travail ?", "a": "Je suis un processus en 4 étapes : Découverte, Conception, Développement et Lancement — avec des jalons clairs et une communication transparente." }
+          {
+            "q": "Quels services proposez-vous ?",
+            "a": "Développement web (Next.js, React), apps mobiles (Flutter, React Native), plateformes SaaS, optimisation SEO, design UI/UX."
+          },
+          {
+            "q": "Travaillez-vous avec des clients internationaux ?",
+            "a": "Oui, je travaille à distance avec des clients au Maroc, en Europe et dans les pays du Golfe. Communication en français, arabe ou anglais."
+          },
+          {
+            "q": "Comment démarrer un projet ?",
+            "a": "Contactez-moi via WhatsApp ou email. Je réponds généralement sous 24h pour planifier un premier échange."
+          },
+          {
+            "q": "Quelle est votre approche de travail ?",
+            "a": "Je suis un processus en 4 étapes : Découverte, Conception, Développement et Lancement — avec des jalons clairs et une communication transparente."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Qui est Ayoub Jaddaoui ?",
+            "text": "Ayoub Jaddaoui est un développeur Full Stack freelance basé à Casablanca, au Maroc. Il conçoit des applications web, des applications mobiles et des plateformes SaaS avec Next.js, React, Angular, Spring Boot et Flutter."
+          },
+          {
+            "title": "Ses réalisations",
+            "text": "Parmi ses projets : SyndicFlow (gestion de syndic et copropriété), RentFlow (gestion d'agences de location de voitures), DriveFlow (ERP pour auto-écoles), PowerGym (gestion de salles de sport) et TawziiFlow (facturation mobile pour la distribution)."
+          },
+          {
+            "title": "Contacter Ayoub Jaddaoui",
+            "text": "Vous pouvez joindre Ayoub Jaddaoui par WhatsApp au +212 7 00 54 71 63, par email à jaddaouiayoub02@gmail.com ou via son profil LinkedIn."
+          }
         ]
       }
-    }
+    },
+    "projectsTitle": "Projets réalisés"
   }
 }

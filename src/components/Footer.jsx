@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import { PERSON } from '../lib/site';
 import { useLanguage } from '../context/LanguageContext';
 
 const EMAIL = 'jaddaouiayoub02@gmail.com';
@@ -47,6 +48,13 @@ export default function Footer() {
                         <p className="text-sm text-strong leading-relaxed max-w-xs font-semibold opacity-80">
                             {t('footer.tagline')}
                         </p>
+                        <ul className="mt-6 flex gap-3 text-sm font-bold">
+                            <li>
+                                <a href={PERSON.linkedin} target="_blank" rel="me noopener noreferrer" className="rounded-lg border border-accent/30 px-3 py-1.5 text-accent hover:bg-accent/10 transition-colors">
+                                    LinkedIn
+                                </a>
+                            </li>
+                        </ul>
                     </motion.div>
 
                     {/* Quick links */}

@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { MessageCircle, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import Image, { type StaticImageData } from 'next/image';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 const WHATSAPP_BASE = 'https://wa.me/212700547163?text=';
@@ -14,6 +16,14 @@ interface PageData {
   heroSub: string;
   intro: string;
   faqs: FAQ[];
+  sections: { title: string; text: string }[];
+}
+
+interface RelatedProject {
+  slug: string;
+  title: string;
+  category: string;
+  img: StaticImageData;
 }
 
 function FAQItem({ faq, index }: { faq: FAQ; index: number }) {
@@ -61,6 +71,8 @@ export default function LandingClient({
   ctaTitle,
   ctaDesc,
   ctaWhatsapp,
+  projectsTitle,
+  projects,
 }: {
   pageData: PageData;
   locale: string;
@@ -69,9 +81,13 @@ export default function LandingClient({
   ctaTitle: string;
   ctaDesc: string;
   ctaWhatsapp: string;
+  projectsTitle: string;
+  projects: RelatedProject[];
 }) {
   const { t } = useLanguage();
-  const waMsg = encodeURIComponent(`Bonjour, je suis intéressé par: ${pageData.hero}`);
+  const waMsg = encodeURIComponent(
+    locale === 'ar' ? `مرحباً، أنا مهتم بـ: ${pageData.hero}` : `Bonjour, je suis intéressé par : ${pageData.hero}`
+  );
 
   return (
     <div className="min-h-screen">
@@ -87,7 +103,7 @@ export default function LandingClient({
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-bold text-accent mb-8 border-main"
           >
-            ✦ Ayoub Jaddaoui — Développeur Full Stack
+            ✦ {t('hero.badge')}
           </motion.div>
 
           <motion.h1
@@ -150,6 +166,47 @@ export default function LandingClient({
           </motion.div>
         </div>
       </section>
+
+      {/* Content sections */}
+      {pageData.sections.length > 0 && (
+        <section className="py-8">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 space-y-12">
+            {pageData.sections.map((section) => (
+              <div key={section.title}>
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-strong mb-4">{section.title}</h2>
+                <p className="text-lg text-strong font-medium leading-relaxed opacity-80">{section.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Related projects */}
+      {projects.length > 0 && (
+        <section className="py-16">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6">
+            <h2 className="font-display text-3xl font-bold text-strong text-center mb-10">{projectsTitle}</h2>
+            <ul className="grid gap-6 sm:grid-cols-2">
+              {projects.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={`/fr/projets/${p.slug}`}
+                    className="group block glass rounded-2xl overflow-hidden border-main hover:border-accent/40 transition-colors"
+                  >
+                    <div className="relative aspect-[16/10]">
+                      <Image src={p.img} alt={`${p.title} — ${p.category}`} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-contain" />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="font-bold text-strong group-hover:text-accent transition-colors">{p.title}</h3>
+                      <p className="text-xs text-muted font-semibold mt-1">{p.category}</p>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="py-16 pb-32">

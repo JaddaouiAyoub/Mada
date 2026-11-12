@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 import { SEO_SLUGS } from '@/lib/landing';
 import { SITE_URL, localeAlternates } from '@/lib/site';
+import { projects } from '@/data/projects';
 
 const LOCALES = ['fr', 'ar'] as const;
 
@@ -51,6 +52,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         )
       );
     }
+  }
+
+  // Project pages (French only)
+  for (const project of projects) {
+    entries.push(entry('fr', `/projets/${project.slug}`, 0.75, 'monthly', undefined, false));
   }
 
   return entries;

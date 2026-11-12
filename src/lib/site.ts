@@ -6,7 +6,12 @@ export const PERSON = {
   name: 'Ayoub Jaddaoui',
   email: 'jaddaouiayoub02@gmail.com',
   telephone: '+212700547163',
-  sameAs: ['https://github.com/jaddaouiayoub'],
+  linkedin: 'https://www.linkedin.com/in/ayoub-jaddaoui-392514250',
+  github: 'https://github.com/jaddaouiayoub',
+  sameAs: [
+    'https://www.linkedin.com/in/ayoub-jaddaoui-392514250',
+    'https://github.com/jaddaouiayoub',
+  ],
 };
 
 export type Locale = 'fr' | 'ar';
