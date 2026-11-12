@@ -1,51 +1,41 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect } from 'react';
-import { translations } from '../i18n/translations';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { useMessages } from 'next-intl';
 
 const LanguageContext = createContext(null);
 
 export function LanguageProvider({ children, initialLocale }) {
-    // The locale is managed by the layout from the URL.
-    // We synchronize our local context state with it.
-    const [lang, setLangState] = useState(initialLocale || 'fr');
+    // The URL (via the [locale] layout) is the single source of truth for the locale.
+    const lang = initialLocale || 'fr';
     const [mounted, setMounted] = useState(false);
+    // Messages come from next-intl (src/i18n/messages/*.json) so every key
+    // available server-side is also available to client components.
+    const messages = useMessages();
 
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    // Sync with initialLocale when it changes (e.g., on navigation)
     useEffect(() => {
-        if (initialLocale && initialLocale !== lang) {
-            setLangState(initialLocale);
-        }
-    }, [initialLocale, lang]);
-
-    useEffect(() => {
-        if (!mounted) return;
-        const dir = lang === 'ar' ? 'rtl' : 'ltr';
         document.documentElement.lang = lang;
-        document.documentElement.dir = dir;
-        // We no longer manually set localStorage here to avoid loops with the router.
-        // The URL is the single source of truth.
-    }, [lang, mounted]);
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    }, [lang]);
 
-    // This is still here for compatibility, but the Navbar will 
-    // now favor URL navigation for language switching.
-    const setLang = (newLang) => {
-        setLangState(newLang);
-    };
+    // Kept for backward compatibility; language switching is done via URL navigation.
+    const setLang = () => {};
 
-    const t = (keyPath) => {
-        const keys = keyPath.split('.');
-        let result = translations[lang];
-        for (const key of keys) {
-            if (result == null) return keyPath;
-            result = result[key];
-        }
-        return result ?? keyPath;
-    };
+    const t = useCallback(
+        (keyPath) => {
+            let result = messages;
+            for (const key of keyPath.split('.')) {
+                if (result == null) return keyPath;
+                result = result[key];
+            }
+            return result ?? keyPath;
+        },
+        [messages]
+    );
 
     return (
         <LanguageContext.Provider value={{ lang, setLang, t, mounted }}>

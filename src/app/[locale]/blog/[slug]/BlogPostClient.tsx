@@ -9,7 +9,7 @@ function renderMarkdown(md: string): string {
   return md
     .replace(/^### (.+)$/gm, '<h3 class="font-display text-xl font-bold text-strong mt-8 mb-3">$1</h3>')
     .replace(/^## (.+)$/gm, '<h2 class="font-display text-2xl font-bold text-strong mt-12 mb-4 pb-2 border-b border-main">$1</h2>')
-    .replace(/^# (.+)$/gm, '<h1 class="font-display text-3xl font-bold text-strong mt-16 mb-6">$1</h1>')
+    .replace(/^# (.+)$/gm, '<h2 class="font-display text-3xl font-bold text-strong mt-16 mb-6">$1</h2>')
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-strong">$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .replace(/`([^`]+)`/g, '<code class="bg-accent/10 text-accent px-1.5 py-0.5 rounded text-sm font-mono">$1</code>')
@@ -58,11 +58,11 @@ export default function BlogPostClient({
               <span className="text-xs text-muted font-semibold">
                 {post.readTime} {t('blog.readTime')}
               </span>
-              <span className="text-xs text-muted font-semibold">
+              <time dateTime={post.date} className="text-xs text-muted font-semibold">
                 {new Date(post.date).toLocaleDateString(locale === 'ar' ? 'ar-MA' : 'fr-MA', {
                   day: 'numeric', month: 'long', year: 'numeric',
                 })}
-              </span>
+              </time>
             </div>
 
             <h1 className="font-display text-4xl sm:text-5xl font-black text-strong leading-tight mb-6">

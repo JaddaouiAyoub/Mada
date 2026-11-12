@@ -31,6 +31,11 @@ export default function Navbar() {
         { label: t('nav.contact'), id: 'contact' },
     ];
 
+    const pageLinks = [
+        { label: t('nav.about'), href: `/${lang}/about` },
+        { label: t('nav.blog'), href: `/${lang}/blog` },
+    ];
+
     const scrollToSection = (id) => {
     const element = document.getElementById(id);
     const navbar = document.querySelector('nav');
@@ -110,13 +115,15 @@ export default function Navbar() {
                         >
                             <Image
                                 src="/logo-dark.svg"
-                                alt="JE logo dark"
+                                alt=""
+                                priority
                                 fill
                                 className="object-contain transition-opacity duration-300 hidden dark:block"
                             />
                             <Image
                                 src="/logo-light.svg"
-                                alt="JE logo light"
+                                alt=""
+                                priority
                                 fill
                                 className="object-contain transition-opacity duration-300 block dark:hidden"
                             />
@@ -151,13 +158,23 @@ export default function Navbar() {
                                 {link.label}
                             </Link>
                         ))}
+                        {pageLinks.map((link) => (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                aria-current={pathname === link.href ? 'page' : undefined}
+                                className="text-sm font-bold text-strong hover:text-accent transition-colors"
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
 
                         <motion.button
                             onClick={toggleLang}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold border border-accent/30 text-accent hover:bg-accent/10 transition-colors"
-                            aria-label="Toggle language"
+                            aria-label={lang === 'fr' ? 'التبديل إلى العربية' : 'Passer en français'}
                         >
                             <AnimatePresence mode="wait">
                                 {isMounted && (
@@ -189,7 +206,7 @@ export default function Navbar() {
                             onClick={toggleLang}
                             whileTap={{ scale: 0.9 }}
                             className="flex items-center rounded-full px-2.5 py-1 text-xs font-bold border border-accent/30 text-accent hover:bg-accent/10 transition-colors"
-                            aria-label="Toggle language"
+                            aria-label={lang === 'fr' ? 'التبديل إلى العربية' : 'Passer en français'}
                         >
                             <AnimatePresence mode="wait">
                                 {isMounted && (
@@ -217,6 +234,7 @@ export default function Navbar() {
                             onClick={() => setMobileOpen(!mobileOpen)}
                             className="rounded-lg p-2 text-strong transition-colors focus:outline-none focus:ring-2 focus:ring-accent/20"
                             aria-label="Toggle menu"
+                            aria-expanded={mobileOpen}
                         >
                             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
                         </button>
@@ -245,6 +263,22 @@ export default function Navbar() {
                                     <Link
                                         href={`/${lang}#${link.id}`}
                                         onClick={(e) => handleLinkClick(e, link.id)}
+                                        className="block rounded-xl px-4 py-3 text-lg font-bold text-strong hover:bg-accent/10 hover:text-accent transition-all active:scale-95"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </motion.div>
+                            ))}
+                            {pageLinks.map((link, i) => (
+                                <motion.div
+                                    key={link.href}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: (navLinks.length + i) * 0.05 }}
+                                >
+                                    <Link
+                                        href={link.href}
+                                        onClick={() => setMobileOpen(false)}
                                         className="block rounded-xl px-4 py-3 text-lg font-bold text-strong hover:bg-accent/10 hover:text-accent transition-all active:scale-95"
                                     >
                                         {link.label}

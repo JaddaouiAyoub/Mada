@@ -1,74 +1,55 @@
 import type { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
+import { SEO_SLUGS } from '@/lib/landing';
+import { SITE_URL, localeAlternates } from '@/lib/site';
 
-const BASE_URL = 'https://www.jaddaoui.com';
 const LOCALES = ['fr', 'ar'] as const;
-const SEO_SLUGS = ['developpeur-fullstack-maroc', 'developpement-mobile-maroc', 'developpeur-casablanca', 'ayoub-jaddaoui'];
+
+type Entry = MetadataRoute.Sitemap[number];
+
+function entry(
+  locale: string,
+  path: string,
+  priority: number,
+  changeFrequency: Entry['changeFrequency'],
+  lastModified?: Date,
+  withAlternates = true
+): Entry {
+  return {
+    url: `${SITE_URL}/${locale}${path}`,
+    lastModified: lastModified ?? new Date(),
+    changeFrequency,
+    priority,
+    ...(withAlternates ? { alternates: { languages: localeAlternates(locale, path).languages } } : {}),
+  };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of LOCALES) {
-    // Homepage
-    entries.push({
-      url: `${BASE_URL}/${locale}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
-      alternates: { languages: { fr: `${BASE_URL}/fr`, ar: `${BASE_URL}/ar`, 'x-default': `${BASE_URL}/fr` } },
-    });
+    entries.push(entry(locale, '', 1.0, 'weekly'));
+    entries.push(entry(locale, '/about', 0.8, 'monthly'));
+    entries.push(entry(locale, '/blog', 0.9, 'weekly'));
 
-    // About
-    entries.push({
-      url: `${BASE_URL}/${locale}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-      alternates: { languages: { fr: `${BASE_URL}/fr/about`, ar: `${BASE_URL}/ar/about`, 'x-default': `${BASE_URL}/fr/about` } },
-    });
-
-    // Blog index
-    entries.push({
-      url: `${BASE_URL}/${locale}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-      alternates: { languages: { fr: `${BASE_URL}/fr/blog`, ar: `${BASE_URL}/ar/blog`, 'x-default': `${BASE_URL}/fr/blog` } },
-    });
-
-    // Blog posts
-    const posts = getAllPosts(locale as 'fr' | 'ar');
-    for (const post of posts) {
-      entries.push({
-        url: `${BASE_URL}/${locale}/blog/${post.slug}`,
-        lastModified: new Date(post.date),
-        changeFrequency: 'monthly',
-        priority: 0.7,
-        alternates: {
-          languages: {
-            fr: `${BASE_URL}/fr/blog/${post.slug}`,
-            ar: `${BASE_URL}/ar/blog/${post.slug}`,
-            'x-default': `${BASE_URL}/fr/blog/${post.slug}`,
-          },
-        },
-      });
+    for (const slug of SEO_SLUGS) {
+      entries.push(entry(locale, `/${slug}`, 0.85, 'monthly'));
     }
 
-    // SEO landing pages
-    for (const slug of SEO_SLUGS) {
-      entries.push({
-        url: `${BASE_URL}/${locale}/${slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.85,
-        alternates: {
-          languages: {
-            fr: `${BASE_URL}/fr/${slug}`,
-            ar: `${BASE_URL}/ar/${slug}`,
-            'x-default': `${BASE_URL}/fr/${slug}`,
-          },
-        },
-      });
+    const otherLocale = locale === 'fr' ? 'ar' : 'fr';
+    const translatedSlugs = new Set(getAllPosts(otherLocale).map((p) => p.slug));
+    for (const post of getAllPosts(locale)) {
+      // Only declare hreflang alternates when the translation actually exists.
+      entries.push(
+        entry(
+          locale,
+          `/blog/${post.slug}`,
+          0.7,
+          'monthly',
+          new Date(post.date),
+          translatedSlugs.has(post.slug)
+        )
+      );
     }
   }
 

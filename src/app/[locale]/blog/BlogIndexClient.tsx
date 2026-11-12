@@ -85,7 +85,7 @@ export default function BlogIndexClient({
                   </div>
 
                   <h2 className="font-display text-xl font-bold text-strong mb-3 group-hover:text-accent transition-colors duration-300 leading-snug flex-1">
-                    {post.title}
+                    <Link href={`/${locale}/blog/${post.slug}`}>{post.title}</Link>
                   </h2>
 
                   <p className="text-sm text-strong font-medium opacity-75 leading-relaxed mb-6 line-clamp-3">
@@ -104,13 +104,13 @@ export default function BlogIndexClient({
                   )}
 
                   <div className="flex items-center justify-between pt-4 border-t border-main mt-auto">
-                    <span className="text-xs text-muted font-semibold">
+                    <time dateTime={post.date} className="text-xs text-muted font-semibold">
                       {new Date(post.date).toLocaleDateString(locale === 'ar' ? 'ar-MA' : 'fr-MA', {
                         day: 'numeric',
                         month: 'long',
                         year: 'numeric',
                       })}
-                    </span>
+                    </time>
                     <Link
                       href={`/${locale}/blog/${post.slug}`}
                       className="text-xs font-bold text-accent hover:underline underline-offset-4 decoration-2 transition-all"

@@ -1,19 +1,17 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
 import LandingClient from './LandingClient';
 import { routing } from '@/i18n/routing';
+import { SEO_SLUGS, type SeoSlug } from '@/lib/landing';
+import { SITE_URL, SITE_NAME, OG_IMAGE, localeAlternates, ogLocale } from '@/lib/site';
+import { breadcrumbSchema } from '@/lib/schema';
 
-const SEO_SLUGS = [
-  'developpeur-fullstack-maroc',
-  'developpement-mobile-maroc',
-  'developpeur-casablanca',
-  'ayoub-jaddaoui',
-] as const;
-
-type SeoSlug = typeof SEO_SLUGS[number];
+// Any other slug returns a real 404 instead of being rendered on demand.
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const params: { locale: string; landing: string }[] = [];
@@ -34,47 +32,25 @@ export async function generateMetadata({
   if (!SEO_SLUGS.includes(landing as SeoSlug)) return {};
 
   const t = await getTranslations({ locale, namespace: `meta.landing.${landing}` });
-  const baseUrl = 'https://www.jaddaoui.com';
-  
+
   return {
     title: t('title'),
     description: t('description'),
-    metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: `${baseUrl}/${locale}/${landing}`,
-      languages: { 
-        fr: `${baseUrl}/fr/${landing}`, 
-        ar: `${baseUrl}/ar/${landing}`, 
-        'x-default': `${baseUrl}/fr/${landing}` 
-      },
-    },
+    alternates: localeAlternates(locale, `/${landing}`),
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `${baseUrl}/${locale}/${landing}`,
-      siteName: 'Ayoub Jaddaoui',
+      url: `${SITE_URL}/${locale}/${landing}`,
+      siteName: SITE_NAME,
       type: 'website',
-      locale: locale === 'ar' ? 'ar_MA' : 'fr_MA',
-      images: [
-        {
-          url: '/og-image.png',
-          width: 1200,
-          height: 630,
-          alt: t('title'),
-          type: 'image/png',
-        },
-      ],
+      locale: ogLocale(locale),
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: t('title'), type: 'image/png' }],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: [
-        {
-          url: '/og-image.png',
-          alt: t('title'),
-        },
-      ],
+      images: [{ url: OG_IMAGE, alt: t('title') }],
     },
   };
 }
@@ -86,50 +62,54 @@ export default async function LandingPage({
 }) {
   const { locale, landing } = await params;
   if (!SEO_SLUGS.includes(landing as SeoSlug)) notFound();
+  setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: `landing.pages.${landing}` });
   const tLanding = await getTranslations({ locale, namespace: 'landing' });
+  const url = `${SITE_URL}/${locale}/${landing}`;
 
   const pageData = {
     hero: t('hero'),
     heroSub: t('heroSub'),
     intro: t('intro'),
-    faqs: (t.raw('faqs') as { q: string; a: string }[]),
+    faqs: t.raw('faqs') as { q: string; a: string }[],
   };
 
-  // JSON-LD: Service + FAQPage
-  const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: pageData.hero,
-      description: pageData.intro,
-      provider: {
-        '@type': 'Person',
-        name: 'Ayoub Jaddaoui',
-        url: 'https://www.jaddaoui.com',
-        address: { '@type': 'PostalAddress', addressLocality: 'Casablanca', addressCountry: 'MA' },
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        '@id': `${url}#service`,
+        name: pageData.hero,
+        description: pageData.intro,
+        provider: { '@id': `${SITE_URL}/#person` },
+        areaServed: [
+          { '@type': 'City', name: 'Casablanca' },
+          { '@type': 'Country', name: 'Morocco' },
+        ],
+        url,
       },
-      areaServed: { '@type': 'Country', name: 'Morocco' },
-      url: `https://www.jaddaoui.com/${locale}/${landing}`,
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: pageData.faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.q,
-        acceptedAnswer: { '@type': 'Answer', text: faq.a },
-      })),
-    },
-  ];
+      {
+        '@type': 'FAQPage',
+        '@id': `${url}#faq`,
+        inLanguage: locale === 'ar' ? 'ar' : 'fr',
+        mainEntity: pageData.faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: { '@type': 'Answer', text: faq.a },
+        })),
+      },
+      breadcrumbSchema(`${url}#breadcrumb`, [
+        { name: locale === 'ar' ? 'الرئيسية' : 'Accueil', url: `${SITE_URL}/${locale}` },
+        { name: pageData.hero, url },
+      ]),
+    ],
+  };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <Navbar />
       <main>
         <LandingClient

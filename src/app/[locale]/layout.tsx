@@ -1,12 +1,13 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { LanguageProvider } from '@/context/LanguageContext';
 import FloatingContact from '@/components/FloatingContact';
+import { SITE_URL, SITE_NAME, OG_IMAGE, localeAlternates, ogLocale, type Locale } from '@/lib/site';
 import '../../index.css';
 
 const inter = Inter({
@@ -23,7 +24,15 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-type Locale = 'fr' | 'ar';
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
+  ],
+  colorScheme: 'light dark',
+};
 
 export async function generateMetadata({
   params,
@@ -32,54 +41,32 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta.home' });
-  const baseUrl = 'https://www.jaddaoui.com';
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: t('title'),
     description: t('description'),
-    metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: `${baseUrl}/${locale}`,
-      languages: {
-        fr: `${baseUrl}/fr`,
-        ar: `${baseUrl}/ar`,
-        'x-default': `${baseUrl}/fr`,
-      },
-    },
+    applicationName: SITE_NAME,
+    authors: [{ name: SITE_NAME, url: SITE_URL }],
+    creator: SITE_NAME,
+    publisher: SITE_NAME,
+    category: 'technology',
+    alternates: localeAlternates(locale),
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `${baseUrl}/${locale}`,
-      siteName: 'Ayoub Jaddaoui',
-      images: [
-        {
-          url: '/og-image.png',
-          width: 1200,
-          height: 630,
-          alt: t('title'),
-          type: 'image/png',
-        },
-      ],
+      url: `${SITE_URL}/${locale}`,
+      siteName: SITE_NAME,
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: t('title'), type: 'image/png' }],
       type: 'website',
-      locale: locale === 'ar' ? 'ar_MA' : 'fr_MA',
+      locale: ogLocale(locale),
+      alternateLocale: locale === 'ar' ? ['fr_MA'] : ['ar_MA'],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: [
-        {
-          url: '/og-image.png',
-          alt: t('title'),
-        },
-      ],
-    },
-    icons: {
-      icon: [
-        { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-        { url: '/favicon.svg', type: 'image/svg+xml' },
-      ],
-      apple: '/apple-touch-icon.png',
+      images: [{ url: OG_IMAGE, alt: t('title') }],
     },
     robots: {
       index: true,
@@ -91,6 +78,15 @@ export async function generateMetadata({
         'max-image-preview': 'large',
         'max-snippet': -1,
       },
+    },
+    appleWebApp: { capable: true, title: SITE_NAME, statusBarStyle: 'default' },
+    formatDetection: { telephone: false },
+    // Set GOOGLE_SITE_VERIFICATION (and optionally BING_SITE_VERIFICATION) in your Vercel env vars.
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+      other: process.env.BING_SITE_VERIFICATION
+        ? { 'msvalidate.01': process.env.BING_SITE_VERIFICATION }
+        : undefined,
     },
   };
 }
@@ -108,17 +104,18 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  // Validate locale
   if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 
+  // Enables static rendering for all pages under this locale.
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
-    <html 
-      lang={locale} 
-      dir={locale === 'ar' ? 'rtl' : 'ltr'} 
+    <html
+      lang={locale}
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
       suppressHydrationWarning
       className={`${inter.variable} ${playfair.variable}`}
     >

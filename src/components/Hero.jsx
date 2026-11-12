@@ -18,9 +18,8 @@ export default function Hero() {
                 {/* Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
                     className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 glass text-sm font-semibold text-strong"
                 >
                     <Sparkles size={14} className="text-accent" />
@@ -30,9 +29,8 @@ export default function Hero() {
                 {/* Title */}
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    viewport={{ once: true }}
                     className="font-display text-5xl sm:text-6xl md:text-8xl font-black tracking-tight text-strong leading-[1.1]"
                 >
                     {t('hero.titleLine1')} <br />
@@ -44,9 +42,8 @@ export default function Hero() {
                 {/* Subtitle */}
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    viewport={{ once: true }}
                     className="mt-8 max-w-2xl mx-auto text-lg sm:text-xl text-strong leading-relaxed font-medium"
                 >
                     {t('hero.subtitle')} <br className="hidden sm:block" />
@@ -56,9 +53,8 @@ export default function Hero() {
                 {/* CTA */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    viewport={{ once: true }}
                     className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
                     <a

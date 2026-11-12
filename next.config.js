@@ -83,10 +83,6 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'geolocation=(), microphone=(), camera=()',
           },
-          {
-            key: 'Link',
-            value: '</fonts/; rel=preconnect, as=style>, <https://fonts.googleapis.com>; rel=preconnect, as=style>, <https://fonts.gstatic.com>; rel=preconnect, as=font>, <https://www.google-analytics.com>; rel=dns-prefetch',
-          },
         ],
       },
       {
@@ -105,7 +101,6 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
-  optimizeFonts: true,
 
   // Experimental features for better performance
   experimental: {

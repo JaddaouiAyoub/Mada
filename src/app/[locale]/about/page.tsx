@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
 import AboutClient from './AboutClient';
+import { SITE_URL, SITE_NAME, OG_IMAGE, localeAlternates, ogLocale } from '@/lib/site';
+import { personSchema, breadcrumbSchema } from '@/lib/schema';
 
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -16,47 +19,26 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta.about' });
-  const baseUrl = 'https://www.jaddaoui.com';
-  
+  const url = `${SITE_URL}/${locale}/about`;
+
   return {
     title: t('title'),
     description: t('description'),
-    metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: `${baseUrl}/${locale}/about`,
-      languages: { 
-        fr: `${baseUrl}/fr/about`, 
-        ar: `${baseUrl}/ar/about`, 
-        'x-default': `${baseUrl}/fr/about` 
-      },
-    },
+    alternates: localeAlternates(locale, '/about'),
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `${baseUrl}/${locale}/about`,
-      siteName: 'Ayoub Jaddaoui',
-      type: 'website',
-      locale: locale === 'ar' ? 'ar_MA' : 'fr_MA',
-      images: [
-        {
-          url: '/og-image.png',
-          width: 1200,
-          height: 630,
-          alt: t('title'),
-          type: 'image/png',
-        },
-      ],
+      url,
+      siteName: SITE_NAME,
+      type: 'profile',
+      locale: ogLocale(locale),
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: t('title'), type: 'image/png' }],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: [
-        {
-          url: '/og-image.png',
-          alt: t('title'),
-        },
-      ],
+      images: [{ url: OG_IMAGE, alt: t('title') }],
     },
   };
 }
@@ -67,34 +49,35 @@ export default async function AboutPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: 'meta.about' });
+  const url = `${SITE_URL}/${locale}/about`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Ayoub Jaddaoui',
-    url: 'https://www.jaddaoui.com',
-    image: 'https://www.jaddaoui.com/og-image.png',
-    jobTitle: 'Développeur Full Stack & Freelance',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Casablanca',
-      addressCountry: 'MA',
-    },
-    email: 'jaddaouiayoub02@gmail.com',
-    telephone: '+212700547163',
-    knowsAbout: [
-      'Next.js', 'React', 'TypeScript', 'Flutter', 'Node.js',
-      'PostgreSQL', 'SEO', 'UI/UX Design', 'SaaS Architecture',
+    '@graph': [
+      {
+        '@type': 'AboutPage',
+        '@id': `${url}#webpage`,
+        url,
+        name: t('title'),
+        description: t('description'),
+        inLanguage: locale === 'ar' ? 'ar' : 'fr',
+        isPartOf: { '@id': `${SITE_URL}/#website` },
+        mainEntity: { '@id': `${SITE_URL}/#person` },
+        breadcrumb: { '@id': `${url}#breadcrumb` },
+      },
+      personSchema(t('description')),
+      breadcrumbSchema(`${url}#breadcrumb`, [
+        { name: locale === 'ar' ? 'الرئيسية' : 'Accueil', url: `${SITE_URL}/${locale}` },
+        { name: t('title'), url },
+      ]),
     ],
-    sameAs: ['https://github.com/jaddaouiayoub'],
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <Navbar />
       <main>
         <AboutClient locale={locale} />
