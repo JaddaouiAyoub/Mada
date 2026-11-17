@@ -26,6 +26,7 @@ import syndicFlow from '../assets/syndicFlow.png';
 import gymFlow from '../assets/gymFlow.png';
 import agrimada from '../assets/agrimada.png';
 import darMarrakech from '../assets/darMarrakech.png';
+import socialMediaPortfolio from '../assets/socialMediaPortfolio.png';
 
 const rawProjects = [
     {
@@ -48,6 +49,25 @@ const rawProjects = [
         preview: "https://dar-marrakech.vercel.app/",
         code: "#",
     },
+    {
+    title: "Social Media Manager Portfolio",
+    category: "Portfolio Professionnel & Présence Digitale",
+    img: socialMediaPortfolio,
+    desc: "Portfolio professionnel moderne et immersif conçu pour présenter les services et l'expertise d'un Social Media Manager. Il met en avant une identité visuelle créative à travers une Hero Section dynamique, une présentation professionnelle, des services de gestion des réseaux sociaux, de création de contenu, de stratégie digitale, de Community Management et d'analyse des performances. Le site comprend également une galerie de projets, une section compétences, un processus de travail, des témoignages clients et un formulaire de contact. L'interface se distingue par un design premium aux nuances violettes, des effets Glassmorphism, des animations fluides, des micro-interactions et une adaptation complète aux modes Dark et Light. Entièrement responsive avec une approche Mobile First, il offre une expérience utilisateur élégante et optimisée sur tous les appareils.",
+    tech: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Lucide React",
+        "Next Themes",
+        "Next/Image"
+    ],
+    type: "website",
+    preview: "https://social-media-manager-portfolio.vercel.app/",
+    code: "#",
+},
     {
         title: "Agrimada",
         category: "Plateforme SaaS de Gestion Agricole",
