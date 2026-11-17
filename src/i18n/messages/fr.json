@@ -93,7 +93,16 @@
     "sectionTitle": "Mon Portfolio",
     "sectionSubtitle": "Une sélection de projets réalisés avec passion, illustrant mon savoir-faire et mon exigence.",
     "all": "Tous",
-    "viewProject": "Voir le projet"
+    "viewProject": "Voir le projet",
+    "allProjects": "Voir tous les projets",
+    "more": "Voir plus de projets",
+    "less": "Voir moins",
+    "projectsCount": "projets",
+    "details": "Détails du projet",
+    "fullSheet": "Fiche complète du projet",
+    "requestDemo": "Demander une démo",
+    "readMore": "Voir plus",
+    "readLess": "Voir moins"
   },
   "values": {
     "sectionTitle": "Mes Valeurs",
@@ -154,6 +163,7 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "values": "Valeurs",
+    "projects": "Projets",
     "quote": "\"Passionné par la création d'expériences qui font la différence.\"",
     "quoteSubtitle": "Discutons de votre prochain projet dès aujourd'hui.",
     "ctaButton": "Me Contacter",

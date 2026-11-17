@@ -48,7 +48,7 @@ export async function generateMetadata({
     title: `${post.title} | ${SITE_NAME}`,
     description: post.excerpt,
     keywords: post.tags,
-    authors: [{ name: SITE_NAME, url: SITE_URL }],
+    authors: [{ name: SITE_NAME, url: `${SITE_URL}/fr/ayoub-jaddaoui` }],
     alternates: postAlternates(locale, slug),
     openGraph: {
       title: post.title,
@@ -83,9 +83,16 @@ export default async function BlogPostPage({
   const post = getPostBySlug(slug, locale as Locale);
   if (!post) notFound();
 
-  const related = getAllPosts(locale as Locale)
-    .filter((p) => p.slug !== slug)
-    .slice(0, 3);
+  // Next 3 posts in circular order so every article receives internal links
+  // (a plain slice(0, 3) always linked to the same 3 posts).
+  const allPosts = getAllPosts(locale as Locale);
+  const postIndex = allPosts.findIndex((p) => p.slug === slug);
+  const related =
+    allPosts.length > 1
+      ? [1, 2, 3]
+          .filter((k) => k < allPosts.length)
+          .map((k) => allPosts[(postIndex + k) % allPosts.length])
+      : [];
   const url = `${SITE_URL}/${locale}/blog/${slug}`;
   const wordCount = post.content.split(/\s+/).filter(Boolean).length;
 

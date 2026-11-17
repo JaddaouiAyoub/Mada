@@ -80,7 +80,10 @@ export default async function ProjectPage({
   const waUrl = `https://wa.me/${PERSON.telephone.replace('+', '')}?text=${encodeURIComponent(
     `Bonjour Ayoub, j'ai vu le projet ${project.title} et je souhaite discuter d'un projet similaire.`
   )}`;
-  const related = projects.filter((p) => p.slug !== slug && p.type === project.type).slice(0, 3);
+  // Next 3 projects in a circular order: guarantees every project page receives
+  // internal links (a same-type filter + slice left some pages orphaned).
+  const index = projects.findIndex((p) => p.slug === slug);
+  const related = [1, 2, 3].map((k) => projects[(index + k) % projects.length]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -105,7 +108,7 @@ export default async function ProjectPage({
       },
       breadcrumbSchema(`${url}#breadcrumb`, [
         { name: 'Accueil', url: `${SITE_URL}/fr` },
-        { name: 'Portfolio', url: `${SITE_URL}/fr#portfolio` },
+        { name: 'Projets', url: `${SITE_URL}/fr/projets` },
         { name: project.title, url },
       ]),
     ],
@@ -124,7 +127,7 @@ export default async function ProjectPage({
                 <ol className="flex flex-wrap items-center gap-2">
                   <li><Link href="/fr" className="hover:text-accent">Accueil</Link></li>
                   <li aria-hidden="true">/</li>
-                  <li><Link href="/fr#portfolio" className="hover:text-accent">Portfolio</Link></li>
+                  <li><Link href="/fr/projets" className="hover:text-accent">Projets</Link></li>
                   <li aria-hidden="true">/</li>
                   <li className="text-strong" aria-current="page">{project.title}</li>
                 </ol>
@@ -223,8 +226,8 @@ export default async function ProjectPage({
                   </li>
                 ))}
               </ul>
-              <Link href="/fr#portfolio" className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-accent hover:underline">
-                <ArrowLeft size={16} /> Tout le portfolio
+              <Link href="/fr/projets" className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-accent hover:underline">
+                <ArrowLeft size={16} /> Tous les projets
               </Link>
             </div>
           </section>

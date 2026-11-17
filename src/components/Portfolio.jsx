@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Globe, Smartphone, Cloud, X, ChevronDown } from 'lucide-react';
+import { ExternalLink, Globe, Smartphone, Cloud, X, ChevronDown, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const PAGE_SIZE = 6;
 
@@ -17,13 +18,16 @@ const getDemoRequestUrl = (projectTitle) => {
 import { projects } from '../data/projects';
 
 const filterCategories = [
-    { id: 'all', label: 'Tous' },
+    { id: 'all', label: null },
     { id: 'web', label: 'Web' },
     { id: 'mobile', label: 'Mobile' },
     { id: 'saas', label: 'SaaS' }
 ];
 
 const ProjectCard = ({ project, i, onOpen }) => {
+    const { lang, t } = useLanguage();
+    // Project texts are only written in French: flag them so the /ar page is not seen as mixed-language.
+    const textLang = lang === 'fr' ? undefined : 'fr';
     const [isExpanded, setIsExpanded] = useState(false);
     const shouldTruncate = project.desc.length > 120;
 
@@ -76,12 +80,12 @@ const ProjectCard = ({ project, i, onOpen }) => {
                 <h3 className="text-xl font-bold text-strong mb-1.5 transition-colors group-hover:text-accent">
                     {project.title}
                 </h3>
-                <p className="text-xs font-semibold text-muted mb-4 uppercase tracking-widest opacity-80">
+                <p lang={textLang} className="text-xs font-semibold text-muted mb-4 uppercase tracking-widest opacity-80">
                     {project.category}
                 </p>
 
                 <div className="mb-6">
-                    <p className={`text-sm text-strong opacity-75 leading-relaxed ${isExpanded ? '' : 'line-clamp-3'}`}>
+                    <p lang={textLang} className={`text-sm text-strong opacity-75 leading-relaxed ${isExpanded ? '' : 'line-clamp-3'}`}>
                         {project.desc}
                     </p>
                     {shouldTruncate && (
@@ -92,14 +96,14 @@ const ProjectCard = ({ project, i, onOpen }) => {
                             }}
                             className="text-xs font-bold text-accent hover:underline mt-2 inline-block"
                         >
-                            {isExpanded ? 'Voir moins' : 'Voir plus'}
+                            {isExpanded ? t('portfolio.readLess') : t('portfolio.readMore')}
                         </button>
                     )}
                 </div>
 
                 <div className="flex flex-wrap gap-4">
                     <Link href={`/fr/projets/${project.slug}`} onClick={(event) => event.stopPropagation()} className="text-xs font-bold text-strong flex items-center gap-1.5 underline decoration-2 underline-offset-4 hover:text-accent transition-colors">
-                        Détails du projet
+                        {t('portfolio.details')}
                     </Link>
                     {project.preview && project.preview !== '#' ? (
                         <a href={project.preview} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()} className="text-xs font-bold text-accent flex items-center gap-1.5 underline decoration-2 underline-offset-4 hover:text-accent/80 transition-colors">
@@ -107,7 +111,7 @@ const ProjectCard = ({ project, i, onOpen }) => {
                         </a>
                     ) : (
                         <a href={getDemoRequestUrl(project.title)} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()} className="text-xs font-bold text-accent flex items-center gap-1.5 underline decoration-2 underline-offset-4 hover:text-accent/80 transition-colors">
-                            Demander une démo <ExternalLink size={14} />
+                            {t('portfolio.requestDemo')} <ExternalLink size={14} />
                         </a>
                     )}
                 </div>
@@ -117,6 +121,8 @@ const ProjectCard = ({ project, i, onOpen }) => {
 };
 
 export default function Portfolio() {
+    const { lang, t } = useLanguage();
+    const textLang = lang === 'fr' ? undefined : 'fr';
     const [filterType, setFilterType] = useState('all');
     const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
     const [selectedProject, setSelectedProject] = useState(null);
@@ -166,10 +172,10 @@ export default function Portfolio() {
                         className="text-center mb-16"
                     >
                         <h2 className="font-display text-4xl sm:text-5xl font-bold text-strong mb-4">
-                            Portfolio
+                            {t('portfolio.sectionTitle')}
                         </h2>
                         <p className="max-w-2xl mx-auto text-muted font-medium">
-                            Une sélection de projets où l'excellence technique rencontre la vision créative.
+                            {t('portfolio.sectionSubtitle')}
                         </p>
                     </motion.div>
 
@@ -183,7 +189,7 @@ export default function Portfolio() {
                                     : 'bg-white/5 text-strong hover:bg-white/10 hover:text-accent border border-white/10'
                                     }`}
                             >
-                                {cat.label}
+                                {cat.label ?? t('portfolio.all')}
                             </button>
                         ))}
                     </div>
@@ -200,7 +206,7 @@ export default function Portfolio() {
                         <div className="mt-14 flex flex-col items-center gap-3">
                             {hasMore && (
                                 <p className="text-xs font-semibold text-muted">
-                                    {visibleProjects.length} / {filteredProjects.length} projets
+                                    {visibleProjects.length} / {filteredProjects.length} {t('portfolio.projectsCount')}
                                 </p>
                             )}
                             <button
@@ -208,11 +214,21 @@ export default function Portfolio() {
                                 onClick={hasMore ? () => setVisibleCount((c) => c + PAGE_SIZE) : showLess}
                                 className="inline-flex items-center gap-2 rounded-full border border-accent/30 px-6 py-3 text-sm font-bold text-accent hover:bg-accent/10 transition-colors"
                             >
-                                {hasMore ? 'Voir plus de projets' : 'Voir moins'}
+                                {hasMore ? t('portfolio.more') : t('portfolio.less')}
                                 <ChevronDown size={16} className={hasMore ? '' : 'rotate-180'} aria-hidden="true" />
                             </button>
                         </div>
                     )}
+
+                    {/* Crawlable link to every project page (the grid above only renders 6 projects in HTML). */}
+                    <div className="mt-8 flex justify-center">
+                        <Link
+                            href="/fr/projets"
+                            className="inline-flex items-center gap-2 text-sm font-bold text-strong underline decoration-2 underline-offset-4 hover:text-accent transition-colors"
+                        >
+                            {t('portfolio.allProjects')} <ArrowRight size={16} className={lang === 'ar' ? 'rotate-180' : ''} aria-hidden="true" />
+                        </Link>
+                    </div>
                 </div>
             </section>
 
@@ -269,11 +285,11 @@ export default function Portfolio() {
                                                 {selectedProject.title}
                                             </h3>
                                             <p className="mt-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-muted">
-                                                {selectedProject.category}
+                                                <span lang={textLang}>{selectedProject.category}</span>
                                             </p>
                                         </div>
 
-                                        <p className="text-sm sm:text-base leading-relaxed text-slate-200/90">
+                                        <p lang={textLang} className="text-sm sm:text-base leading-relaxed text-slate-200/90">
                                             {selectedProject.desc}
                                         </p>
 
@@ -290,7 +306,7 @@ export default function Portfolio() {
                                                 href={`/fr/projets/${selectedProject.slug}`}
                                                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-bold text-white transition hover:bg-white/10"
                                             >
-                                                Fiche complète du projet
+                                                {t('portfolio.fullSheet')}
                                             </Link>
                                             {selectedProject.preview && selectedProject.preview !== '#' ? (
                                                 <a
@@ -308,7 +324,7 @@ export default function Portfolio() {
                                                     rel="noopener noreferrer"
                                                     className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 text-sm font-bold text-white transition hover:bg-accent/90"
                                                 >
-                                                    Demander une démo <ExternalLink size={16} />
+                                                    {t('portfolio.requestDemo')} <ExternalLink size={16} />
                                                 </a>
                                             )}
                                         </div>

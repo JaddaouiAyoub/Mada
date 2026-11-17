@@ -7,7 +7,7 @@ export function personSchema(description?: string) {
     '@id': `${SITE_URL}/#person`,
     name: PERSON.name,
     alternateName: 'Jaddaoui Ayoub',
-    url: `${SITE_URL}/`,
+    url: `${SITE_URL}/fr`,
     image: `${SITE_URL}${OG_IMAGE}`,
     ...(description ? { description } : {}),
     email: PERSON.email,

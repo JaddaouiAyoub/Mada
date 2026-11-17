@@ -1,7 +1,7 @@
 {
   "meta": {
     "home": {
-      "title": "Ayoub Jaddaoui — Développeur Full Stack | الدار البيضاء، المغرب",
+      "title": "أيوب جداوي (Ayoub Jaddaoui) — مطور Full Stack | الدار البيضاء، المغرب",
       "description": "جداوي أيوب (Jaddaoui Ayoub) — مطور Full Stack مقيم في الدار البيضاء (Casa). مواقع ويب احترافية، تطبيقات موبايل iOS/Android، منصات SaaS. خبير Next.js وReact وFlutter."
     },
     "about": {
@@ -22,7 +22,7 @@
         "description": "تطوير تطبيقات iOS و Android بالمغرب. Flutter وReact Native. تواصل سريع."
       },
       "developpeur-casablanca": {
-        "title": "Développeur Casa — فريلانس Web & Mobile | Ayoub Jaddaoui",
+        "title": "مطور ويب الدار البيضاء — فريلانس ويب وموبايل | أيوب جداوي",
         "description": "مطور ويب الدار البيضاء (Développeur Casa). أيوب جداوي، مطور Full Stack في الدار البيضاء. مواقع ويب، تطبيقات موبايل، حلول SaaS بخبرة Next.js وReact."
       },
       "ayoub-jaddaoui": {
@@ -93,7 +93,16 @@
     "sectionTitle": "أعمالي",
     "sectionSubtitle": "مختارات من مشاريعي تعكس خبرتي ومعاييري العالية.",
     "all": "الكل",
-    "viewProject": "عرض المشروع"
+    "viewProject": "عرض المشروع",
+    "allProjects": "عرض كل المشاريع",
+    "more": "عرض المزيد من المشاريع",
+    "less": "عرض أقل",
+    "projectsCount": "مشروع",
+    "details": "تفاصيل المشروع",
+    "fullSheet": "البطاقة الكاملة للمشروع",
+    "requestDemo": "اطلب عرضاً تجريبياً",
+    "readMore": "اقرأ المزيد",
+    "readLess": "عرض أقل"
   },
   "values": {
     "sectionTitle": "قيمي",
@@ -154,6 +163,7 @@
     "services": "الخدمات",
     "portfolio": "أعمالي",
     "values": "قيمي",
+    "projects": "المشاريع",
     "quote": "\"شغوف بإنشاء تجارب تُحدث فارقاً.\"",
     "quoteSubtitle": "لنتحدث عن مشروعك القادم اليوم.",
     "ctaButton": "تواصل معي",

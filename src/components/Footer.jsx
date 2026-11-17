@@ -13,6 +13,7 @@ const LANDING_SLUGS = [
     'developpeur-fullstack-maroc',
     'developpement-mobile-maroc',
     'developpeur-casablanca',
+    'ayoub-jaddaoui',
 ];
 
 export default function Footer() {
@@ -26,6 +27,8 @@ export default function Footer() {
         { href: `${home}#values`, label: t('footer.values') },
         { href: `${home}/about`, label: t('nav.about') },
         { href: `${home}/blog`, label: t('nav.blog') },
+        // Project pages only exist in French.
+        { href: '/fr/projets', label: t('footer.projects') },
     ];
 
     return (

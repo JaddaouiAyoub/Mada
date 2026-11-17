@@ -55,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Project pages (French only)
+  entries.push(entry('fr', '/projets', 0.8, 'monthly', undefined, false));
   for (const project of projects) {
     entries.push(entry('fr', `/projets/${project.slug}`, 0.75, 'monthly', undefined, false));
   }

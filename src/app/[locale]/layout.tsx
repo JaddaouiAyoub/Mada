@@ -47,7 +47,7 @@ export async function generateMetadata({
     title: t('title'),
     description: t('description'),
     applicationName: SITE_NAME,
-    authors: [{ name: SITE_NAME, url: SITE_URL }],
+    authors: [{ name: SITE_NAME, url: `${SITE_URL}/fr/ayoub-jaddaoui` }],
     creator: SITE_NAME,
     publisher: SITE_NAME,
     category: 'technology',

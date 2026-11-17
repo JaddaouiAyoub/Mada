@@ -32,7 +32,7 @@ export default async function HomePage({
       {
         '@type': 'WebSite',
         '@id': `${SITE_URL}/#website`,
-        url: `${SITE_URL}/`,
+        url: `${SITE_URL}/fr`,
         name: SITE_NAME,
         description: t('description'),
         inLanguage: ['fr', 'ar'],
