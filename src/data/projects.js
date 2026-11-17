@@ -25,8 +25,29 @@ import rentFlow from '../assets/rentFlow.png';
 import syndicFlow from '../assets/syndicFlow.png';
 import gymFlow from '../assets/gymFlow.png';
 import agrimada from '../assets/agrimada.png';
+import darMarrakech from '../assets/darMarrakech.png';
 
 const rawProjects = [
+    {
+        title: "Dar Marrakech",
+        category: "Site Web Premium pour Restaurant Marocain",
+        img: darMarrakech,
+        desc: "Site web vitrine premium pour un restaurant marocain, mettant en valeur la gastronomie traditionnelle et l'expérience culinaire à travers une identité visuelle élégante et immersive. Il comprend une présentation du restaurant, un menu interactif avec catégories et prix en MAD, une galerie photo, des témoignages clients, un formulaire de contact et un système de demande de réservation. L'interface est entièrement responsive avec une approche Mobile First, des animations fluides et un design inspiré de l'architecture marocaine.",
+        tech: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Motion",
+            "Lucide React",
+            "React Hook Form",
+            "Zod",
+            "Next/Image"
+        ],
+        type: "website",
+        preview: "https://dar-marrakech.vercel.app/",
+        code: "#",
+    },
     {
         title: "Agrimada",
         category: "Plateforme SaaS de Gestion Agricole",
